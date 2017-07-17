@@ -22,6 +22,13 @@
       body: "body"
     }
   },
+  friends: {
+    1: {
+      id: 1,
+      author_id: 5,
+      body: "body"
+    }
+  },
   friend_requests: {
     1: {
       id: 1,

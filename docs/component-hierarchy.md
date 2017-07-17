@@ -46,8 +46,8 @@
 |Path   | Component   |
 |-------|-------------|
 | "/" | "LoginPage" |
-| "/feed" | "NewsFeed" |
-| "/:user" | "ProfilePage" |
-| "/:user/about" | "About" |
-| "/:user/friends" | "Friends" |
-| "/:user/photos" | "Photos" |
+| "/users/feed" | "NewsFeed" |
+| "/users/:userId" | "ProfilePage" |
+| "/users/:userId/about" | "About" |
+| "/users/:userId/friends" | "Friends" |
+| "/users/:userId/photos" | "Photos" |
