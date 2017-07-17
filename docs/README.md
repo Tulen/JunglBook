@@ -53,4 +53,4 @@ and sufficient CSS styling:
   * Search
   * Messaging
   * Pictures / Albums
-  * Infinite Scroll for News Feed, Timeline
+  * Infinite Scroll for News Feed, Timeline Wall
