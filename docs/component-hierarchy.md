@@ -16,6 +16,11 @@
   - PostCreate
   - NewsFeedList
 
+**About**
+  - ProfileHeader
+  - BioList
+  - BioDetail
+
 **Friends**
   - ProfileHeader
   - FriendGrid
@@ -31,5 +36,6 @@
 | "/" | "LoginPage" |
 | "/feed" | "NewsFeed" |
 | "/:user" | "ProfilePage" |
+| "/:user/about" | "About" |
 | "/:user/friends" | "Friends" |
 | "/:user/photos" | "Photos" |

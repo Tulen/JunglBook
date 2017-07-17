@@ -15,6 +15,7 @@ and sufficient CSS styling:
  * Friending
  * Comments / Wall Posts
  * News Feed
+ * Pictures / Albums
  * Production README sample
 
 ## Design Docs
@@ -27,23 +28,25 @@ and sufficient CSS styling:
 
 ## Implementation Timeline
 
-### Phase 1: Backend Setup and Front End User Authentication
+### Phase 1: Backend Setup and Front End User Authentication (2 Days)
 **Objective:**  Functioning rails project with front-end authentication
 
-### Phase 2:
-**Objective:**
+### Phase 2: Profile Pages, Bios Components (1.5 Days)
+**Objective:** Be able to view and edit current user profile page. Have working intro widget and about page.  
 
-### Phase 3:
-**Objective:**
+### Phase 3: Friend Requests, Friend Components (1.5 Days)
+**Objective:** Be able to send, accept, reject friend requests, view friend pages. Working friend widget and
+friend grid.
 
-### Phase 4:
-**Objective:**
+### Phase 4: Posts and Comments (2 Days)
+**Objective:** Be able post on own profile page and friend profile pages. Able to comment on posts. Edit and
+delete functionality for posts and comments.
 
-### Phase 5:
-**Objective:**
+### Phase 5: News Feed (2 Days)
+**Objective:** Working news feed populated with friends' recent posts.
 
-### Phase 6:
-**Objective:**
+### Phase 6: Pictures and Albums ( 1 Day)
+**Objective:** Able to upload photos, displayed in working photo widget and photo grid page.
 
 
 ### Bonus Features(TBD)
@@ -52,5 +55,4 @@ and sufficient CSS styling:
   * Comments on Comments
   * Search
   * Messaging
-  * Pictures / Albums
   * Infinite Scroll for News Feed, Timeline Wall
