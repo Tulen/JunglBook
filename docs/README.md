@@ -26,6 +26,11 @@ and sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 ## Implementation Timeline
 
 ### Phase 1: Backend Setup and Front End User Authentication (2 Days)
