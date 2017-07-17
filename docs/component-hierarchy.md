@@ -11,10 +11,20 @@
   - FriendWidget
   - PostCreate
   - UserWall
+    - UserPost
+      - PostMain
+      - CommentList
+        - CommentListItem
+      - NewComment
 
 **NewsFeed**
   - PostCreate
   - NewsFeedList
+    - UserPost
+      - PostMain
+      - CommentList
+        - CommentListItem
+      - NewComment
 
 **About**
   - ProfileHeader
@@ -24,10 +34,12 @@
 **Friends**
   - ProfileHeader
   - FriendGrid
+    - FriendGridItem
 
 **Photos**
   - ProfileHeader
   - PhotoGrid
+    - PhotoGridItem
 
 ## Routes
 

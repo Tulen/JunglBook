@@ -1,10 +1,10 @@
-# JungleBook
+# JunglBook
 [Heroku Link](https://mighty-peak-20853.herokuapp.com/)
 [Trello Link](https://trello.com/b/3TAy0w8n/junglebook)
 
 ## Minimum Viable Project
 
-JungleBook is a web application inspired by Facebook that will be built using
+JunglBook is a web application inspired by Facebook that will be built using
 Ruby on Rails and React/Redux.  By the end of Week 9, this app will, at a minimum,
 satisfy the following criteria with smooth, bug-free navigation, adequate seed data
 and sufficient CSS styling:
