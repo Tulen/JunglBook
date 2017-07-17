@@ -20,11 +20,11 @@ and sufficient CSS styling:
 
 ## Design Docs
 
-* View Wireframes
-* React Components
-* API endpoints
-* DB schema
-* Sample State
+* [View Wireframes][wireframes]
+* [React Components][components]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
 
 ## Implementation Timeline
 
