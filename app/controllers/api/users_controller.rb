@@ -35,5 +35,5 @@ end
 # $.ajax({
 #     method: 'POST',
 #     url: '/api/users/',
-#     data: {user:{email: 'justin@happy.com', password: 'password', fname:'justin', lname: 'happy', birthday: 'Sat, 10 Nov 2007', sex:'male'}}});
+#     data: {user:{email: 'justin3@happy.com', password: 'password', fname:'justin', lname: 'happy', birthday: 'Sat, 10 Nov 2007', sex:'male'}}});
 #
