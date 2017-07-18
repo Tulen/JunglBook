@@ -4,26 +4,38 @@
 
 // TODO:  login header styling issues: responsive?
 
+// body * {
+//   border: 1px solid black;
+// }
+
 .login-tagline {
   font-family: Helvetica, Arial;
   font-weight: 900;
 }
 
 .login-header {
+  min-width: 1000px;
   background-color: #004b23;
   height: 83px;
   display: flex;
-  color: white;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
+  align-content: center;
+  color: white;
 }
 
 .login-logo-container {
+  margin-top: 50px;
   font-weight: 700;
+  height: 83px;
+  width: 170px;
+  margin-left: 100px;
 }
 
 .login-form-container {
-  min-width: 300px;
+  margin-top: 20px;
+  height: 83px;
+  width: 392px;
 }
 
 .login-form-input {
@@ -123,8 +135,16 @@
   margin: 10px 0 5px 0;
 }
 
+.signup-bday-container div:first-child {
+  margin-bottom: 5px
+}
+
+input[type="date"] {
+  font-family: inherit;
+  color: grey;
+}
 .signup-sex-container {
-  margin-top: 10px;
+  margin: 10px 0;
   display: flex;
 }
 
@@ -132,18 +152,46 @@
   flex: 1;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-sex-container label > * {
+  width: 50%
 }
 
 .login-main-right button {
-  background-color: #970F00;
-  border: 1px solid #4A0700;
+  background-color: #8F6796;
+  border: 1px solid #77557C;
   border-radius: 5px;
   padding: 7px 20px;
   font-size: 19px;
   color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.login-main-right div:last-child{
+  margin-top: 20px;
 }
 
 .signup-form {
   height: 393px;
   width: 399px;
+}
+
+.login-footer {
+  background-color: white;
+  height: 154px;
+  color: #044A25;
+}
+
+.login-footer > * {
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.login-footer li {
+  padding: 5px;
+  display: inline-block;
+  font-size: 12px;
 }

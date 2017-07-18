@@ -6,12 +6,14 @@ import CreateUser from './LoginPage/create_user'
 
 const App = () => (
   <div>
-    <header className="login-header">
-      <div className="login-logo-container">
-        <h1> JunglBook </h1>
-      </div>
-      <CreateLogin />
-    </header>
+    <div>
+      <header className="login-header">
+        <div className="login-logo-container">
+          <h1> JunglBook </h1>
+        </div>
+        <CreateLogin />
+      </header>
+    </div>
     <div>
       <main className="login-main">
         <section className="login-main-left">
@@ -44,6 +46,34 @@ const App = () => (
         <CreateUser />
       </main>
     </div>
+    <footer className="login-footer">
+      <div>
+        <ul>
+          <li>
+            English
+          </li>
+          <li>
+            Espanol
+          </li>
+          <li>
+            Francais
+          </li>
+        </ul>
+      </div>
+      <nav>
+        <ul>
+          <li> Sign Up </li>
+          <li> Log In </li>
+          <li> Mobile </li>
+          <li> Find Friends </li>
+          <li> Pages</li>
+          <li> Help </li>
+        </ul>
+      </nav>
+      <div>
+        <li> More... </li>
+      </div>
+    </footer>
   </div>
 )
 

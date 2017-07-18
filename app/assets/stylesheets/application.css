@@ -15,7 +15,7 @@
  */
 
 body {
-  background-color: #EDF0F5;
+  background-color: #D7E3C9;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -45,4 +45,12 @@ h6 {
 
 p {
   font-size: 11px;
+}
+
+input[type="radio"], input[type="date"], button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .9;
 }

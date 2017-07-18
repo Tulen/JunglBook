@@ -19,25 +19,28 @@ class CreateUser extends React.Component {
                <input type="text"></input>
              </div>
              <div className="signup-bday-container">
-               Birthday
                <div>
-                 <select></select>
-                 <select></select>
-                 <select></select>
+                  <h3> Birthday </h3>
+               </div>
+               <div>
+                  <input type="date"></input>
                </div>
              </div>
              <div className = "signup-sex-container">
                <label>
-                 <input type="radio"></input>
-                 Female
+                  Female
+                 <input type="radio" name="sex-choice"></input>
+
                </label>
                <label>
-                 <input type="radio"></input>
-                 Male
+                    Male
+                 <input type="radio" name="sex-choice"></input>
+
                </label>
                <label>
-                 <input type="radio"></input>
-                 Non-binary
+                  Non-binary
+                 <input type="radio" name="sex-choice"></input>
+
                </label>
 
              </div>
