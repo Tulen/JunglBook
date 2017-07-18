@@ -55,12 +55,15 @@
   color: #333;
 }
 
-.login-main section {
-  flex: 1;
+.login-main-left {
+  margin-right: 16px;
 }
 
-h2.login-tagline {
+
+.login-main-left h2 {
   padding: 42px 0 24px 0;
+  display: inline-block;
+  width: 400px;
 }
 
 .login-list-group {
@@ -79,4 +82,37 @@ h2.login-tagline {
 
 .login-list-group div:last-child {
   width: 440px;
+}
+
+.login-main-right {
+  height: 557px;
+  width: 399px;
+}
+
+.login-main-right h1 {
+  margin-bottom: 5px;
+}
+
+.login-main-right div:first-of-type {
+  margin-bottom: 20px;
+}
+
+.login-main-right input {
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.login-main-right button {
+  background-color: #970F00;
+  border: 1px solid #4A0700;
+  border-radius: 5px;
+  padding: 7px 20px;
+  font-size: 19px;
+  color: white;
+}
+
+.signup-form {
+  height: 393px;
+  width: 399px;
 }
