@@ -46,7 +46,7 @@ const App = () => (
               <i className="fa fa-search fa-3x"></i>
             </div>
             <div>
-              <span className="login-tagline"> Find more </span> of what you're looking for with Facebook Search.
+              <span className="login-tagline"> Find more </span> of what you're looking for with JunglBook Search.
             </div>
           </div>
         </section>
@@ -80,7 +80,7 @@ const App = () => (
               </div>
               <div>
                 <p>
-                  By clicking Create Account, you agree to our Terms and that you have read our Data Policy, including our Cookie Use. You may receive SMS Notifications from Facebook and can opt out at any time.
+                  By clicking Create Account, you agree to our Terms and that you have read our Data Policy, including our Cookie Use. You may receive SMS Notifications from JunglBook and can opt out at any time.
                 </p>
               </div>
               <div>
