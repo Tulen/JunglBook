@@ -7,6 +7,7 @@ const defaultState = {
 }
 
 const SessionReducer = (state = defaultState, action) => {
+  console.log("ACTION!!!",action);
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:

@@ -1,6 +1,34 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 class CreateUser extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fname: '',
+      lname: '',
+      email: '',
+      password: '',
+      birthday: '',
+      sex: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(e) {
+    let newUser = {
+      user: {}
+    }
+    e.preventDefault();
+    newUser['user'] = this.state;
+
+    this.props.signup(newUser);
+  }
+
+  update(val) {
+    return e => this.setState({ [val]: e.target.value });
+  }
+
   render() {
      return(
        <section className="login-main-right">
@@ -9,40 +37,36 @@ class CreateUser extends React.Component {
          <div className="signup-form">
            <form>
              <div>
-               <input type="text"></input>
-               <input type="text"></input>
+               <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder="First name"></input>
+               <input type="text" value={this.state.lname} onChange={this.update('lname')} placeholder="Last name"></input>
              </div>
              <div>
-               <input type="text"></input>
+               <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"></input>
              </div>
              <div>
-               <input type="text"></input>
+               <input type="text" value={this.state.password} onChange={this.update('password')} placeholder="New Password"></input>
              </div>
              <div className="signup-bday-container">
                <div>
                   <h3> Birthday </h3>
                </div>
                <div>
-                  <input type="date"></input>
+                  <input value={this.state.birthday} type="date"></input>
                </div>
              </div>
              <div className = "signup-sex-container">
                <label>
                   Female
-                 <input type="radio" name="sex-choice"></input>
-
+                 <input type="radio" onClick={() => (this.state.sex = "female")} name="sex-choice"></input>
                </label>
                <label>
                     Male
-                 <input type="radio" name="sex-choice"></input>
-
+                 <input type="radio" onClick={() => (this.state.sex = "male")} name="sex-choice"></input>
                </label>
                <label>
-                  Non-binary
-                 <input type="radio" name="sex-choice"></input>
-
+                  Non-Binary
+                 <input type="radio" onClick={() => (this.state.sex = "non-binary")} name="sex-choice"></input>
                </label>
-
              </div>
              <div>
                <p>
@@ -50,7 +74,7 @@ class CreateUser extends React.Component {
                </p>
              </div>
              <div>
-               <button> Create Account </button>
+               <button onClick={this.handleSubmit}> Create Account </button>
              </div>
            </form>
          </div>
@@ -59,4 +83,4 @@ class CreateUser extends React.Component {
   }
 }
 
-export default CreateUser
+export default withRouter(CreateUser);

@@ -5,6 +5,7 @@
   - UserCreate
 
 **ProfilePage**
+  - NavBar
   - ProfileHeader
   - IntroWidget
   - PhotoWidget
@@ -18,6 +19,7 @@
       - NewComment
 
 **NewsFeed**
+  - NavBar
   - PostCreate
   - NewsFeedList
     - UserPost
@@ -27,16 +29,19 @@
       - NewComment
 
 **About**
+  - NavBar
   - ProfileHeader
   - BioList
   - BioDetail
 
 **Friends**
+  - NavBar
   - ProfileHeader
   - FriendGrid
     - FriendGridItem
 
 **Photos**
+  - NavBar
   - ProfileHeader
   - PhotoGrid
     - PhotoGridItem
