@@ -11,24 +11,22 @@ fname           | string    | not null
 lname           | string    | not null
 birthday        | date      | not null
 sex             | string    | not null
+work            | string    |
+education       | string    |
+current_city    | string    |
+hometown        | string    |
+relationship    | string    |
+nicknames       | string    |
+favorite_quotes | string    |
 
-## Bios
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-user_id         | integer   | not null, indexed, unique
-work            | string    | not null
-education       | string    | not null
-current_city    | string    | not null
-hometown        | string    | not null
 
-## Friendships
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-accepted    | boolean   | not null
-user_id     | integer   | not null, foreign key (references users), indexed(unique with friend_id)
-friend_id   | integer   | not null, foreign key (references users), indexed(unique with user_id)
+## FriendRequests
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+status       | string   | not null
+sender_id    | integer   | not null, foreign key (references users), indexed(unique with friend_id)
+recipient_id | integer   | not null, foreign key (references users), indexed(unique with user_id)
 
 ## Posts
 column name | data type | details
@@ -42,4 +40,13 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
+post_id     | integer   | not null, foreign key (references users), indexed
+parent_id   | integer   | not null, foreign key (references users), indexed
 body        | text      | not null
+
+## Photos
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+owner_id    | integer   | not null, foreign key (references users), indexed
+img_url     | text      | not null

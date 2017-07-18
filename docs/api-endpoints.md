@@ -25,19 +25,15 @@
 
 ### Bios
 
-- `GET /api/users/:user_id/bios`
-  - gets all about information of a certain user
-- `GET /api/users/:user_id/bios/id`
-  - get specific about information of a certain user
+- `GET /api/bios`
+  - gets all bio information of a certain user
 - `PATCH /api/users/:user_id/bios/id`
-  - update certain user about information
+  - update certain user bio information
 
-### Friendships
+### FriendRequests
 
 - `GET /api/users/:user_id/friends`
   - gets all friends of a certain user
-- `GET /api/users/:user_id/friends/:id`
-  - get specific friend of a certain user
 - `POST /api/friends`
   - create new friend request
 - `PATCH /api/friends`

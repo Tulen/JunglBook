@@ -5,9 +5,9 @@
     username: "name"
   },
   forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    createPost: {errors: ["body can't be blank"]}
+    userCreate: {errors: []},
+    userLogin: {errors: []},
+    postCreate: {errors: ["body can't be blank"]}
   },
   posts: {
     1: {
@@ -29,11 +29,18 @@
       body: "body"
     }
   },
+  photos: {
+    1: {
+      id: 1,
+      owner_id: 5,
+      image_url: "./image.png"
+    }
+  },
   friend_requests: {
     1: {
       id: 1,
-      user_id: 1,
-      friend_id: 3,
+      sender_id: 1,
+      recipient_id: 3,
       accepted: false
     }
   }

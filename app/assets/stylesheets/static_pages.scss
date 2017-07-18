@@ -1,0 +1,82 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.login-tagline {
+  font-family: Helvetica, Arial;
+  font-weight: 900;
+}
+
+.login-header {
+  background-color: #004b23;
+  height: 83px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.login-logo-container {
+  font-weight: 700;
+}
+
+.login-form-container {
+  min-width: 300px;
+}
+
+.login-form-input {
+  max-width: 40%;
+  display: inline-block;
+  padding: 10px;
+}
+
+.login-form-input input {
+  border: 1px solid #1d2a5b;
+  padding: 5px;
+}
+
+.login-form-container button {
+  color: white;
+  font-weight: bold;
+  background-color: #005829;
+  border: 1px solid #003318;
+  padding: 5px;
+}
+
+.login-form-container button:hover {
+  background-color: #004b23;
+}
+
+.login-main {
+  display: flex;
+  width: 980px;
+  height: 597px;
+  margin: auto;
+  padding: 20px 0;
+  color: #333;
+}
+
+.login-main section {
+  flex: 1;
+}
+
+h2.login-tagline {
+  padding: 42px 0 24px 0;
+}
+
+.login-list-group {
+  width: 565px;
+}
+
+.login-list-group > * {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.login-list-group div:first-child {
+  margin-right: 20px;
+}
+
+.login-list-group div:last-child {
+  width: 440px;
+}

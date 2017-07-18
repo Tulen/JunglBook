@@ -12,8 +12,9 @@ and sufficient CSS styling:
  * Hosting on Heroku
  * New account creation, login, and guest/demo login
  * Profiles
- * Friending
+ * Friends
  * Comments / Wall Posts
+ * Comments on Comments
  * News Feed
  * Pictures / Albums
  * Production README sample
@@ -57,7 +58,6 @@ delete functionality for posts and comments.
 ### Bonus Features(TBD)
   * Notifications
   * Likes
-  * Comments on Comments
   * Search
   * Messaging
   * Infinite Scroll for News Feed, Timeline Wall
