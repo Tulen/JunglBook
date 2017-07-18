@@ -1,6 +1,6 @@
 # JunglBook
 [Heroku Link](https://mighty-peak-20853.herokuapp.com/)
-[Trello Link](https://trello.com/b/3TAy0w8n/junglebook)
+[Trello Link](https://trello.com/b/3TAy0w8n/junglbook)
 
 ## Minimum Viable Project
 

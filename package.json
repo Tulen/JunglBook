@@ -1,5 +1,5 @@
 {
-  "name": "junglebook",
+  "name": "junglbook",
   "private": true,
   "dependencies": {
     "babel-core": "^6.25.0",

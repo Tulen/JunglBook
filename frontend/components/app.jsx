@@ -24,7 +24,7 @@ const App = () => (
     <div>
       <main className="login-main">
         <section className="login-main-left">
-          <h2 className="login-tagline"> Connect with animals and the world around you on JungleBook. </h2>
+          <h2 className="login-tagline"> Connect with animals and the world around you on junglbook. </h2>
           <div className="login-list-group">
             <div>
               <i className="fa fa-newspaper-o fa-3x"></i>
