@@ -16,8 +16,8 @@ education       | string    |
 current_city    | string    |
 hometown        | string    |
 relationship    | string    |
-nicknames       | string    |
-favorite_quotes | string    |
+nickname        | string    |
+favorite_quote  | string    |
 
 
 ## FriendRequests
