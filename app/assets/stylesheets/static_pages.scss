@@ -96,14 +96,42 @@
   margin-bottom: 5px;
 }
 
-.login-main-right div:first-of-type {
+.login-main-right > div:first-of-type {
   margin-bottom: 20px;
 }
 
+.login-main-right form > div:first-child {
+  display: flex;
+  width: 100%;
+}
+
+.login-main-right form > div:first-of-type input:first-child{
+  margin-right: 10px;
+}
+
 .login-main-right input {
+  width: 100%;
+  box-sizing: border-box;
   padding: 8px 10px;
   border-radius: 5px;
   font-size: 18px;
+  margin-bottom: 10px;
+  border: 1px solid #bdc7d8;
+}
+
+.signup-bday-container {
+  margin: 10px 0 5px 0;
+}
+
+.signup-sex-container {
+  margin-top: 10px;
+  display: flex;
+}
+
+.signup-sex-container label {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
 }
 
 .login-main-right button {
