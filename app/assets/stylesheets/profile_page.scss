@@ -1,0 +1,38 @@
+#prof-header-container {
+  width: 851px;
+  margin-left: 64px;
+}
+
+#prof-cvr-photo{
+  background-color: black;
+  height: 205px;
+  color: white;
+}
+
+#prof-pic {
+  border: 1px solid grey;
+  height: 168px;
+  width: 168px;
+  margin-top: 55px;
+  margin-left: 15px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 3px;
+}
+
+#prof-pic img {
+  height: 95%;
+  width: 95%;
+}
+
+#prof-headline {
+  background-color: white;
+  height: 34px;
+}
+
+
+//coverphoto height: 205px 851w
+//headline height: 34px 851w
