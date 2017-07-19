@@ -51,7 +51,7 @@ class CreateUser extends React.Component {
                   <h3> Birthday </h3>
                </div>
                <div>
-                  <input value={this.state.birthday} type="date"></input>
+                  <input value={this.state.birthday} onChange={this.update('birthday')} type="date"></input>
                </div>
              </div>
              <div className = "signup-sex-container">

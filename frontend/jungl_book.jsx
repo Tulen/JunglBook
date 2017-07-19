@@ -5,7 +5,16 @@ import configureStore from './store/store';
 import * as APIUTIL from './util/session_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store
+
+  if (window.currentUser) {
+    const preloadedState = { session: {currentUser: window.currentUser} };
+    store = configureStore(preloadedState);
+    console.log("PRE", preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
   const root = document.getElementById('root');
 
   // TESTING START

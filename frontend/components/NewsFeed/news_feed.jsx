@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from '../nav_bar'
+import NavBarContainer from '../nav_bar_container'
 
 class NewsFeed extends React.Component {
   render() {
      return(
        <div>
-         <NavBar />
+         <NavBarContainer />
          <h1> News Feed! </h1>
        </div>
 

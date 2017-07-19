@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter, Redirect } from 'react-router-dom'
 
 class CreateLogin extends React.Component {
   constructor(props) {
@@ -11,8 +12,12 @@ class CreateLogin extends React.Component {
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
-    this.props.login({user: this.state})
+    this.props.login({user: this.state}).then(() => (
+      this.props.history.push('/feed')
+    ))
+
   }
 
   update(val) {
@@ -37,4 +42,4 @@ class CreateLogin extends React.Component {
   }
 }
 
-export default CreateLogin
+export default withRouter(CreateLogin);
