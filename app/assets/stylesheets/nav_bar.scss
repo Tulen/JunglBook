@@ -38,7 +38,12 @@
 
 .nav-menu-container i {
   font-size: 20px;
-  color: #0C121E
+  color: #0C121E;
+  opacity: .8;
+}
+
+.nav-menu-container i:hover {
+  opacity: 1;
 }
 
 .nav-btn-grp {

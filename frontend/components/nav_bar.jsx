@@ -20,23 +20,26 @@ class NavBar extends React.Component {
       <div id='nav-bar'>
         <div className='nav-bar-left'>
           <div className="nav-logo-container">
-            <i className='fa fa-bug fa-2x'></i>
-            JB
+            <Link to="/feed"><i className='fa fa-bug fa-2x'></i></Link>
+
           </div>
 
         </div>
         <div className='nav-bar-right'>
           <div className = "nav-menu-container">
             <div className="nav-btn-grp lng-2">
-              <div>
-                <div className="img-container img-container-xs">
-                  <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+              <Link to="/user">
+                <div>
+                  <div className="img-container img-container-xs">
+                    <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                  </div>
+
+                  <p> User </p>
                 </div>
+              </Link>
 
-                <p> User </p>
-              </div>
 
-              <p> Home </p>
+              <p> <Link to="/feed">Home</Link>  </p>
             </div>
 
 

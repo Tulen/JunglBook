@@ -3,6 +3,7 @@ import CreateLoginContainer from './create_login_container'
 import CreateUserContainer from './create_user_container'
 
 class LoginPage extends React.Component {
+  
   render() {
     return (
       <div>

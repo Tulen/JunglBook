@@ -11,6 +11,10 @@ class CreateLogin extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentWillUnmount() {
+    this.props.receiveErrors([]);
+  }
+
   handleSubmit(e) {
 
     e.preventDefault();
@@ -25,6 +29,7 @@ class CreateLogin extends React.Component {
   }
 
   render() {
+
      return(
       <div className="login-form-container">
         <div className = "login-form-input">
@@ -37,6 +42,7 @@ class CreateLogin extends React.Component {
         </div>
 
         <button onClick={this.handleSubmit}>Log in</button>
+        <p className="error-txt"> {this.props.session.errors}</p>
       </div>
     )
   }

@@ -22,7 +22,9 @@ class CreateUser extends React.Component {
     e.preventDefault();
     newUser['user'] = this.state;
 
-    this.props.signup(newUser);
+    this.props.signup(newUser).then(() => (
+      this.props.history.push('/feed')
+    ));
   }
 
   update(val) {

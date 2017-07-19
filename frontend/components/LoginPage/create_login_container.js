@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import CreateLogin from './create_login'
-import { login } from '../../actions/session_actions'
+import { login, receiveErrors } from '../../actions/session_actions'
 
 const mapStateToProps = ( { session } ) => ({
   session
 })
 
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))
+  login: user => dispatch(login(user)),
+  receiveErrors: errors => dispatch(receiveErrors(errors))
 })
 
 export default connect(
