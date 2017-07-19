@@ -47,10 +47,20 @@ p {
   font-size: 11px;
 }
 
-input[type="radio"], input[type="date"], button {
+input[type="radio"], input[type="date"], button, i {
   cursor: pointer;
 }
 
 button:hover {
   opacity: .9;
+}
+
+.img-container img {
+  height:100%;
+  width:100%;
+}
+
+.img-container-xs {
+  height: 30px;
+  width: 30px;
 }

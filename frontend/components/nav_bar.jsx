@@ -17,8 +17,44 @@ class NavBar extends React.Component {
 
   render() {
     return(
-      <div id='#nav-bar'>
-        <button onClick={ this.handleSubmit }> Log Out! </button>
+      <div id='nav-bar'>
+        <div className='nav-bar-left'>
+          <div className="nav-logo-container">
+            <i className='fa fa-bug fa-2x'></i>
+            JB
+          </div>
+
+        </div>
+        <div className='nav-bar-right'>
+          <div className = "nav-menu-container">
+            <div className="nav-btn-grp lng-2">
+              <div>
+                <div className="img-container img-container-xs">
+                  <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                </div>
+
+                <p> User </p>
+              </div>
+
+              <p> Home </p>
+            </div>
+
+
+            <div className="nav-btn-grp lng-2">
+              <i className='fa fa-group'></i>
+              <i className='fa fa-comments'></i>
+              <i className='fa fa-globe'></i>
+            </div>
+
+            <div className="nav-btn-grp lng-1">
+              <i className='fa fa-question-circle'></i>
+              <i className='fa fa-share-square-o' onClick={ this.handleSubmit }></i>
+            </div>
+
+
+          </div>
+        </div>
+
 
       </div>
     )
