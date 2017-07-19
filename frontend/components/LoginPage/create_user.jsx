@@ -1,18 +1,104 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import merge from 'lodash/merge'
 
 class CreateUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fname: '',
-      lname: '',
-      email: '',
-      password: '',
-      birthday: '',
-      sex: ''
+      user: {
+        fname: '',
+        lname: '',
+        email: '',
+        password: '',
+        birthday: '',
+        sex: ''
+      },
+      inputState: {
+        fname: {
+          clicked: false,
+          valid: false,
+          className: 'input-noerror'
+        },
+        lname: {
+          clicked: false,
+          valid: false,
+          className: 'input-noerror'
+        },
+        email: {
+          clicked: false,
+          valid: false,
+          className: 'input-noerror'
+        },
+        password: {
+          clicked: false,
+          valid: false,
+          className: 'input-noerror'
+        },
+        birthday: {
+          clicked: false,
+          valid: false,
+          className: 'input-noerror'
+        }
+      }
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  checkValidity(val) {
+
+    function validateEmail(email) {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
+
+    let newInputState = merge({}, this.state.inputState);
+    return (e) => {
+      newInputState[val].clicked = true;
+      newInputState[val].className = 'input-noerror';
+      switch (val) {
+        case 'fname':
+        case 'lname':
+          if (e.target.value.length > 0 ) {
+            newInputState[val].valid = true;
+          } else {
+            newInputState[val].valid = false;
+            newInputState[val].className = 'input-error';
+          }
+          break;
+        case 'email':
+          if (validateEmail(e.target.value)) {
+            newInputState[val].valid = true;
+          } else {
+            newInputState[val].valid = false;
+            newInputState[val].className = 'input-error';
+          }
+          break;
+        case 'password':
+          if (e.target.value.length > 7 ) {
+            newInputState[val].valid = true;
+          } else {
+            newInputState[val].valid = false;
+            newInputState[val].className = 'input-error';
+          }
+          break;
+        case 'birthday':
+          if (e.target.value.length > 0 ) {
+            newInputState[val].valid = true;
+          } else {
+            newInputState[val].valid = false;
+              newInputState[val].className = 'input-error';
+          }
+          break;
+        default:
+
+      }
+      // console.log(newInputState);
+      this.setState({ ['inputState']: newInputState });
+      console.log(this.state);
+      // let newInputClass = toggleValidity(this.state)
+      // console.log(newInputClass);
+      // this.setState({ ['inputState']: newInputClass });
+    };
   }
 
   handleSubmit(e) {
@@ -20,15 +106,20 @@ class CreateUser extends React.Component {
       user: {}
     }
     e.preventDefault();
-    newUser['user'] = this.state;
-
+    newUser['user'] = this.state.user;
     this.props.signup(newUser).then(() => (
       this.props.history.push('/feed')
     ));
   }
 
   update(val) {
-    return e => this.setState({ [val]: e.target.value });
+
+    let newUserState = merge({}, this.state.user);
+
+    return e => {
+      newUserState[val] = e.target.value;
+      this.setState({ ['user']: newUserState });
+    };
   }
 
   render() {
@@ -39,35 +130,35 @@ class CreateUser extends React.Component {
          <div className="signup-form">
            <form>
              <div>
-               <input type="text" value={this.state.fname} onChange={this.update('fname')} placeholder="First name"></input>
-               <input type="text" value={this.state.lname} onChange={this.update('lname')} placeholder="Last name"></input>
+               <input className={this.state.inputState.fname.className} type="text" value={this.state.user.fname} onBlur={this.checkValidity('fname')} onChange={this.update('fname')} placeholder="First name" required></input>
+               <input className={this.state.inputState.lname.className} type="text" value={this.state.user.lname} onBlur={this.checkValidity('lname')} onChange={this.update('lname')} placeholder="Last name" required></input>
              </div>
              <div>
-               <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email"></input>
+               <input className={this.state.inputState.email.className} type="email" value={this.state.user.email} onBlur={this.checkValidity('email')} onChange={this.update('email')} placeholder="Email" required></input>
              </div>
              <div>
-               <input type="text" value={this.state.password} onChange={this.update('password')} placeholder="New Password"></input>
+               <input className={this.state.inputState.password.className} type="password" value={this.state.user.password} onBlur={this.checkValidity('password')} onChange={this.update('password')} placeholder="New Password" minLength="8" required></input>
              </div>
              <div className="signup-bday-container">
                <div>
                   <h3> Birthday </h3>
                </div>
                <div>
-                  <input value={this.state.birthday} onChange={this.update('birthday')} type="date"></input>
+                  <input className={this.state.inputState.birthday.className} value={this.state.user.birthday} onBlur={this.checkValidity('birthday')} onChange={this.update('birthday')} type="date" required></input>
                </div>
              </div>
-             <div className = "signup-sex-container">
-               <label>
+             <div className = 'signup-sex-container'>
+               <label className={this.state.inputState.birthday.className}>
                   Female
-                 <input type="radio" onClick={() => (this.state.sex = "female")} name="sex-choice"></input>
+                 <input type="radio" onClick={() => (this.state.user.sex = "female")} name="sex-choice" ></input>
                </label>
-               <label>
+               <label className={this.state.inputState.birthday.className}>
                     Male
-                 <input type="radio" onClick={() => (this.state.sex = "male")} name="sex-choice"></input>
+                 <input type="radio" onClick={() => (this.state.user.sex = "male")} name="sex-choice"></input>
                </label>
-               <label>
+               <label className={this.state.inputState.birthday.className}>
                   Non-Binary
-                 <input type="radio" onClick={() => (this.state.sex = "non-binary")} name="sex-choice"></input>
+                 <input type="radio" onClick={() => (this.state.user.sex = "non-binary")} name="sex-choice"></input>
                </label>
              </div>
              <div>
@@ -85,4 +176,4 @@ class CreateUser extends React.Component {
   }
 }
 
-export default withRouter(CreateUser);
+export default CreateUser;

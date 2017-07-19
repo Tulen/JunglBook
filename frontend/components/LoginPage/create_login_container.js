@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CreateLogin from './create_login'
 import { login, receiveErrors } from '../../actions/session_actions'
+import { withRouter } from 'react-router'
 
 const mapStateToProps = ( { session } ) => ({
   session
@@ -11,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
   receiveErrors: errors => dispatch(receiveErrors(errors))
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(CreateLogin);
+)(CreateLogin));

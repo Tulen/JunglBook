@@ -34,11 +34,11 @@ class CreateLogin extends React.Component {
       <div className="login-form-container">
         <div className = "login-form-input">
             <p> Email </p>
-            <input type="text" value={this.state.email} onChange={this.update("email")}></input>
+            <input type="email" value={this.state.email} onChange={this.update("email")}></input>
         </div>
         <div className = "login-form-input">
             <p> Password </p>
-            <input type="text" value={this.state.password} onChange={this.update("password")}></input>
+            <input type="password" value={this.state.password} onChange={this.update("password")}></input>
         </div>
 
         <button onClick={this.handleSubmit}>Log in</button>
@@ -48,4 +48,4 @@ class CreateLogin extends React.Component {
   }
 }
 
-export default withRouter(CreateLogin);
+export default CreateLogin;
