@@ -24,6 +24,13 @@ class CreateLogin extends React.Component {
 
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.login({user: this.state}).then(() => (
+      this.props.history.push('/feed')
+    ))
+  }
+
   update(val) {
     return e => this.setState({ [val]: e.target.value });
   }

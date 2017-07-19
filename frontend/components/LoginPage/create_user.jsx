@@ -38,6 +38,11 @@ class CreateUser extends React.Component {
           clicked: false,
           valid: false,
           className: 'input-noerror'
+        },
+        sex: {
+          clicked: false,
+          valid: false,
+          className: 'input-noerror'
         }
       }
     };
@@ -82,7 +87,32 @@ class CreateUser extends React.Component {
           }
           break;
         case 'birthday':
-          if (e.target.value.length > 0 ) {
+          let currentDate = new Date();
+          let currentYear = 1900 + currentDate.getYear();
+          let currentMonth = 1 + currentDate.getMonth();
+          let currentDay = currentDate.getDate();
+          let inputDate = e.target.value.split('-');
+          let inputYear = parseInt(inputDate[0]);
+          let inputMonth = parseInt(inputDate[1]);
+          let inputDay = parseInt(inputDate[2]);
+          let oldEnough
+
+          if (currentYear - inputYear < 13) {
+            if (currentMonth > inputMonth) {
+              oldEnough = true
+            } else if (currentMonth === inputMonth) {
+              if ( currentDay >= inputDay ) {
+                oldEnough = true
+              } else {
+                oldEnough = false
+              }
+            } else {
+              oldEnough = false
+            }
+          } else {
+              oldEnough = true
+          }
+          if (oldEnough) {
             newInputState[val].valid = true;
           } else {
             newInputState[val].valid = false;
@@ -92,12 +122,8 @@ class CreateUser extends React.Component {
         default:
 
       }
-      // console.log(newInputState);
       this.setState({ ['inputState']: newInputState });
-      console.log(this.state);
-      // let newInputClass = toggleValidity(this.state)
-      // console.log(newInputClass);
-      // this.setState({ ['inputState']: newInputClass });
+
     };
   }
 
@@ -148,15 +174,15 @@ class CreateUser extends React.Component {
                </div>
              </div>
              <div className = 'signup-sex-container'>
-               <label className={this.state.inputState.birthday.className}>
+               <label className={this.state.inputState.sex.className}>
                   Female
                  <input type="radio" onClick={() => (this.state.user.sex = "female")} name="sex-choice" ></input>
                </label>
-               <label className={this.state.inputState.birthday.className}>
+               <label className={this.state.inputState.sex.className}>
                     Male
                  <input type="radio" onClick={() => (this.state.user.sex = "male")} name="sex-choice"></input>
                </label>
-               <label className={this.state.inputState.birthday.className}>
+               <label className={this.state.inputState.sex.className}>
                   Non-Binary
                  <input type="radio" onClick={() => (this.state.user.sex = "non-binary")} name="sex-choice"></input>
                </label>
