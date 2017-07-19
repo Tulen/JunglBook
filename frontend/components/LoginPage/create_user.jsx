@@ -95,14 +95,18 @@ class CreateUser extends React.Component {
           let inputYear = parseInt(inputDate[0]);
           let inputMonth = parseInt(inputDate[1]);
           let inputDay = parseInt(inputDate[2]);
-          let oldEnough
+          let oldEnough = false
 
-          if (currentYear - inputYear < 13) {
-            if (currentMonth > inputMonth) {
-              oldEnough = true
-            } else if (currentMonth === inputMonth) {
-              if ( currentDay >= inputDay ) {
+          if ((currentYear - inputYear) < 13) {
+            if (currentYear - inputYear === 12) {
+              if (currentMonth > inputMonth) {
                 oldEnough = true
+              } else if (currentMonth === inputMonth) {
+                if ( currentDay >= inputDay ) {
+                  oldEnough = true
+                } else {
+                  oldEnough = false
+                }
               } else {
                 oldEnough = false
               }
@@ -155,22 +159,28 @@ class CreateUser extends React.Component {
          <div> <h3> It's free and always will be. </h3> </div>
          <div className="signup-form">
            <form>
-             <div>
+             <div className="signup-form-row">
                <input className={this.state.inputState.fname.className} type="text" value={this.state.user.fname} onBlur={this.checkValidity('fname')} onChange={this.update('fname')} placeholder="First name" required></input>
                <input className={this.state.inputState.lname.className} type="text" value={this.state.user.lname} onBlur={this.checkValidity('lname')} onChange={this.update('lname')} placeholder="Last name" required></input>
+               <div className={this.state.inputState.fname.className} > <i className="fa fa-warning"></i> </div>
+               <div className={this.state.inputState.lname.className} > <i className="fa fa-warning"></i> </div>
+
              </div>
-             <div>
+             <div className="signup-form-row">
                <input className={this.state.inputState.email.className} type="email" value={this.state.user.email} onBlur={this.checkValidity('email')} onChange={this.update('email')} placeholder="Email" required></input>
+               <div className={this.state.inputState.email.className} > <i className="fa fa-warning"></i> </div>
              </div>
-             <div>
+             <div className="signup-form-row">
                <input className={this.state.inputState.password.className} type="password" value={this.state.user.password} onBlur={this.checkValidity('password')} onChange={this.update('password')} placeholder="New Password" minLength="8" required></input>
+               <div className={this.state.inputState.password.className} > <i className="fa fa-warning"></i> </div>
              </div>
              <div className="signup-bday-container">
                <div>
                   <h3> Birthday </h3>
                </div>
-               <div>
+               <div className="signup-form-row">
                   <input className={this.state.inputState.birthday.className} value={this.state.user.birthday} onBlur={this.checkValidity('birthday')} onChange={this.update('birthday')} type="date" required></input>
+
                </div>
              </div>
              <div className = 'signup-sex-container'>
@@ -193,7 +203,7 @@ class CreateUser extends React.Component {
                </p>
              </div>
              <div>
-               <button onClick={this.handleSubmit}> Create Account </button>
+               <button className="sign-up-button" onClick={this.handleSubmit}> Create Account </button>
              </div>
            </form>
          </div>

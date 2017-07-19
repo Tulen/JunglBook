@@ -9,6 +9,7 @@ class CreateLogin extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.demoLogin = this.demoLogin.bind(this)
   }
 
   componentWillUnmount() {
@@ -26,7 +27,10 @@ class CreateLogin extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    this.props.login({user: this.state}).then(() => (
+    this.props.login({user: {
+      email: 'justin@happy.com',
+      password: 'password'
+    }}).then(() => (
       this.props.history.push('/feed')
     ))
   }
@@ -49,6 +53,7 @@ class CreateLogin extends React.Component {
         </div>
 
         <button onClick={this.handleSubmit}>Log in</button>
+        <button onClick={this.demoLogin}>Demo</button>
         <p className="error-txt"> {this.props.session.errors}</p>
       </div>
     )

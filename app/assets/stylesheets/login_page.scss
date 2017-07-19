@@ -29,7 +29,7 @@
 .login-form-container {
   margin-top: 20px;
   height: 83px;
-  width: 392px;
+  width: 492px;
 }
 
 .login-form-input {
@@ -49,6 +49,7 @@
   background-color: #005829;
   border: 1px solid #003318;
   padding: 5px;
+  margin-right: 5px;
 }
 
 .login-form-container button:hover {
@@ -109,6 +110,16 @@
 .login-main-right form > div:first-child {
   display: flex;
   width: 100%;
+}
+
+div.input-noerror, div.input-error {
+  float: right;
+  padding: 10px;
+  color: #B94A48;
+}
+
+div.input-noerror {
+  display: none;
 }
 
 .login-main-right form > div:first-of-type input:first-child{
@@ -177,7 +188,7 @@ input[type="date"] {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.login-main-right div:last-child{
+.sign-up-button {
   margin-top: 20px;
 }
 
@@ -186,7 +197,16 @@ input[type="date"] {
   width: 399px;
 }
 
+.signup-form-row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 
+.signup-form-row div{
+  margin: 0;
+}
 
 .login-footer {
   background-color: white;
