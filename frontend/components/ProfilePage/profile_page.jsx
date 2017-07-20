@@ -1,21 +1,27 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar_container'
+import ProfileHeader from './profile_header'
+import IntroWidget from './intro_widget'
+import PhotoWidget from './photo_widget'
+import FriendWidget from './friend_widget'
+import UserWall from './user_wall'
+import PostCreate from '../post_create'
 
 class ProfilePage extends React.Component {
   render() {
      return(
-       <div>
+       <div id="profile-feed">
          <NavBarContainer />
-
-         <div id="prof-header-container">
-           <div id="prof-cvr-photo">
-             <div id="prof-pic">
-               <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-             </div>
-              <h2> Quokka </h2>
+         <ProfileHeader />
+         <div id="feed-body">
+           <div id="feed-left">
+            <IntroWidget />
+            <PhotoWidget />
+            <FriendWidget />
            </div>
-           <div id="prof-headline">
-
+           <div id="feed-right">
+            <PostCreate />
+            <UserWall />
            </div>
          </div>
        </div>

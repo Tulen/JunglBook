@@ -1,6 +1,12 @@
-#prof-header-container {
+
+#profile-feed {
+  height: 100%;
   width: 851px;
-  margin-left: 64px;
+  margin: auto;
+}
+
+#prof-header-container {
+  width: 100%;
 }
 
 #prof-cvr-photo{
@@ -28,11 +34,80 @@
   width: 95%;
 }
 
+#prof-name {
+  padding-top: 160px;
+  padding-left: 200px;
+}
+
 #prof-headline {
   background-color: white;
   height: 34px;
 }
 
+#prof-nav-links {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
 
+#prof-nav-links li {
+  height: 100%;
+  padding: 0 17px;
+  list-style-type: none;
+  border-left: 1px solid #E9EAED;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+  font-family: sans-serif;
+  color: #4B4F56;
+}
+
+#prov-nav-links li:hover {
+  background-color: #ddddd;
+}
+
+#prof-nav-links li:last-of-type {
+  border-right: 1px solid #E9EAED;
+}
+
+#feed-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+#feed-left {
+  width: 323px;
+}
+
+.prof-subcomponent {
+  background-color: white;
+  margin: 15px 0;
+}
+
+#intro-widget {
+  height: 269px;
+}
+
+#photo-widget {
+  height: 155px;
+}
+#friend-widget {
+  height: 365px;
+}
+
+#feed-right{
+  width: 510px;
+}
+
+.post-create {
+  height: 152px;
+}
+
+.post-feed {
+  height: 1000px;
+}
 //coverphoto height: 205px 851w
 //headline height: 34px 851w

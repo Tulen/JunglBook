@@ -1,12 +1,17 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar_container'
+import PostCreate from '../post_create'
+import NewsFeedList from './news_feed_list'
 
 class NewsFeed extends React.Component {
   render() {
      return(
        <div>
          <NavBarContainer />
-         <h1> News Feed! </h1>
+           <div id="feed-right">
+            <PostCreate />
+            <NewsFeedList />
+           </div>
        </div>
 
     )
