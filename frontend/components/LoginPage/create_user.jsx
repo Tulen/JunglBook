@@ -1,6 +1,7 @@
 import React from 'react'
 import merge from 'lodash/merge'
 import Popup from 'react-popup'
+import { values } from 'lodash'
 
 class CreateUser extends React.Component {
   constructor(props) {
@@ -48,63 +49,105 @@ class CreateUser extends React.Component {
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validationSwitch = [];
+    // this.checkValidity = this.checkValidity.bind(this);
   }
 
   checkValidity(val) {
-
     function validateEmail(email) {
       let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     }
-
     let newInputState = merge({}, this.state.inputState);
+    // console.log(newInputState);
     return (e) => {
+      console.log(e);
+      console.log(e.target);
       newInputState[val].clicked = true;
       newInputState[val].className = 'input-noerror';
-      switch (val) {
-        case 'fname':
-        case 'lname':
-          if (e.target.value.length > 0 ) {
-            newInputState[val].valid = true;
-          } else {
-            newInputState[val].valid = false;
-            newInputState[val].className = 'input-error';
-          }
-          break;
-        case 'email':
-          if (validateEmail(e.target.value)) {
-            newInputState[val].valid = true;
-          } else {
-            newInputState[val].valid = false;
-            newInputState[val].className = 'input-error';
-          }
-          break;
-        case 'password':
-          if (e.target.value.length > 7 ) {
-            newInputState[val].valid = true;
-          } else {
-            newInputState[val].valid = false;
-            newInputState[val].className = 'input-error';
-          }
-          break;
-        case 'birthday':
-          let currentDate = new Date();
-          let currentYear = 1900 + currentDate.getYear();
-          let currentMonth = 1 + currentDate.getMonth();
-          let currentDay = currentDate.getDate();
-          let inputDate = e.target.value.split('-');
-          let inputYear = parseInt(inputDate[0]);
-          let inputMonth = parseInt(inputDate[1]);
-          let inputDay = parseInt(inputDate[2]);
-          let oldEnough = false
+      let checkValue
+      if (e.target === undefined) {
+        checkValue = e
+      } else {
+        checkValue = e.target.value
+      }
 
-          if ((currentYear - inputYear) < 13) {
-            if (currentYear - inputYear === 12) {
-              if (currentMonth > inputMonth) {
-                oldEnough = true
-              } else if (currentMonth === inputMonth) {
-                if ( currentDay >= inputDay ) {
+      if (e === '') {
+        // console.log("TESTTEST")
+        newInputState[val].valid = false;
+        newInputState[val].className = 'input-error';
+        this.validationSwitch.push(false);
+
+      } else {
+        switch (val) {
+          case 'fname':
+          case 'lname':
+            if (checkValue.length > 0 ) {
+              newInputState[val].valid = true;
+              newInputState[val].className = 'input-noerror';
+              if (e.target === undefined) {
+                this.validationSwitch.push(true);
+              }
+
+            } else {
+              newInputState[val].valid = false;
+              newInputState[val].className = 'input-error';
+              if (e.target === undefined) {
+                  this.validationSwitch.push(false);
+              }
+            }
+            break;
+          case 'email':
+            if (validateEmail(checkValue)) {
+              newInputState[val].valid = true;
+              newInputState[val].className = 'input-noerror';
+              if (e.target === undefined) {
+                this.validationSwitch.push(true);
+              }
+            } else {
+              newInputState[val].valid = false;
+              newInputState[val].className = 'input-error';
+              if (e.target === undefined) {
+                this.validationSwitch.push(false);
+              }
+            }
+            break;
+          case 'password':
+            if (checkValue.length > 7 ) {
+              newInputState[val].valid = true;
+              newInputState[val].className = 'input-noerror';
+              if (e.target === undefined) {
+                this.validationSwitch.push(true);
+              }
+            } else {
+              newInputState[val].valid = false;
+              newInputState[val].className = 'input-error';
+              if (e.target === undefined) {
+                this.validationSwitch.push(false);
+              }
+            }
+            break;
+          case 'birthday':
+            let currentDate = new Date();
+            let currentYear = 1900 + currentDate.getYear();
+            let currentMonth = 1 + currentDate.getMonth();
+            let currentDay = currentDate.getDate();
+            let inputDate = checkValue.split('-');
+            let inputYear = parseInt(inputDate[0]);
+            let inputMonth = parseInt(inputDate[1]);
+            let inputDay = parseInt(inputDate[2]);
+            let oldEnough = false
+
+            if ((currentYear - inputYear) < 13) {
+              if (currentYear - inputYear === 12) {
+                if (currentMonth > inputMonth) {
                   oldEnough = true
+                } else if (currentMonth === inputMonth) {
+                  if ( currentDay >= inputDay ) {
+                    oldEnough = true
+                  } else {
+                    oldEnough = false
+                  }
                 } else {
                   oldEnough = false
                 }
@@ -112,22 +155,29 @@ class CreateUser extends React.Component {
                 oldEnough = false
               }
             } else {
-              oldEnough = false
+                oldEnough = true
             }
-          } else {
-              oldEnough = true
-          }
-          if (oldEnough) {
-            newInputState[val].valid = true;
-          } else {
-            newInputState[val].valid = false;
-              newInputState[val].className = 'input-error';
-          }
-          break;
-        default:
-
+            if (oldEnough) {
+              newInputState[val].valid = true;
+              newInputState[val].className = 'input-noerror';
+              if (e.target === undefined) {
+                this.validationSwitch.push(true);
+              }
+            } else {
+              newInputState[val].valid = false;
+                newInputState[val].className = 'input-error';
+                if (e.target === undefined) {
+                  this.validationSwitch.push(false);
+                }
+            }
+            break;
+          default:
+        }
       }
+
       this.setState({ ['inputState']: newInputState });
+      // console.log(this.validationSwitch);
+
 
     };
   }
@@ -137,6 +187,65 @@ class CreateUser extends React.Component {
       user: {}
     }
     e.preventDefault();
+
+    Object.keys(this.state.user).forEach( (val) => {
+      if (val !== "sex") {
+        this.checkValidity(val)(this.state.user[val]);
+      }
+
+    })
+    let newSubmitInputState = merge({}, this.state.inputState)
+
+    let indexCounter = 0;
+    this.validationSwitch.forEach((bool) => {
+      console.log(bool);
+      console.log(indexCounter);
+      if (bool){
+        switch (indexCounter) {
+          case 0:
+            newSubmitInputState.fname.className = "input-noerror";
+            break;
+          case 1:
+            newSubmitInputState.lname.className = "input-noerror";
+            break;
+          case 2:
+            newSubmitInputState.email.className = "input-noerror";
+            break;
+          case 3:
+            newSubmitInputState.password.className = "input-noerror";
+            break;
+          case 4:
+            newSubmitInputState.birthday.className = "input-noerror";
+            break;
+          default:
+
+        }
+      } else {
+        switch (indexCounter) {
+          case 0:
+            newSubmitInputState.fname.className = "input-error";
+            break;
+          case 1:
+            newSubmitInputState.lname.className = "input-error";
+            break;
+          case 2:
+            newSubmitInputState.email.className = "input-error";
+            break;
+          case 3:
+            newSubmitInputState.password.className = "input-error";
+            break;
+          case 4:
+            newSubmitInputState.birthday.className = "input-error";
+            break;
+          default:
+      }
+    }
+    indexCounter++;
+   }
+ );
+ console.log(newSubmitInputState);
+    this.setState({ ['inputState']: newSubmitInputState });
+    this.validationSwitch = [];
     newUser['user'] = this.state.user;
     this.props.signup(newUser).then(() => (
       this.props.history.push('/feed')
