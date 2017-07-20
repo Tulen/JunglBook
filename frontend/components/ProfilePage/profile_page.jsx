@@ -1,11 +1,12 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar_container'
 import ProfileHeader from './profile_header'
-import IntroWidget from './intro_widget'
-import PhotoWidget from './photo_widget'
-import FriendWidget from './friend_widget'
-import UserWall from './user_wall'
-import PostCreate from '../post_create'
+import Timeline from './Timeline/timeline'
+import About from './About/about'
+import Friends from './Friends/friends'
+import Photos from './Photos/photos'
+import { Switch, Route } from 'react-router-dom'
+
 
 class ProfilePage extends React.Component {
   render() {
@@ -13,19 +14,14 @@ class ProfilePage extends React.Component {
        <div>
          <NavBarContainer />
          <div id="profile-feed">
-
            <ProfileHeader />
-           <div id="feed-body">
-             <div id="feed-left">
-              <IntroWidget />
-              <PhotoWidget />
-              <FriendWidget />
-             </div>
-             <div id="feed-right">
-              <PostCreate />
-              <UserWall />
-             </div>
-           </div>
+           <Switch>
+             <Route path="/user/about" component={About}></Route>
+             <Route path="/user/friends" component={Friends}></Route>
+             <Route path="/user/photos" component={Photos}></Route>
+             <Route path="/user" component={Timeline}></Route>
+           </Switch>
+
          </div>
 
        </div>
@@ -35,7 +31,3 @@ class ProfilePage extends React.Component {
 }
 
 export default ProfilePage
-
-//coverphoto height: 205px 851w
-//headline height: 34px 851w
-//profile pic 168x168
