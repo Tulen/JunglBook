@@ -10,20 +10,24 @@ import PostCreate from '../post_create'
 class ProfilePage extends React.Component {
   render() {
      return(
-       <div id="profile-feed">
+       <div>
          <NavBarContainer />
-         <ProfileHeader />
-         <div id="feed-body">
-           <div id="feed-left">
-            <IntroWidget />
-            <PhotoWidget />
-            <FriendWidget />
-           </div>
-           <div id="feed-right">
-            <PostCreate />
-            <UserWall />
+         <div id="profile-feed">
+
+           <ProfileHeader />
+           <div id="feed-body">
+             <div id="feed-left">
+              <IntroWidget />
+              <PhotoWidget />
+              <FriendWidget />
+             </div>
+             <div id="feed-right">
+              <PostCreate />
+              <UserWall />
+             </div>
            </div>
          </div>
+
        </div>
 
     )
