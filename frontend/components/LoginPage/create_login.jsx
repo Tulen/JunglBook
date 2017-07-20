@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
+import Popup from 'react-popup'
 
 class CreateLogin extends React.Component {
   constructor(props) {
@@ -10,6 +11,12 @@ class CreateLogin extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this)
     this.demoLogin = this.demoLogin.bind(this)
+  }
+
+  //Error message wont go away?
+
+  componentWillMount() {
+    this.props.receiveErrors([]);
   }
 
   componentWillUnmount() {

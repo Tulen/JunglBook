@@ -1,5 +1,26 @@
-.error-txt {
-  // color: #47AFB2;
+.mm-popup--visible {
+  background-color: rgba(186, 80, 77, .5);
+  border-radius: 5px;
+  width: 280px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: white;
+  clear: both;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 50px;
+  text-align: center;
+  position: fixed;
+}
+
+.mm-popup--visible button.mm-popup__btn--danger {
+  background-color: rgba(186, 80, 77, .1);;
+
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 .login-tagline {

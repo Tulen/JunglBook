@@ -1,5 +1,6 @@
 import React from 'react'
 import merge from 'lodash/merge'
+import Popup from 'react-popup'
 
 class CreateUser extends React.Component {
   constructor(props) {
@@ -155,24 +156,83 @@ class CreateUser extends React.Component {
   render() {
      return(
        <section className="login-main-right">
+
          <h1 className="login-tagline"> Sign Up </h1>
          <div> <h3> It's free and always will be. </h3> </div>
+         <Popup closeBtn={false} closeOnOutsideClick={true}/>
          <div className="signup-form">
            <form>
              <div className="signup-form-row">
                <input className={this.state.inputState.fname.className} type="text" value={this.state.user.fname} onBlur={this.checkValidity('fname')} onChange={this.update('fname')} placeholder="First name" required></input>
+               <div className={this.state.inputState.fname.className} > <i className="fa fa-warning" onClick={() => ( Popup.create(
+                   {
+                     title: null,
+                     content:'Must provide first name',
+                     buttons: {
+                         left: [{
+                             text: 'close',
+                             className: 'danger',
+                             action: function () {
+                                 Popup.close();
+                           }
+                        }]
+                      }
+                   }
+                 ))}></i> </div>
                <input className={this.state.inputState.lname.className} type="text" value={this.state.user.lname} onBlur={this.checkValidity('lname')} onChange={this.update('lname')} placeholder="Last name" required></input>
-               <div className={this.state.inputState.fname.className} > <i className="fa fa-warning"></i> </div>
-               <div className={this.state.inputState.lname.className} > <i className="fa fa-warning"></i> </div>
+
+               <div className={this.state.inputState.lname.className} > <i className="fa fa-warning" onClick={() => ( Popup.create(
+                   {
+                     title: null,
+                     content:'Must provide last name',
+                     buttons: {
+                         left: [{
+                             text: 'close',
+                             className: 'danger',
+                             action: function () {
+                                 Popup.close();
+                           }
+                        }]
+                      }
+                   }
+                 ))}></i> </div>
 
              </div>
              <div className="signup-form-row">
                <input className={this.state.inputState.email.className} type="email" value={this.state.user.email} onBlur={this.checkValidity('email')} onChange={this.update('email')} placeholder="Email" required></input>
-               <div className={this.state.inputState.email.className} > <i className="fa fa-warning"></i> </div>
+               <div className={this.state.inputState.email.className} > <i className="fa fa-warning" onClick={() => ( Popup.create(
+                   {
+                     title: null,
+                     content:'Must be valid email address',
+                     buttons: {
+                         left: [{
+                             text: 'close',
+                             className: 'danger',
+                             action: function () {
+                                 Popup.close();
+                           }
+                        }]
+                      }
+                   }
+                 ))}></i> </div>
              </div>
              <div className="signup-form-row">
                <input className={this.state.inputState.password.className} type="password" value={this.state.user.password} onBlur={this.checkValidity('password')} onChange={this.update('password')} placeholder="New Password" minLength="8" required></input>
-               <div className={this.state.inputState.password.className} > <i className="fa fa-warning"></i> </div>
+               <div className={this.state.inputState.password.className} > <i className="fa fa-warning" onClick={() => ( Popup.create(
+                   {
+                     title: null,
+                     content:'Password must be at least 8 characters',
+                     buttons: {
+                         left: [{
+                             text: 'close',
+                             className: 'danger',
+                             action: function () {
+                                  Popup.close();
+                           }
+                        }]
+                      }
+                   }
+                 ))}></i> </div>
              </div>
              <div className="signup-bday-container">
                <div>
@@ -204,8 +264,10 @@ class CreateUser extends React.Component {
              </div>
              <div>
                <button className="sign-up-button" onClick={this.handleSubmit}> Create Account </button>
+
              </div>
            </form>
+
          </div>
        </section>
     )

@@ -2,11 +2,13 @@ import React from 'react'
 import CreateLoginContainer from './create_login_container'
 import CreateUserContainer from './create_user_container'
 
+
 class LoginPage extends React.Component {
-  
+
   render() {
+
     return (
-      <div>
+      <div>  
         <div>
           <header className="login-header">
             <div className="login-logo-container">
