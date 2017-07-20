@@ -244,7 +244,22 @@ class CreateUser extends React.Component {
                </div>
                <div className="signup-form-row">
                   <input className={this.state.inputState.birthday.className} value={this.state.user.birthday} onBlur={this.checkValidity('birthday')} onChange={this.update('birthday')} type="date" required></input>
-
+                    <div className={this.state.inputState.birthday.className} > <i className="fa fa-warning" onClick={() => ( Popup.create(
+                        {
+                          title: null,
+                          content:'You must be at least 13 to use JungleBook',
+                          buttons: {
+                              left: [{
+                                  text: 'close',
+                                  className: 'danger',
+                                  action: function () {
+                                       Popup.clearQueue();
+                                       Popup.close();
+                                }
+                             }]
+                           }
+                        }
+                      ))}></i> </div>
                </div>
              </div>
              <div className = 'signup-sex-container'>

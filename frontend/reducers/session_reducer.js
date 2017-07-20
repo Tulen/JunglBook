@@ -15,7 +15,7 @@ const SessionReducer = (state = defaultState, action) => {
     case RECEIVE_ERRORS:
       if (action.errors.length === 0) {
         console.log("ZERO!")
-        return merge({}, state, {errors: []})
+        return merge({}, {currentuser: state.currentUser}, {errors: []})
       }
       if (action.errors.length <= 1) {
         console.log("ERRORS",action.errors);

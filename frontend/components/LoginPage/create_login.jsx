@@ -13,14 +13,10 @@ class CreateLogin extends React.Component {
     this.demoLogin = this.demoLogin.bind(this)
   }
 
-  //Error message wont go away?
-
-  componentWillMount() {
-    this.props.receiveErrors([]);
-  }
-
-  componentWillUnmount() {
-    this.props.receiveErrors([]);
+  componentWillReceiveProps() {
+    if (this.props.session.errors.length > 0 ) {
+      this.props.receiveErrors([]);
+    }
   }
 
   handleSubmit(e) {

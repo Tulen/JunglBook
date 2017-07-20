@@ -9,6 +9,7 @@ class FriendsGridItem extends React.Component {
         </div>
         <div className="friends-grid-content">
           <p> Quokka </p>
+          <div id="friends-grid-btn"> <p> Friends </p> </div>
         </div>
       </div>
 

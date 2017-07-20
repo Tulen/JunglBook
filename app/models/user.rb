@@ -26,13 +26,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
 
+  validates_date :birthday, :before => lambda { 13.years.ago },
+                            :before_message => "must be at least 13 years old to use JungleBook"
+
   before_validation :ensure_session_token
 
   attr_reader :password
-
-  def is_old_enough
-
-  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)

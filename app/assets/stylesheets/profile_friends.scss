@@ -37,7 +37,9 @@
 .friends-grid-content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-left: 10px;
+  width: 70%;
 
 }
 
@@ -46,4 +48,14 @@
     font-weight: bold;
     font-size: 14px;
     color: #005829;
+}
+
+#friends-grid-btn {
+  border: 1px solid #D3D6DB;
+  padding: 4px;
+  background-color: #F5F5F5;
+}
+
+#friends-grid-btn p {
+  color: #4B4F56;
 }
