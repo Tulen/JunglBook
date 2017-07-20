@@ -9,8 +9,8 @@ class About extends React.Component {
   render() {
     return (
       <div id="about-container">
-        <div id="about-header-container">
-          <div id="about-header">
+        <div className="detail-header-container">
+          <div className="detail-header">
             <i className="fa fa-user"> </i>
             <h4> About </h4>
           </div>

@@ -52,6 +52,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 input[type="radio"], input[type="date"], button, i {
   cursor: pointer;
 }
