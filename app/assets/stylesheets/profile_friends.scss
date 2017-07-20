@@ -21,4 +21,29 @@
   height: 98px;
   padding-right: 10px;
   margin: 0 0 13px 15px;
+  display: flex;
+}
+
+.friends-grid-photo-container {
+  height: 100px;
+  width: 100px;
+}
+
+.friends-grid-photo-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.friends-grid-content {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+}
+
+.friends-grid-content p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #005829;
 }

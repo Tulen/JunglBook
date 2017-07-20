@@ -158,7 +158,7 @@ class CreateUser extends React.Component {
        <section className="login-main-right">
 
          <h1 className="login-tagline"> Sign Up </h1>
-         <div> <h3> It's free and always will be. </h3> </div>
+         <div> <h3> Humans welcome too! </h3> </div>
          <Popup closeBtn={false} closeOnOutsideClick={true}/>
          <div className="signup-form">
            <form>
