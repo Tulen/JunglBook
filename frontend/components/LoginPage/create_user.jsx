@@ -173,6 +173,7 @@ class CreateUser extends React.Component {
                              text: 'close',
                              className: 'danger',
                              action: function () {
+                                 Popup.clearQueue();
                                  Popup.close();
                            }
                         }]
@@ -190,6 +191,7 @@ class CreateUser extends React.Component {
                              text: 'close',
                              className: 'danger',
                              action: function () {
+                                 Popup.clearQueue();
                                  Popup.close();
                            }
                         }]
@@ -209,6 +211,7 @@ class CreateUser extends React.Component {
                              text: 'close',
                              className: 'danger',
                              action: function () {
+                                 Popup.clearQueue();
                                  Popup.close();
                            }
                         }]
@@ -227,6 +230,7 @@ class CreateUser extends React.Component {
                              text: 'close',
                              className: 'danger',
                              action: function () {
+                                  Popup.clearQueue();
                                   Popup.close();
                            }
                         }]
