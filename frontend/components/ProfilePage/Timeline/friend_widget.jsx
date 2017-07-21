@@ -1,5 +1,6 @@
 import React from 'react'
 import FriendWidgetItem from './friend_widget_item'
+import { Link } from 'react-router-dom'
 
 class FriendWidget extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class FriendWidget extends React.Component {
           <div className="prof-subcomponent-icon-container">
             <i className="fa fa-group"></i>
           </div>
-          Friends
+          <Link to="/user/friends"> Friends </Link>
         </div>
         <div className="widget-grid">
           <ul>

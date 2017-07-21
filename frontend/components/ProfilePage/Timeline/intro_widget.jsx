@@ -12,9 +12,9 @@ class IntroWidget extends React.Component {
           Intro
         </div>
         <ul className="intro-widget-list">
-          <li><IntroWidgetItem /> </li>
-          <li><IntroWidgetItem /> </li>
-          <li><IntroWidgetItem /> </li>
+          <li> <IntroWidgetItem /> </li>
+          <li> <IntroWidgetItem /> </li>
+          <li> <IntroWidgetItem /> </li>
         </ul>
 
       </div>

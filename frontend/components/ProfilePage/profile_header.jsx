@@ -7,6 +7,10 @@ class ProfileHeader extends React.Component {
       <div id="prof-header-container">
         <div id="prof-cvr-photo">
           <div id="prof-pic">
+            <div className="edit-ppic-overlay">
+              <i className="fa fa-camera"> </i>
+              <p> Update Profile Picture </p>
+            </div>
             <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
           </div>
            <h2 id="prof-name"> Quokka </h2>

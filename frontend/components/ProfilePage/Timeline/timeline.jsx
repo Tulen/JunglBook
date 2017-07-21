@@ -6,6 +6,11 @@ import UserWall from './user_wall'
 import PostCreate from '../../PostCreate/post_create'
 
 class Timeline extends React.Component {
+
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div id="feed-body">

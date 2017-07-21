@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import * as APIUTIL from './util/session_api_util'
+import * as BIOAPIUTIL from './util/bios_api_util'
+import { fetchUserBio } from './actions/bios_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = APIUTIL.signup
   window.logout = APIUTIL.logout
   window.deleteAccount = APIUTIL.deleteAccount
+  window.fetchUserBio = fetchUserBio
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);

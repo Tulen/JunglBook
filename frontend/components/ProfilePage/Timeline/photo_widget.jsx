@@ -1,5 +1,6 @@
 import React from 'react'
 import PhotoWidgetItem from './photo_widget_item'
+import { Link } from 'react-router-dom' 
 
 class PhotoWidget extends React.Component {
   render() {
@@ -9,14 +10,14 @@ class PhotoWidget extends React.Component {
           <div className="prof-subcomponent-icon-container">
             <i className="fa fa-photo"></i>
           </div>
-          Photos
+          <Link to="/user/photos"> Photos </Link>
         </div>
         <div className="widget-grid">
           <ul>
             <li> <PhotoWidgetItem /> </li>
             <li> <PhotoWidgetItem /> </li>
             <li> <PhotoWidgetItem /> </li>
-    
+
           </ul>
 
         </div>
