@@ -1,4 +1,5 @@
 import React from 'react'
+import IntroWidgetItem from './intro_widget_item'
 
 class IntroWidget extends React.Component {
   render() {
@@ -10,6 +11,11 @@ class IntroWidget extends React.Component {
           </div>
           Intro
         </div>
+        <ul className="intro-widget-list">
+          <li><IntroWidgetItem /> </li>
+          <li><IntroWidgetItem /> </li>
+          <li><IntroWidgetItem /> </li>
+        </ul>
 
       </div>
     )
