@@ -3,7 +3,7 @@ import IntroWidget from './intro_widget'
 import PhotoWidget from './photo_widget'
 import FriendWidget from './friend_widget'
 import UserWall from './user_wall'
-import PostCreate from '../../post_create'
+import PostCreate from '../../PostCreate/post_create'
 
 class Timeline extends React.Component {
   render() {

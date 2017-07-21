@@ -1,10 +1,13 @@
 import React from 'react'
+import UserPost from '../../UserPost/user_post'
 
 class UserWall extends React.Component {
   render() {
     return (
-      <div className="prof-subcomponent post-feed" id="user-wall">
-        UserWall
+      <div className="post-feed" id="user-wall">
+        <UserPost />
+        <UserPost />
+        <UserPost />
       </div>
     )
   }

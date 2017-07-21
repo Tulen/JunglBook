@@ -1,0 +1,62 @@
+.user-post {
+  background-color: #FDFFFB;
+  margin-bottom: 10px;
+}
+
+.post-body-container {
+  min-height: 91px;
+}
+
+.user-post-actions {
+  padding-top: 4px;
+  height: 22px;
+  border-top: 1px solid #E9EAED;
+  display: flex;
+  width: 460px;
+  margin: 0 12px;
+}
+
+.comment-list-container {
+  background-color: #FFFFFF;
+}
+
+.comment-list-item {
+  min-height: 34px;
+  padding: 8px 12px 4px 12px;
+  display: flex;
+
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.comment-form {
+  min-height: 34px;
+  padding: 2px 0 8px 0;
+  margin: 0 12px;
+}
+
+.comment-pic {
+  height: 32px;
+  width: 32px;
+  border: 1px solid #E9EAED;
+}
+
+.comment-body-container {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.comment-username {
+  font-weight: 700;
+  color: #005829;
+}
+
+.comment-actions {
+  display: flex;
+}
+
+.comment-actions p {
+  padding-right: 6px;
+}
