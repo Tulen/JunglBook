@@ -1,0 +1,29 @@
+//Bio Overview
+
+.bio-overview-container {
+  display: flex;
+  height: 377px;
+  width: 558px;
+  border: 2px solid green;
+  padding: 30px 24px 0 24px;
+}
+
+.bio-overview-left {
+  flex: 3;
+}
+
+.bio-overview-left ul {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  height: 355px;
+  justify-content: space-around;
+}
+
+.bio-overview-left ul > * {
+
+}
+
+.bio-overview-right {
+  flex: 2;
+}

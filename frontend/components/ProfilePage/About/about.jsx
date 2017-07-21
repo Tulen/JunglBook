@@ -27,7 +27,7 @@ class About extends React.Component {
                 <Link to="/user/about/work"> <p> Work and Education </p> </Link>
               </li>
               <li>
-                <Link to="/user/about/places"> <p> Places You'ved lived </p> </Link>
+                <Link to="/user/about/places"> <p> Places You've lived </p> </Link>
               </li>
               <li>
                 <Link to="/user/about/details"> <p> Details About You </p> </Link>

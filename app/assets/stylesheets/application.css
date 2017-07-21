@@ -64,6 +64,10 @@ button:hover {
   opacity: .9;
 }
 
+img {
+  cursor: pointer;
+}
+
 .img-container img {
   height:100%;
   width:100%;
