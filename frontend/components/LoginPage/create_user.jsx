@@ -50,7 +50,6 @@ class CreateUser extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.validationSwitch = [];
-    // this.checkValidity = this.checkValidity.bind(this);
   }
 
   checkValidity(val) {
@@ -59,10 +58,8 @@ class CreateUser extends React.Component {
       return re.test(email);
     }
     let newInputState = merge({}, this.state.inputState);
-    // console.log(newInputState);
     return (e) => {
-      console.log(e);
-      console.log(e.target);
+
       newInputState[val].clicked = true;
       newInputState[val].className = 'input-noerror';
       let checkValue
@@ -73,7 +70,6 @@ class CreateUser extends React.Component {
       }
 
       if (e === '') {
-        // console.log("TESTTEST")
         newInputState[val].valid = false;
         newInputState[val].className = 'input-error';
         this.validationSwitch.push(false);
@@ -198,8 +194,6 @@ class CreateUser extends React.Component {
 
     let indexCounter = 0;
     this.validationSwitch.forEach((bool) => {
-      console.log(bool);
-      console.log(indexCounter);
       if (bool){
         switch (indexCounter) {
           case 0:
@@ -219,31 +213,30 @@ class CreateUser extends React.Component {
             break;
           default:
 
-        }
-      } else {
-        switch (indexCounter) {
-          case 0:
-            newSubmitInputState.fname.className = "input-error";
-            break;
-          case 1:
-            newSubmitInputState.lname.className = "input-error";
-            break;
-          case 2:
-            newSubmitInputState.email.className = "input-error";
-            break;
-          case 3:
-            newSubmitInputState.password.className = "input-error";
-            break;
-          case 4:
-            newSubmitInputState.birthday.className = "input-error";
-            break;
-          default:
+          }
+        } else {
+            switch (indexCounter) {
+              case 0:
+                newSubmitInputState.fname.className = "input-error";
+                break;
+              case 1:
+                newSubmitInputState.lname.className = "input-error";
+                break;
+              case 2:
+                newSubmitInputState.email.className = "input-error";
+                break;
+              case 3:
+                newSubmitInputState.password.className = "input-error";
+                break;
+              case 4:
+                newSubmitInputState.birthday.className = "input-error";
+                break;
+              default:
+              }
+            }
+        indexCounter++;
       }
-    }
-    indexCounter++;
-   }
- );
- console.log(newSubmitInputState);
+    );
     this.setState({ ['inputState']: newSubmitInputState });
     this.validationSwitch = [];
     newUser['user'] = this.state.user;
