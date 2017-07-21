@@ -154,12 +154,14 @@
 
 
 .widget-item-container {
+
   height: 101px;
   width: 101px;
 
 }
 
 .widget-item-container img {
+  cursor: pointer;
   height: 100%;
   width: 100%;
 }

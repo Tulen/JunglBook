@@ -5,7 +5,7 @@ class CommentForm extends React.Component {
     return (
       <div className="comment-form">
         <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-        comment form
+        <input type="text" placeholder="Write a comment..."/> 
       </div>
     )
   }

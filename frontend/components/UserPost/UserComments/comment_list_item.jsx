@@ -13,8 +13,6 @@ class CommentListItem extends React.Component {
             <p> Like </p>
             <p> Reply </p>
             <p> May 14, 2016 at 10:13am </p>
-
-
           </div>
         </div>
       </div>

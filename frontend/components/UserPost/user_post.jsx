@@ -8,9 +8,18 @@ class UserPost extends React.Component {
       <div className="user-post">
         <UserPostBody />
         <div className="user-post-actions">
-          <p> Like </p>
-          <p> Comment </p>
-          <p> Share </p>
+          <span>
+            <i className="fa fa-thumbs-up"> </i>
+            <p> Like </p>
+          </span>
+          <span>
+            <i className="fa fa-comment"> </i>
+            <p> Comment </p>
+          </span>
+          <span>
+            <i className="fa fa-share"> </i>
+            <p> Share </p>
+          </span>
         </div>
         <CommentList />
       </div>
