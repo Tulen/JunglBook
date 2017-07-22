@@ -56,14 +56,13 @@ class BioFormItem extends React.Component {
            onRequestClose={this.closeModal}
            contentLabel="Bio Form Modal"
          >
-
            <h2 ref={subtitle => this.subtitle = subtitle}> Your {this.props.valName} </h2>
-
-           <form>
-             <input type="text" value={this.state.password} onChange={this.update("inputVal")}/>
+           <input className="modalInput" type="text" value={this.state.password} onChange={this.update("inputVal")}/>
+           <div>
              <button onClick={this.handleSubmit}> Update Info </button>
-           </form>
-           <button onClick={this.closeModal}>close</button>
+             <button onClick={this.closeModal}> Cancel </button>
+           </div>
+
          </Modal>
         <div> <i className="fa fa-plus"> </i> </div>
         Add your {this.props.valName}
