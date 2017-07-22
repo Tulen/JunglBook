@@ -1,5 +1,6 @@
 import React from 'react'
 import BioOverviewItem from './bio_overview_item'
+import { Link } from 'react-router-dom'
 
 class BioOverview extends React.Component {
   render() {
@@ -8,16 +9,16 @@ class BioOverview extends React.Component {
         <div className="bio-overview-left">
           <ul>
             <li className="bio-overview-item">
-              <BioOverviewItem />
+              <Link to="/user/about/work"> <BioOverviewItem /> </Link>
             </li>
             <li className="bio-overview-item">
-              <BioOverviewItem />
+              <Link to="/user/about/work"> <BioOverviewItem /> </Link>
             </li>
             <li className="bio-overview-item">
-              <BioOverviewItem />
+              <Link to="/user/about/places"> <BioOverviewItem /> </Link>
             </li>
             <li className="bio-overview-item">
-              <BioOverviewItem />
+              <Link to="/user/about/details"> <BioOverviewItem /> </Link>
             </li>
           </ul>
         </div>

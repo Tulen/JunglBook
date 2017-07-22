@@ -6,16 +6,16 @@ import UserWall from './user_wall'
 import PostCreate from '../../PostCreate/post_create'
 
 class Timeline extends React.Component {
-
-  componentDidMount() {
-
+  constructor(props) {
+    super(props);
+    console.log(props);
   }
 
   render() {
     return (
       <div id="feed-body">
         <div id="feed-left">
-         <IntroWidget />
+         <IntroWidget bios={this.props.bios}/>
          <PhotoWidget />
          <FriendWidget />
         </div>

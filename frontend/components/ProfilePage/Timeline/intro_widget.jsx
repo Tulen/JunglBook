@@ -1,7 +1,11 @@
 import React from 'react'
-import IntroWidgetItem from './intro_widget_item'
+// import IntroWidgetItem from './intro_widget_item'
 
 class IntroWidget extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log("INTRO WIDGET", props)
+  }
   render() {
     return (
       <div className="prof-subcomponent" id="intro-widget">
@@ -12,9 +16,27 @@ class IntroWidget extends React.Component {
           Intro
         </div>
         <ul className="intro-widget-list">
-          <li> <IntroWidgetItem /> </li>
-          <li> <IntroWidgetItem /> </li>
-          <li> <IntroWidgetItem /> </li>
+          <li>
+            <div className="intro-widget-list-item">
+              <i className="fa fa-birthday-cake"> </i>
+              <p> {this.props.bios.birthday} </p>
+
+            </div>
+          </li>
+          <li>
+            <div className="intro-widget-list-item">
+              <i className="fa fa-graduation-cap"> </i>
+              <p> {this.props.bios.education} </p>
+
+            </div>
+          </li>
+          <li>
+            <div className="intro-widget-list-item">
+              <i className="fa fa-graduation-cap"> </i>
+              <p> Sample Intro Widget Text </p>
+
+            </div>
+          </li>
         </ul>
 
       </div>
