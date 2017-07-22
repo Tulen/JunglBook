@@ -15,6 +15,23 @@
   background-color: #1D2129;
   height: 205px;
   color: white;
+  position: relative;
+}
+
+#edit-cvr-photo {
+  position: absolute;
+  clear: both;
+  top: 10px;
+  left: 20px;
+  padding: 10px;
+  color: #ACADB0;
+  background-color: rgba(0,0,0,.25);
+  border: 1px solid #ACADB0;
+  border-radius: 5px;
+}
+
+#edit-cvr-photo i {
+  padding-right: 3px;
 }
 
 #prof-pic {

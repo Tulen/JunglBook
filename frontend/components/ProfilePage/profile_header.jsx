@@ -6,6 +6,7 @@ class ProfileHeader extends React.Component {
     return (
       <div id="prof-header-container">
         <div id="prof-cvr-photo">
+          <button id="edit-cvr-photo"> <i className="fa fa-camera"> </i> Add/Edit Cover Photo</button>
           <div id="prof-pic">
             <div className="edit-ppic-overlay">
               <i className="fa fa-camera"> </i>
