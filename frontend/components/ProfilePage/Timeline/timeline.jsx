@@ -8,7 +8,6 @@ import PostCreate from '../../PostCreate/post_create'
 class Timeline extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {

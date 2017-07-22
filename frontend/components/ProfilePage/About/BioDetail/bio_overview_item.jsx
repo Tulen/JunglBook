@@ -1,11 +1,15 @@
 import React from 'react'
 
 class BioOverviewItem extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(props)
+  }
   render() {
     return (
       <div className="boi-container">
         <div> <i className="fa fa-plus"> </i> </div>
-        Add a bio detail
+        Add {this.props.valName}
       </div>
     )
   }
