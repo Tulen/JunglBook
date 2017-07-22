@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, Switch, Route } from 'react-router-dom'
-import BioDetails from './BioDetail/bio_details'
+import BioDetailsContainer from './BioDetail/bio_details_container'
 import BioOverviewContainer from './BioDetail/bio_overview_container'
-import BioPlaces from './BioDetail/bio_places'
-import BioWork from './BioDetail/bio_work'
+import BioPlacesContainer from './BioDetail/bio_places_container'
+import BioWorkContainer from './BioDetail/bio_work_container'
 
 class About extends React.Component {
   render() {
@@ -36,9 +36,9 @@ class About extends React.Component {
           </div>
           <div id="bio-detail">
             <Switch>
-              <Route path="/user/about/details" component={BioDetails}/>
-              <Route path="/user/about/places" component={BioPlaces}/>
-              <Route path="/user/about/work" component={BioWork}/>
+              <Route path="/user/about/details" component={BioDetailsContainer}/>
+              <Route path="/user/about/places" component={BioPlacesContainer}/>
+              <Route path="/user/about/work" component={BioWorkContainer}/>
               <Route path="/user/about" component={BioOverviewContainer}/>
             </Switch>
           </div>

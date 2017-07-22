@@ -1,6 +1,15 @@
 import React from 'react'
+import BioFormItem from './bio_form_item'
+
+
 
 class BioWork extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(props)
+
+  }
+
   render() {
     return (
       <div className="bio-category-container">
@@ -9,21 +18,13 @@ class BioWork extends React.Component {
             Work
           </div>
           <div className="bci-body">
-            <div className="bci-container">
-              <div> <i className="fa fa-plus"> </i> </div>
-              Add a workplace
-            </div>
+            <BioFormItem valName="work" />
           </div>
-
-
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Education </div>
             <div className="bci-body">
-              <div className="bci-container">
-                <div> <i className="fa fa-plus"> </i> </div>
-                Add your education
-              </div>
+              <BioFormItem valName="education" />
             </div>
         </div>
       </div>
