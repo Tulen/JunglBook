@@ -38,37 +38,73 @@ class BioFormItem extends React.Component {
   }
 
   render() {
-    return (
-      <div className="bci-container" onClick={this.openModal}>
-        <Modal
-          className={{
-              base: 'aboutFormModal',
-              afterOpen: 'aboutFormModal_after-open',
-              beforeClose: 'aboutFormModal_before-close'
-            }}
-            overlayClassName={{
-              base: 'aboutFormOverlay',
-              afterOpen: 'aboutFormOverlay_after-open',
-              beforeClose: 'aboutFormOverlay_before-close'
-            }}
-           isOpen={this.state.modalIsOpen}
-           onAfterOpen={this.afterOpenModal}
-           onRequestClose={this.closeModal}
-           contentLabel="Bio Form Modal"
-         >
-           <h2 ref={subtitle => this.subtitle = subtitle}> Your {this.props.valName} </h2>
-           <input className="modalInput" type="text" value={this.state.password} onChange={this.update("inputVal")}/>
-           <div>
-             <button onClick={this.handleSubmit}> Update Info </button>
-             <button onClick={this.closeModal}> Cancel </button>
-           </div>
+    console.log("CONTENT", this.props.valContent);
+    if (this.props.valContent === null || this.props.valContent === '') {
+      return (
+        <div className="bci-container" onClick={this.openModal}>
+          <Modal
+            className={{
+                base: 'aboutFormModal',
+                afterOpen: 'aboutFormModal_after-open',
+                beforeClose: 'aboutFormModal_before-close'
+              }}
+              overlayClassName={{
+                base: 'aboutFormOverlay',
+                afterOpen: 'aboutFormOverlay_after-open',
+                beforeClose: 'aboutFormOverlay_before-close'
+              }}
+             isOpen={this.state.modalIsOpen}
+             onAfterOpen={this.afterOpenModal}
+             onRequestClose={this.closeModal}
+             contentLabel="Bio Form Modal"
+           >
+             <h2 ref={subtitle => this.subtitle = subtitle}> Your {this.props.valName} </h2>
+             <input className="modalInput" type="text" value={this.state.password} onChange={this.update("inputVal")}/>
+             <div>
+               <button onClick={this.handleSubmit}> Update Info </button>
+               <button onClick={this.closeModal}> Cancel </button>
+             </div>
 
-         </Modal>
-        <div> <i className="fa fa-plus"> </i> </div>
-        Add your {this.props.valName}
-        <Modal />
-      </div>
-    )
+           </Modal>
+          <div> <i className="fa fa-plus"> </i> </div>
+          Add your {this.props.valName}
+          <Modal />
+        </div>
+      )
+    } else {
+      return(
+        <div className="bio-content">
+          <h4> {this.props.valContent} </h4>
+            <Modal
+              className={{
+                  base: 'aboutFormModal',
+                  afterOpen: 'aboutFormModal_after-open',
+                  beforeClose: 'aboutFormModal_before-close'
+                }}
+                overlayClassName={{
+                  base: 'aboutFormOverlay',
+                  afterOpen: 'aboutFormOverlay_after-open',
+                  beforeClose: 'aboutFormOverlay_before-close'
+                }}
+               isOpen={this.state.modalIsOpen}
+               onAfterOpen={this.afterOpenModal}
+               onRequestClose={this.closeModal}
+               contentLabel="Bio Form Modal"
+             >
+               <h2 ref={subtitle => this.subtitle = subtitle}> Your {this.props.valName} </h2>
+               <input className="modalInput" type="text" value={this.state.password} onChange={this.update("inputVal")}/>
+               <div>
+                 <button onClick={this.handleSubmit}> Update Info </button>
+                 <button onClick={this.closeModal}> Cancel </button>
+               </div>
+
+             </Modal>
+          <button onClick={this.openModal}> Edit Info </button>
+        </div>
+
+      )
+    }
+
   }
 }
 

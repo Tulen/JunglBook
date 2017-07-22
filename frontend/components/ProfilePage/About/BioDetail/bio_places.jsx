@@ -1,4 +1,5 @@
 import React from 'react'
+import BioFormItemContainer from './bio_form_item_container'
 
 class BioPlaces extends React.Component {
   render() {
@@ -7,19 +8,13 @@ class BioPlaces extends React.Component {
         <div className="bio-category-item">
           <div className="bci-header"> Current City </div>
           <div className="bci-body">
-            <div className="bci-container">
-              <div> <i className="fa fa-plus"> </i> </div>
-              Add your current city
-            </div>
+            <BioFormItemContainer valName="current_city" valContent={this.props.bios.current_city}/>
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Hometown </div>
           <div className="bci-body">
-            <div className="bci-container">
-              <div> <i className="fa fa-plus"> </i> </div>
-              Add your hometown
-            </div>
+            <BioFormItemContainer valName="hometown" valContent={this.props.bios.hometown}/>
           </div>
         </div>
       </div>

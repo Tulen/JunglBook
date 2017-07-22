@@ -1,4 +1,5 @@
 import React from 'react'
+import BioFormItemContainer from './bio_form_item_container'
 
 class BioDetails extends React.Component {
   render() {
@@ -7,28 +8,19 @@ class BioDetails extends React.Component {
         <div className="bio-category-item">
           <div className="bci-header"> Relationship </div>
           <div className="bci-body">
-            <div className="bci-container">
-              <div> <i className="fa fa-plus"> </i> </div>
-              Add your relationship staus
-            </div>
+            <BioFormItemContainer valName="relationship" valContent={this.props.bios.relationship} />
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Nickname </div>
           <div className="bci-body">
-            <div className="bci-container">
-              <div> <i className="fa fa-plus"> </i> </div>
-              Add your nickname
-            </div>
+            <BioFormItemContainer valName="nickname" valContent={this.props.bios.nickname} />
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Favorite Quote </div>
           <div className="bci-body">
-            <div className="bci-container">
-              <div> <i className="fa fa-plus"> </i> </div>
-              Add your favorite quote
-            </div>
+            <BioFormItemContainer valName="favorite_quote" valContent={this.props.bios.favorite_quote} />
           </div>
         </div>
       </div>

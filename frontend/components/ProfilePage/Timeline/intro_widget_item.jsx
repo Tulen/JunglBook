@@ -7,7 +7,7 @@ class IntroWidgetItem extends React.Component {
   }
 
   render() {
-    if (this.props.valContent === null) {
+    if (this.props.valContent === null || this.props.valContent === '') {
       switch (this.props.valName) {
         case "current city":
         case "hometown":

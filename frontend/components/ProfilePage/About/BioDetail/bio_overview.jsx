@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 class BioOverview extends React.Component {
   constructor(props) {
     super(props)
-    console.log("BOVERVIEW", props)
   }
 
   render() {
@@ -14,16 +13,20 @@ class BioOverview extends React.Component {
         <div className="bio-overview-left">
           <ul>
             <li className="bio-overview-item">
-              <Link to="/user/about/work"> <BioOverviewItem valName="your education" valContent={ this.props.bios.education } /> </Link>
+              <p className="bci-header boi-headline"> Went to school at: </p>
+              <Link to="/user/about/work"> <BioOverviewItem valName="education" valContent={ this.props.bios.education } /> </Link>
             </li>
             <li className="bio-overview-item">
-              <Link to="/user/about/places"> <BioOverviewItem valName="your current city" valContent={ this.props.bios.current_city } /> </Link>
+              <p className="bci-header boi-headline"> Currently lives in: </p>
+              <Link to="/user/about/places"> <BioOverviewItem valName="current_city" valContent={ this.props.bios.current_city } /> </Link>
             </li>
             <li className="bio-overview-item">
-              <Link to="/user/about/details"> <BioOverviewItem valName="your relationship status" valContent={ this.props.bios.relationship } /> </Link>
+              <p className="bci-header boi-headline"> Relationship status: </p>
+              <Link to="/user/about/details"> <BioOverviewItem valName="relationship" valContent={ this.props.bios.relationship } /> </Link>
             </li>
             <li className="bio-overview-item">
-              <Link to="/user/about/details"> <BioOverviewItem valName="your favorite quote" valContent={ this.props.bios.favorite_quote } /> </Link>
+              <p className="bci-header boi-headline"> Favorite quote: </p>
+              <Link to="/user/about/details"> <BioOverviewItem valName="favorite_quote" valContent={ this.props.bios.favorite_quote } /> </Link>
             </li>
           </ul>
         </div>
