@@ -1,5 +1,5 @@
 import React from 'react'
-import BioFormItem from './bio_form_item'
+import BioFormItemContainer from './bio_form_item_container'
 
 
 
@@ -18,13 +18,13 @@ class BioWork extends React.Component {
             Work
           </div>
           <div className="bci-body">
-            <BioFormItem valName="work" />
+            <BioFormItemContainer valName="work" />
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Education </div>
             <div className="bci-body">
-              <BioFormItem valName="education" />
+              <BioFormItemContainer valName="education" />
             </div>
         </div>
       </div>

@@ -4,13 +4,16 @@ import Modal from 'react-modal'
 class BioFormItem extends React.Component {
   constructor(props) {
     super(props)
+    console.log("BFI", props)
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      inputVal: ''
     }
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this)
+    this.closeModal = this.closeModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   openModal() {
@@ -22,6 +25,16 @@ class BioFormItem extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updateUserBio(this.props.bios.id ,{user: {[`${this.props.valName}`]: this.state.inputVal}})
+    this.closeModal();
+  }
+
+  update(val) {
+    return e => this.setState({ [val]: e.target.value });
   }
 
   render() {
@@ -47,8 +60,8 @@ class BioFormItem extends React.Component {
            <h2 ref={subtitle => this.subtitle = subtitle}> Your {this.props.valName} </h2>
 
            <form>
-             <input type="text"/>
-             <button> Update Info </button>
+             <input type="text" value={this.state.password} onChange={this.update("inputVal")}/>
+             <button onClick={this.handleSubmit}> Update Info </button>
            </form>
            <button onClick={this.closeModal}>close</button>
          </Modal>
