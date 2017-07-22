@@ -6,6 +6,15 @@ import BioPlacesContainer from './BioDetail/bio_places_container'
 import BioWorkContainer from './BioDetail/bio_work_container'
 
 class About extends React.Component {
+  constructor(props) {
+    super(props)
+    let idReg = /\d+/g;
+    let currentProfId = this.props.location.pathname.match( idReg )[0];
+    this.state = {
+      currentProfId: currentProfId
+    }
+  }
+
   render() {
     return (
       <div id="about-container">
@@ -20,26 +29,26 @@ class About extends React.Component {
           <div id="bio-list">
             <ul>
               <li>
-                <Link to="/user/about"> <p> Overview </p> </Link>
+                <Link to={`/user/${this.state.currentProfId}/about`}> <p> Overview </p> </Link>
 
               </li>
               <li>
-                <Link to="/user/about/work"> <p> Work and Education </p> </Link>
+                <Link to={`/user/${this.state.currentProfId}/about/work`}> <p> Work and Education </p> </Link>
               </li>
               <li>
-                <Link to="/user/about/places"> <p> Places You've lived </p> </Link>
+                <Link to={`/user/${this.state.currentProfId}/about/places`}> <p> Places You've lived </p> </Link>
               </li>
               <li>
-                <Link to="/user/about/details"> <p> Details About You </p> </Link>
+                <Link to={`/user/${this.state.currentProfId}/about/details`}> <p> Details About You </p> </Link>
               </li>
             </ul>
           </div>
           <div id="bio-detail">
             <Switch>
-              <Route path="/user/about/details" component={BioDetailsContainer}/>
-              <Route path="/user/about/places" component={BioPlacesContainer}/>
-              <Route path="/user/about/work" component={BioWorkContainer}/>
-              <Route path="/user/about" component={BioOverviewContainer}/>
+              <Route path="/user/:userId/about/details" component={BioDetailsContainer}/>
+              <Route path="/user/:userId/about/places" component={BioPlacesContainer}/>
+              <Route path="/user/:userId/about/work" component={BioWorkContainer}/>
+              <Route path="/user/:userId/about" component={BioOverviewContainer}/>
             </Switch>
           </div>
         </div>

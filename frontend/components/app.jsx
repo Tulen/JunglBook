@@ -9,7 +9,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util'
 
 const App = () => (
   <Switch>
-    <Route path="/user" component ={ ProfilePageContainer } />
+    <Route path="/user/:userId" component ={ ProfilePageContainer } />
     <ProtectedRoute path="/feed" component={ NewsFeed } />
     <AuthRoute path="/" component={ LoginPage }/>
   </Switch>

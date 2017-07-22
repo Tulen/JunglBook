@@ -98,7 +98,7 @@
 
 #prof-nav-links li {
   height: 100%;
-  padding: 0 17px;
+  padding: 0 7px;
   border-left: 1px solid #E9EAED;
   display: flex;
   flex-direction: column;
@@ -114,6 +114,10 @@
 
 #prof-nav-links li:last-of-type {
   border-right: 1px solid #E9EAED;
+}
+
+#prof-nav-links a {
+  padding: 10px;
 }
 
 #feed-body {

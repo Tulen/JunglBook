@@ -16,6 +16,10 @@ class NavBar extends React.Component {
   }
 
   render() {
+    let linkTo = ''
+    if (this.props.session.currentUser !== null) {
+      linkTo = this.props.session.currentUser.id
+    }
     return(
       <div id='nav-bar'>
         <div className='nav-bar-left'>
@@ -28,7 +32,7 @@ class NavBar extends React.Component {
         <div className='nav-bar-right'>
           <div className = "nav-menu-container">
             <div className="nav-btn-grp lng-2">
-              <Link to="/user">
+              <Link to={`/user/${linkTo}`}>
                 <div>
                   <div className="img-container img-container-xs">
                     <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />

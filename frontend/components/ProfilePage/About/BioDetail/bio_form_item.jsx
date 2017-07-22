@@ -4,7 +4,6 @@ import Modal from 'react-modal'
 class BioFormItem extends React.Component {
   constructor(props) {
     super(props)
-    console.log("BFI", props)
     this.state = {
       modalIsOpen: false,
       inputVal: ''
@@ -38,7 +37,6 @@ class BioFormItem extends React.Component {
   }
 
   render() {
-    console.log("CONTENT", this.props.valContent);
     if (this.props.valContent === null || this.props.valContent === '') {
       return (
         <div className="bci-container" onClick={this.openModal}>
