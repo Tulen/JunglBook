@@ -21,3 +21,11 @@ export const acceptUserRequest = (id, request) => {
     data: request
   })
 }
+
+export const removeUserRequest = (id, request) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/friend_requests/${id}`,
+    data: request
+  })
+}

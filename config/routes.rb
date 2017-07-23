@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :destroy]
     resource :session, only: [:create, :destroy]
     resources :bios, only: [:show, :update]
-    resources :friend_requests, only: [:show, :create, :update]
+    resources :friend_requests, only: [:show, :create, :update, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

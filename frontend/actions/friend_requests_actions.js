@@ -1,6 +1,8 @@
 import * as APIUtil from '../util/friend_requests_api_util';
 
 export const RECEIVE_USER_REQUESTS = "RECEIVE_USER_REQUESTS";
+export const ACCEPT_USER_REQUEST = "ACCEPT_USER_REQUEST";
+export const DELETE_USER_REQUEST = "DELETE_USER_REQUEST";
 
 export const fetchUserRequests = id => dispatch => (
   APIUtil.fetchUserRequests(id).then(
@@ -11,7 +13,14 @@ export const fetchUserRequests = id => dispatch => (
 
 export const acceptUserRequest = (id, req) => dispatch => (
   APIUtil.acceptUserRequest(id, req).then(
-    reqs => (dispatch(receiveUserRequests(reqs))),
+    req => (dispatch(acceptRequest(req))),
+    error => ( dispatch(receiveErrors(error.responseJSON)))
+  )
+)
+
+export const removeUserRequest = (id, req) => dispatch => (
+  APIUtil.removeUserRequest(id, req).then(
+    req => (dispatch(deleteRequest(req))),
     error => ( dispatch(receiveErrors(error.responseJSON)))
   )
 )
@@ -19,4 +28,14 @@ export const acceptUserRequest = (id, req) => dispatch => (
 export const receiveUserRequests = reqs => ({
   type: RECEIVE_USER_REQUESTS,
   reqs
+})
+
+export const acceptRequest = req => ({
+  type: ACCEPT_USER_REQUEST,
+  req
+})
+
+export const deleteRequest = req => ({
+  type: DELETE_USER_REQUEST,
+  req
 })

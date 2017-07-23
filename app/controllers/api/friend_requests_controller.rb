@@ -27,7 +27,19 @@ class Api::FriendRequestsController < ApplicationController
   def update
     @request = FriendRequest.find(params[:id])
     if @request.update_attributes(friend_request_params)
-      render "api/friend_requests/show"
+      render "api/friend_requests/accept"
+    else
+      render(
+        json: ["Request error"],
+        status: 404
+      )
+    end
+  end
+
+  def destroy
+    @request = FriendRequest.find(params[:id])
+    if @request.destroy!
+      render "api/friend_requests/delete"
     else
       render(
         json: ["Request error"],

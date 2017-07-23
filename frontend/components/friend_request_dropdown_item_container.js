@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FriendRequestDropdownItem from './friend_request_dropdown_item'
-import { acceptUserRequest } from '../actions/friend_requests_actions'
+import { acceptUserRequest, removeUserRequest } from '../actions/friend_requests_actions'
 
 const mapStateToProps = ( { session, friendRequests } ) => ({
   session,
@@ -8,7 +8,8 @@ const mapStateToProps = ( { session, friendRequests } ) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  acceptUserRequest: (id, request) => dispatch(acceptUserRequest(id, request))
+  acceptUserRequest: (id, request) => dispatch(acceptUserRequest(id, request)),
+  removeUserRequest: (id, request) => dispatch(removeUserRequest(id, request))
 })
 
 export default connect(

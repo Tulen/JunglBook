@@ -5,14 +5,21 @@ class FriendRequestDropdownItem extends React.Component {
   constructor(props) {
     super(props)
     this.handleConfirm = this.handleConfirm.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   handleConfirm(e) {
     // e.preventDefault();
     let acceptedRequest = merge({}, this.props.request, {status: "accepted"});
-    console.log("PROPS", this.props.acceptUserRequest);
 
     this.props.acceptUserRequest(this.props.request.id, {friend_request: acceptedRequest })
+
+  }
+
+  handleDelete(e) {
+    // e.preventDefault();
+
+    this.props.removeUserRequest(this.props.request.id, this.props.request)
 
   }
 
@@ -27,7 +34,7 @@ class FriendRequestDropdownItem extends React.Component {
         </div>
         <div>
           <button onClick={this.handleConfirm}> Confirm </button>
-          <button> Delete Request </button>
+          <button onClick={this.handleDelete}> Delete Request </button>
         </div>
        </div>
     )
