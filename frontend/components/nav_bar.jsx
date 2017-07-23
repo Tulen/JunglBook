@@ -1,10 +1,15 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import FriendRequestDropdown from './friend_request_dropdown'
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      dropdownHidden: true
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   handleSubmit(e) {
@@ -12,6 +17,14 @@ class NavBar extends React.Component {
     this.props.logout().then(() => (
       this.props.history.push('/')
     ))
+  }
+
+  toggleDropdown() {
+    if (this.state.dropdownHidden) {
+      this.setState({dropdownHidden: false})
+    } else {
+      this.setState({dropdownHidden: true})
+    }
   }
 
   render() {
@@ -52,60 +65,10 @@ class NavBar extends React.Component {
 
 
             <div className="nav-btn-grp lng-2">
-              <i className='fa fa-group'>
-                <div className="nav-fr-dropdown">
-                  <div className="fr-dropdown-header"> <p> Friend Requests </p> </div>
-                  <div className="fr-dropdown-item">
-                    <div>
-                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-                    </div>
-                    <div>
-                      <p> Quokka </p>
-                    </div>
-                    <div>
-                      <button> Confirm </button>
-                      <button> Delete Request </button>
-                    </div>
-                   </div>
-                  <div className="fr-dropdown-item">
-                    <div>
-                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-                    </div>
-                    <div>
-                      <p> Quokka </p>
-                    </div>
-                    <div>
-                      <button> Confirm </button>
-                      <button> Delete Request </button>
-                    </div>
-                   </div>
-                  <div className="fr-dropdown-item">
-                    <div>
-                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-                    </div>
-                    <div>
-                      <p> Quokka </p>
-                    </div>
-                    <div>
-                      <button> Confirm </button>
-                      <button> Delete Request </button>
-                    </div>
-                   </div>
-                  <div className="fr-dropdown-item">
-                    <div>
-                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-                    </div>
-                    <div>
-                      <p> Quokka </p>
-                    </div>
-                    <div>
-                      <button> Confirm </button>
-                      <button> Delete Request </button>
-                    </div>
-                   </div>
-                </div>
+              <i className='fa fa-group' onClick={this.toggleDropdown}>
+                <FriendRequestDropdown dropdownHidden={this.state.dropdownHidden} />
               </i>
-              <i className='fa fa-comments'></i>
+              <i className='fa fa-comments' ></i>
               <i className='fa fa-globe'></i>
             </div>
 
