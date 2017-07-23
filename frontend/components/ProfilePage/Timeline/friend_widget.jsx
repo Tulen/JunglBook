@@ -3,6 +3,10 @@ import FriendWidgetItem from './friend_widget_item'
 import { Link } from 'react-router-dom'
 
 class FriendWidget extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  
   render() {
     return (
       <div className="prof-subcomponent"  id="friend-widget">
@@ -10,7 +14,7 @@ class FriendWidget extends React.Component {
           <div className="prof-subcomponent-icon-container">
             <i className="fa fa-group"></i>
           </div>
-          <Link to="/user/friends"> Friends </Link>
+          <Link to={`/user/${this.props.profId}/friends/`}> Friends </Link>
         </div>
         <div className="widget-grid">
           <ul>

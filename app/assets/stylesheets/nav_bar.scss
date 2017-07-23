@@ -56,10 +56,6 @@
   font-weight: 600;
 }
 
-.nav-btn-grp .fa-group {
-  position: relative;
-}
-
 .nav-btn-grp:first-of-type div {
   display: flex;
   flex-direction: row;
@@ -87,9 +83,13 @@
   flex: 1;
 }
 
+.nav-dropdowns-container{
+  position: relative;
+}
+
 .nav-fr-dropdown {
-  right: -50px;
-  top: 30px;
+  right: -70px;
+  top: 21px;
   max-height: 600px;
   overflow-y: auto;
   min-width: 430px;

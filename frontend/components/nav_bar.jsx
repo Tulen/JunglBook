@@ -65,8 +65,11 @@ class NavBar extends React.Component {
 
 
             <div className="nav-btn-grp lng-2">
+              <div className="nav-dropdowns-container">
+                  <FriendRequestDropdown dropdownHidden={this.state.dropdownHidden} />
+              </div>
               <i className='fa fa-group' onClick={this.toggleDropdown}>
-                <FriendRequestDropdown dropdownHidden={this.state.dropdownHidden} />
+
               </i>
               <i className='fa fa-comments' ></i>
               <i className='fa fa-globe'></i>
