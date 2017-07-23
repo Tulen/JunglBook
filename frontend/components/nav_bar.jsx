@@ -31,45 +31,7 @@ class NavBar extends React.Component {
         </div>
 
 
-        <div className="nav-fr-dropdown">
-          <div className="fr-dropdown-header"> <p> Friend Requests </p> </div>
-          <div className="fr-dropdown-item">
-            <div>
-              <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-            </div>
-            <div>
-              Quokka
-            </div>
-            <div>
-              <button> Confirm </button>
-              <button> Delete Request </button>
-            </div>
-           </div>
-          <div className="fr-dropdown-item">
-            <div>
-              <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-            </div>
-            <div>
-              Quokka
-            </div>
-            <div>
-              <button> Confirm </button>
-              <button> Delete Request </button>
-            </div>
-           </div>
-          <div className="fr-dropdown-item">
-            <div>
-              <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-            </div>
-            <div>
-              Quokka
-            </div>
-            <div>
-              <button> Confirm </button>
-              <button> Delete Request </button>
-            </div>
-           </div>
-        </div>
+
 
         <div className='nav-bar-right'>
           <div className = "nav-menu-container">
@@ -90,7 +52,59 @@ class NavBar extends React.Component {
 
 
             <div className="nav-btn-grp lng-2">
-              <i className='fa fa-group'></i>
+              <i className='fa fa-group'>
+                <div className="nav-fr-dropdown">
+                  <div className="fr-dropdown-header"> <p> Friend Requests </p> </div>
+                  <div className="fr-dropdown-item">
+                    <div>
+                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                    </div>
+                    <div>
+                      <p> Quokka </p>
+                    </div>
+                    <div>
+                      <button> Confirm </button>
+                      <button> Delete Request </button>
+                    </div>
+                   </div>
+                  <div className="fr-dropdown-item">
+                    <div>
+                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                    </div>
+                    <div>
+                      <p> Quokka </p>
+                    </div>
+                    <div>
+                      <button> Confirm </button>
+                      <button> Delete Request </button>
+                    </div>
+                   </div>
+                  <div className="fr-dropdown-item">
+                    <div>
+                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                    </div>
+                    <div>
+                      <p> Quokka </p>
+                    </div>
+                    <div>
+                      <button> Confirm </button>
+                      <button> Delete Request </button>
+                    </div>
+                   </div>
+                  <div className="fr-dropdown-item">
+                    <div>
+                      <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                    </div>
+                    <div>
+                      <p> Quokka </p>
+                    </div>
+                    <div>
+                      <button> Confirm </button>
+                      <button> Delete Request </button>
+                    </div>
+                   </div>
+                </div>
+              </i>
               <i className='fa fa-comments'></i>
               <i className='fa fa-globe'></i>
             </div>
