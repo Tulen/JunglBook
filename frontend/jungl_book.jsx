@@ -6,6 +6,7 @@ import * as APIUTIL from './util/session_api_util'
 import * as BIOAPIUTIL from './util/bios_api_util'
 import * as FRIENDAPIUTIL from './util/friend_requests_api_util'
 import { fetchUserBio, updateUserBio } from './actions/bios_actions'
+import { fetchUserRequests } from './actions/friend_requests_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteAccount = APIUTIL.deleteAccount
   window.fetchUserBio = fetchUserBio
   window.updateUserBio = updateUserBio
-  window.fetchUserRequests = FRIENDAPIUTIL.fetchUserRequests
+  window.fetchUserRequests = fetchUserRequests
   window.sendUserRequest = FRIENDAPIUTIL.sendUserRequest
   // TESTING END
 

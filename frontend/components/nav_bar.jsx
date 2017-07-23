@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import FriendRequestDropdown from './friend_request_dropdown'
+import FriendRequestDropdownContainer from './friend_request_dropdown_container'
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class NavBar extends React.Component {
 
             <div className="nav-btn-grp lng-2">
               <div className="nav-dropdowns-container">
-                  <FriendRequestDropdown dropdownHidden={this.state.dropdownHidden} />
+                  <FriendRequestDropdownContainer dropdownHidden={this.state.dropdownHidden} />
               </div>
               <i className='fa fa-group' onClick={this.toggleDropdown}>
 

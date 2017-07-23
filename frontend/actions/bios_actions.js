@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/bios_api_util';
 
-export const RECEIVE_USER_BIO = "RECEIVE_CURRENT_USER_BIO";
+export const RECEIVE_USER_BIO = "RECEIVE_USER_BIO";
 
 export const fetchUserBio = id => dispatch => (
   APIUtil.fetchUserBio(id).then(

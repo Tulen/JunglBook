@@ -9,7 +9,7 @@ class FriendRequestDropdownItem extends React.Component {
           <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
         </div>
         <div>
-          <p> Quokka </p>
+          <p> {this.props.senderFirst} {this.props.senderLast} </p>
         </div>
         <div>
           <button> Confirm </button>
