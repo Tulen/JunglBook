@@ -1,1 +1,1 @@
-json.extract! @requests, :id, :sender_id, :recipient_id, :status
+json.array! @requests, :id, :sender_id, :recipient_id, :status
