@@ -6,6 +6,9 @@
   justify-content: space-around;
   align-items: center;
   color: white;
+  position: fixed;
+  z-index: 1000;
+  top: 0px;
 }
 
 .nav-bar-left {

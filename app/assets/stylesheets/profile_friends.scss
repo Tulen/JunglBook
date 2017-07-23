@@ -1,3 +1,26 @@
+.friends-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-header-buttons {
+  padding: 5px;
+}
+
+.detail-header-buttons button {
+  padding: 8px;
+  margin-right: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #D3D6DB;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #4B4F56;
+}
+
+.detail-header-buttons button:hover {
+  background-color: #E9EBEE
+}
 #friends-container {
   height: 800px;
   width: 100%;
