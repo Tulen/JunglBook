@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import * as APIUTIL from './util/session_api_util'
 import * as BIOAPIUTIL from './util/bios_api_util'
+import * as FRIENDAPIUTIL from './util/friend_requests_api_util'
 import { fetchUserBio, updateUserBio } from './actions/bios_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteAccount = APIUTIL.deleteAccount
   window.fetchUserBio = fetchUserBio
   window.updateUserBio = updateUserBio
+  window.fetchUserRequests = FRIENDAPIUTIL.fetchUserRequests
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);
