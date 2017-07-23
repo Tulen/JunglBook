@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateUserBio = updateUserBio
   window.fetchUserRequests = fetchUserRequests
   window.sendUserRequest = FRIENDAPIUTIL.sendUserRequest
+  window.acceptUserRequest = FRIENDAPIUTIL.acceptUserRequest
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);

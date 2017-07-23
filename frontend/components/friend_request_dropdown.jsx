@@ -1,5 +1,5 @@
 import React from 'react'
-import FriendRequestDropdownItem from './friend_request_dropdown_item'
+import FriendRequestDropdownItemContainer from './friend_request_dropdown_item_container'
 import values from 'lodash/values'
 
 
@@ -14,9 +14,11 @@ class FriendRequestDropdown extends React.Component {
   }
 
   render() {
-    let requestsArray = values(this.props.friendRequests)
+    let requestsArray = values(this.props.friendRequests).filter((request) => {
+      return request.status === "pending"
+    })
     let requestInfo = requestsArray.map( (request) => (
-      <FriendRequestDropdownItem key={request.id} senderFirst={request.sender_fname} senderLast={request.sender_lname} />
+      <FriendRequestDropdownItemContainer key={request.id} request={request} senderFirst={request.sender_fname} senderLast={request.sender_lname} />
     ));
     if (this.props.dropdownHidden) {
       return <div> </div>

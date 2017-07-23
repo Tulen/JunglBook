@@ -9,6 +9,13 @@ export const fetchUserRequests = id => dispatch => (
   )
 )
 
+export const acceptUserRequest = (id, req) => dispatch => (
+  APIUtil.acceptUserRequest(id, req).then(
+    reqs => (dispatch(receiveUserRequests(reqs))),
+    error => ( dispatch(receiveErrors(error.responseJSON)))
+  )
+)
+
 export const receiveUserRequests = reqs => ({
   type: RECEIVE_USER_REQUESTS,
   reqs

@@ -13,3 +13,11 @@ export const sendUserRequest = request => {
     data: request
   })
 };
+
+export const acceptUserRequest = (id, request) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/friend_requests/${id}`,
+    data: request
+  })
+}
