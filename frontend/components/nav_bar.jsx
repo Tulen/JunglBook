@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
-
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +21,7 @@ class NavBar extends React.Component {
     }
     return(
       <div id='nav-bar'>
+
         <div className='nav-bar-left'>
           <div className="nav-logo-container">
             <Link to="/feed"><i className='fa fa-bug fa-2x'></i></Link>
@@ -29,6 +29,48 @@ class NavBar extends React.Component {
           </div>
 
         </div>
+
+
+        <div className="nav-fr-dropdown">
+          <div className="fr-dropdown-header"> <p> Friend Requests </p> </div>
+          <div className="fr-dropdown-item">
+            <div>
+              <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+            </div>
+            <div>
+              Quokka
+            </div>
+            <div>
+              <button> Confirm </button>
+              <button> Delete Request </button>
+            </div>
+           </div>
+          <div className="fr-dropdown-item">
+            <div>
+              <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+            </div>
+            <div>
+              Quokka
+            </div>
+            <div>
+              <button> Confirm </button>
+              <button> Delete Request </button>
+            </div>
+           </div>
+          <div className="fr-dropdown-item">
+            <div>
+              <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+            </div>
+            <div>
+              Quokka
+            </div>
+            <div>
+              <button> Confirm </button>
+              <button> Delete Request </button>
+            </div>
+           </div>
+        </div>
+
         <div className='nav-bar-right'>
           <div className = "nav-menu-container">
             <div className="nav-btn-grp lng-2">
