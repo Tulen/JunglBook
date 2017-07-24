@@ -172,7 +172,6 @@ class CreateUser extends React.Component {
       }
 
       this.setState({ ['inputState']: newInputState });
-      // console.log(this.validationSwitch);
 
 
     };

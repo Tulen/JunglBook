@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 class BioOverview extends React.Component {
   constructor(props) {
     super(props)
-    // console.log("BO", props)
   }
 
   render() {

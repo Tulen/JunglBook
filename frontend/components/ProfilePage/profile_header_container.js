@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import ProfileHeader from './profile_header'
 import { withRouter } from 'react-router'
 
-const mapStateToProps = ( {bios, session, friendRequests} ) => ({
+const mapStateToProps = ( {bios, session, friendRequests, friends} ) => ({
   bios,
   session,
-  friendRequests
+  friendRequests,
+  friends
 })
 
 const mapDispatchToProps = dispatch => ({

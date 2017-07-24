@@ -4,7 +4,6 @@ import IntroWidgetItemContainer from './intro_widget_item_container'
 class IntroWidget extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("INTROWIDGET", props);
   }
   render() {
     return (

@@ -16,7 +16,6 @@ class ProfileHeader extends React.Component {
     let deleteId
 
     idArray.forEach((idPair) => {
-
       if ((idPair[0] === this.props.session.currentUser.id && idPair[1] === this.props.bios.id) ||
           (idPair[1] === this.props.session.currentUser.id && idPair[0] === this.props.bios.id)) {
         alreadyFriends = true;
@@ -45,14 +44,18 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    let idArray = values(this.props.friendRequests).map((req) => {
+    let friendIdArray = values(this.props.friends).map((req) => {
       return [req['sender_id'], req['recipient_id'], req['status']]
     })
+    let requestIdArray = values(this.props.friendRequests).map((req) => {
+      return [req['sender_id'], req['recipient_id'], req['status']]
+    })
+
     let alreadyFriends = false
+    let pendingFriends = false
     let requestStatus
     let requestSenderId
-    idArray.forEach((idPair) => {
-
+    friendIdArray.forEach((idPair) => {
       if ((idPair[0] === this.props.session.currentUser.id && idPair[1] === this.props.bios.id) ||
           (idPair[1] === this.props.session.currentUser.id && idPair[0] === this.props.bios.id)) {
         alreadyFriends = true
@@ -60,18 +63,26 @@ class ProfileHeader extends React.Component {
         requestSenderId = idPair[0]
       }
     })
+
+    requestIdArray.forEach((idPair) => {
+      if ((idPair[0] === this.props.session.currentUser.id && idPair[1] === this.props.bios.id) ||
+          (idPair[1] === this.props.session.currentUser.id && idPair[0] === this.props.bios.id)) {
+        pendingFriends = true
+        requestStatus = idPair[2]
+        requestSenderId = idPair[0]
+      }
+    })
+
     let profileButton
+
     if (this.props.bios.id !== this.props.session.currentUser.id) {
       if (alreadyFriends) {
-        if (requestStatus === "accepted") {
-          profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Delete Friend </button>
+        profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Delete Friend </button>
+      } else if (pendingFriends) {
+        if (this.props.session.currentUser.id === requestSenderId) {
+          profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Cancel Request </button>
         } else {
-          if (this.props.session.currentUser.id === requestSenderId) {
-            profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Cancel Request </button>
-          } else {
-            profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Accept/Delete Request </button>
-          }
-
+          profileButton = <button id="prof-friend-btn"> <i className="fa fa-user"></i> Pending Request </button>
         }
       } else {
         profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user-plus"></i> Add Friend </button>
@@ -79,6 +90,7 @@ class ProfileHeader extends React.Component {
     } else {
       profileButton = <Link to={`/user/${this.props.session.currentUser.id}/about`}><button id="prof-friend-btn"> <i className="fa fa-pencil"></i> Edit Profile </button></Link>
     }
+
 
     return (
 

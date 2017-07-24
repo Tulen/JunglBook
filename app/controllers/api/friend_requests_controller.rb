@@ -1,28 +1,11 @@
 class Api::FriendRequestsController < ApplicationController
   def index
-
-    # debugger
-    @requests = current_user.received_requests
+    @requests = current_user.received_requests + current_user.sent_requests
     if @requests.length != 0
       render :index
     else
       render(
         json: ["No friend requests"],
-        status: 404
-      )
-    end
-  end
-
-  def friends
-    @user = User.find(params[:id])
-    puts(@user)
-    @requests = FriendRequest.where(["recipient_id = ? OR sender_id = ?", params[:id], params[:id]]).where("status = ?", "accepted")
-    puts(@requests)
-    if @requests.length != 0
-      render "api/friend_requests/friends"
-    else
-      render(
-        json: ["No friends"],
         status: 404
       )
     end

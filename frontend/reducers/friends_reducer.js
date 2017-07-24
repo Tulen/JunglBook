@@ -7,7 +7,6 @@ const defaultState = {
 
 const FriendsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  console.log("FRIENDSREDUCER", action);
   let newState = merge({}, state)
   switch (action.type) {
     case RECEIVE_USER_FRIENDS:

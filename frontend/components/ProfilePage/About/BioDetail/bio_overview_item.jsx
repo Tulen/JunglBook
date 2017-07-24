@@ -3,7 +3,6 @@ import React from 'react'
 class BioOverviewItem extends React.Component {
   constructor(props) {
     super(props)
-    console.log("BOIITEM", props)
   }
   render() {
     let editDisplay
