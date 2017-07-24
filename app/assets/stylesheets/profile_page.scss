@@ -91,10 +91,17 @@
 
 #prof-friend-btn {
   position: absolute;
-  right: 50px;
-  bottom: 20px;
+  background-color: #E9EBEE;
+  font-weight: bold;
+  right: 15px;
+  bottom: 15px;
   padding: 8px;
   border: none;
+  font-size: 12px;
+}
+
+#prof-friend-btn i {
+  font-size: 14px;
 }
 
 #prof-headline {

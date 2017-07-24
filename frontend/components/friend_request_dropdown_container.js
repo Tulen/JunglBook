@@ -8,7 +8,7 @@ const mapStateToProps = ( { session, friendRequests } ) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserRequests: (id) => dispatch(fetchUserRequests(id))
+  fetchUserRequests: () => dispatch(fetchUserRequests())
 })
 
 export default connect(

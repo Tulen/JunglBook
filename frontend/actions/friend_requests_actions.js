@@ -4,9 +4,10 @@ export const RECEIVE_USER_REQUESTS = "RECEIVE_USER_REQUESTS";
 export const RECEIVE_USER_REQUEST = "RECEIVE_USER_REQUEST";
 export const ACCEPT_USER_REQUEST = "ACCEPT_USER_REQUEST";
 export const DELETE_USER_REQUEST = "DELETE_USER_REQUEST";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
-export const fetchUserRequests = id => dispatch => (
-  APIUtil.fetchUserRequests(id).then(
+export const fetchUserRequests = () => dispatch => (
+  APIUtil.fetchUserRequests().then(
       reqs => ( dispatch(receiveUserRequests(reqs))),
       error => ( dispatch(receiveErrors(error.responseJSON)))
   )
@@ -52,4 +53,9 @@ export const acceptRequest = req => ({
 export const deleteRequest = req => ({
   type: DELETE_USER_REQUEST,
   req
+})
+
+export const receiveErrors = err  => ({
+  type: RECEIVE_ERRORS,
+  err
 })

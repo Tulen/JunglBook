@@ -6,16 +6,15 @@ import values from 'lodash/values'
 class FriendRequestDropdown extends React.Component {
   constructor(props) {
     super(props);
-    console.log("DROPDOWN", props)
   }
 
   componentWillMount() {
-    this.props.fetchUserRequests(this.props.session.currentUser.id)
+    this.props.fetchUserRequests()
   }
 
   render() {
     let requestsArray = values(this.props.friendRequests).filter((request) => {
-      return request.status === "pending"
+      return request.status === "pending" || request.status === "PENDING"
     })
     let requestInfo = requestsArray.map( (request) => (
       <FriendRequestDropdownItemContainer key={request.id} request={request} senderFirst={request.sender_fname} senderLast={request.sender_lname} />

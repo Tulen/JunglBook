@@ -1,9 +1,10 @@
 class Api::FriendRequestsController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-    @requests = @user.received_requests
+  def index
+
+    # debugger
+    @requests = current_user.received_requests
     if @requests.length != 0
-      render "api/friend_requests/show"
+      render :index
     else
       render(
         json: ["No friend requests"],

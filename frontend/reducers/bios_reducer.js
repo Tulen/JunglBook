@@ -22,6 +22,7 @@ const BiosReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_USER_BIO:
       return Object.assign({}, state, action.bio);
+
     default:
       return state;
   }

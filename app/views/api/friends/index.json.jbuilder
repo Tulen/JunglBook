@@ -6,6 +6,7 @@
     json.sender_lname request.sender.lname
     json.recipient_fname request.recipient.fname
     json.recipient_lname request.recipient.lname
+    json.status request.status
   end
 
 end

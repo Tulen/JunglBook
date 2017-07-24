@@ -32,6 +32,9 @@ class FriendWidget extends React.Component {
       } else {
         pathId = friend.sender_id
       }
+      if (pathId === undefined) {
+        return <h4> No friends added </h4>
+      }
       return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendWidgetItem friend={friend}/> </Link></li>)
     })
 

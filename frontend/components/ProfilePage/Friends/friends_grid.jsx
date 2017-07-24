@@ -24,6 +24,9 @@ class FriendsGrid extends React.Component {
       } else {
         pathId = friend.sender_id
       }
+      if (pathId === undefined) {
+        return <h2> No friends added </h2>
+      }
       return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendsGridItem displayId={pathId} friend={friend}/> </Link></li>)
     })
 
