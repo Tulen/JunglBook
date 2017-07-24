@@ -38,7 +38,12 @@ class BioFormItem extends React.Component {
 
   render() {
     if (this.props.canEdit === false) {
-      return <p className="filler-text"> n/a </p>
+      if (this.props.valContent === null || this.props.valContent === '') {
+        return <p className="filler-text"> n/a </p>
+      } else {
+        return <h4> {this.props.valContent} </h4>
+      }
+
     }
 
     if (this.props.valContent === null || this.props.valContent === '') {

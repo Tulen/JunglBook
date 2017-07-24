@@ -6,6 +6,13 @@ class BioOverviewItem extends React.Component {
     console.log("BOIITEM", props)
   }
   render() {
+    let editDisplay
+    if (this.props.canEdit) {
+      editDisplay = <p> click to edit</p>
+    } else {
+      editDisplay = <p> </p>
+    }
+
     if (this.props.valContent === "" || this.props.valContent === null) {
       if (this.props.canEdit) {
         return (
@@ -22,7 +29,7 @@ class BioOverviewItem extends React.Component {
       return (
         <div className="bio-content bc-overview">
           <h4> {this.props.valContent} </h4>
-          <p> Click to edit </p>
+          <p> { editDisplay }</p>
         </div>
       )
     }
