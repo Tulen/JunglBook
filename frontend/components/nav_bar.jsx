@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                     <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
                   </div>
 
-                  <p> User </p>
+                  <p> {this.props.session.currentUser.fname} </p>
                 </div>
               </Link>
 

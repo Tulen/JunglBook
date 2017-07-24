@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import ProfileHeader from './profile_header'
 import { withRouter } from 'react-router'
 
-const mapStateToProps = ( state ) => ({
-  state
+const mapStateToProps = ( {bios, session} ) => ({
+  bios,
+  session
 })
 
 

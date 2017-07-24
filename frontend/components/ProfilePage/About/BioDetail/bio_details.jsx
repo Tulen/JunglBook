@@ -8,19 +8,19 @@ class BioDetails extends React.Component {
         <div className="bio-category-item">
           <div className="bci-header"> Relationship </div>
           <div className="bci-body">
-            <BioFormItemContainer valName="relationship" valContent={this.props.bios.relationship} />
+            <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="relationship" valContent={this.props.bios.relationship} />
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Nickname </div>
           <div className="bci-body">
-            <BioFormItemContainer valName="nickname" valContent={this.props.bios.nickname} />
+            <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="nickname" valContent={this.props.bios.nickname} />
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Favorite Quote </div>
           <div className="bci-body">
-            <BioFormItemContainer valName="favorite_quote" valContent={this.props.bios.favorite_quote} />
+            <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="favorite_quote" valContent={this.props.bios.favorite_quote} />
           </div>
         </div>
       </div>

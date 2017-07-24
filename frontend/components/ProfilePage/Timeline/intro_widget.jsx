@@ -1,5 +1,5 @@
 import React from 'react'
-import IntroWidgetItem from './intro_widget_item'
+import IntroWidgetItemContainer from './intro_widget_item_container'
 
 class IntroWidget extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class IntroWidget extends React.Component {
             <div className="intro-widget-list-item">
               <i className="fa fa-building"> </i>
               <p> Current city: </p>
-              <IntroWidgetItem profId={this.props.profId} valName={"current city"} valContent={this.props.bios.current_city} />
+              <IntroWidgetItemContainer valName={"current city"} valContent={this.props.bios.current_city} />
             </div>
           </li>
 
@@ -38,7 +38,7 @@ class IntroWidget extends React.Component {
             <div className="intro-widget-list-item">
               <i className="fa fa-home"> </i>
               <p> Hometown </p>
-              <IntroWidgetItem profId={this.props.profId} valName={"hometown"} valContent={this.props.bios.hometown} />
+              <IntroWidgetItemContainer valName={"hometown"} valContent={this.props.bios.hometown} />
 
             </div>
           </li>
@@ -46,14 +46,14 @@ class IntroWidget extends React.Component {
             <div className="intro-widget-list-item">
               <i className="fa fa-briefcase"> </i>
               <p> Works at: </p>
-              <IntroWidgetItem profId={this.props.profId} valName={"work"} valContent={this.props.bios.work} />
+              <IntroWidgetItemContainer valName={"work"} valContent={this.props.bios.work} />
             </div>
           </li>
           <li>
             <div className="intro-widget-list-item">
               <i className="fa fa-graduation-cap"> </i>
               <p> Studied at: </p>
-              <IntroWidgetItem profId={this.props.profId} valName={"education"} valContent={this.props.bios.education} />
+              <IntroWidgetItemContainer valName={"education"} valContent={this.props.bios.education} />
 
             </div>
           </li>
@@ -61,7 +61,7 @@ class IntroWidget extends React.Component {
             <div className="intro-widget-list-item">
               <i className="fa fa-heart"> </i>
               <p> Relationship status: </p>
-              <IntroWidgetItem profId={this.props.profId} valName={"relationship status"} valContent={this.props.bios.relationship} />
+              <IntroWidgetItemContainer valName={"relationship status"} valContent={this.props.bios.relationship} />
 
             </div>
           </li>
@@ -70,7 +70,7 @@ class IntroWidget extends React.Component {
             <div className="intro-widget-list-item">
               <i className="fa fa-book"> </i>
               <p> Favorite quote: </p>
-              <IntroWidgetItem profId={this.props.profId} valName={"favorite quote"} valContent={this.props.bios.favorite_quote} />
+              <IntroWidgetItemContainer valName={"favorite quote"} valContent={this.props.bios.favorite_quote} />
             </div>
           </li>
 

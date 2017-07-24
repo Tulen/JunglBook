@@ -37,6 +37,10 @@ class BioFormItem extends React.Component {
   }
 
   render() {
+    if (this.props.canEdit === false) {
+      return <p></p>
+    }
+
     if (this.props.valContent === null || this.props.valContent === '') {
       return (
         <div className="bci-container" onClick={this.openModal}>

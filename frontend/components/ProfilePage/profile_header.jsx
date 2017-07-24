@@ -9,15 +9,15 @@ class ProfileHeader extends React.Component {
     return (
       <div id="prof-header-container">
         <div id="prof-cvr-photo">
-          <button id="edit-cvr-photo"> <i className="fa fa-camera"> </i> Add/Edit Cover Photo</button>
+          <button id={`edit-cvr-photo-${this.props.bios.id === this.props.session.currentUser.id}`}> <i className="fa fa-camera"> </i> Add/Edit Cover Photo</button>
           <div id="prof-pic">
-            <div className="edit-ppic-overlay">
+            <div className={`edit-ppic-overlay-${this.props.bios.id === this.props.session.currentUser.id}`}>
               <i className="fa fa-camera"> </i>
               <p> Update Profile Picture </p>
             </div>
             <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
           </div>
-           <h2 id="prof-name"> {this.props.state.bios.fname} {this.props.state.bios.lname} </h2>
+           <h2 id="prof-name"> {this.props.bios.fname} {this.props.bios.lname} </h2>
         </div>
         <nav id="prof-headline">
           <ul id="prof-nav-links">

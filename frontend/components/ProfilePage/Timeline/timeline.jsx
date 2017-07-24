@@ -19,7 +19,7 @@ class Timeline extends React.Component {
     return (
       <div id="feed-body">
         <div id="feed-left">
-         <IntroWidget profId={this.state.currentProfId} bios={this.props.bios}/>
+         <IntroWidget currentId={this.props.session.currentUser.id} profId={this.state.currentProfId} bios={this.props.bios}/>
          <PhotoWidget profId={this.state.currentProfId} />
          <FriendWidget profId={this.state.currentProfId} />
         </div>

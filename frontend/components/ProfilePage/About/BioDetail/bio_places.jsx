@@ -8,13 +8,13 @@ class BioPlaces extends React.Component {
         <div className="bio-category-item">
           <div className="bci-header"> Current City </div>
           <div className="bci-body">
-            <BioFormItemContainer valName="current_city" valContent={this.props.bios.current_city}/>
+            <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="current_city" valContent={this.props.bios.current_city}/>
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Hometown </div>
           <div className="bci-body">
-            <BioFormItemContainer valName="hometown" valContent={this.props.bios.hometown}/>
+            <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="hometown" valContent={this.props.bios.hometown}/>
           </div>
         </div>
       </div>

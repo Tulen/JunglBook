@@ -19,7 +19,7 @@
   position: relative;
 }
 
-#edit-cvr-photo {
+#edit-cvr-photo-true {
   position: absolute;
   clear: both;
   top: 10px;
@@ -31,8 +31,12 @@
   border-radius: 5px;
 }
 
-#edit-cvr-photo i {
+#edit-cvr-photo-true i {
   padding-right: 3px;
+}
+
+#edit-cvr-photo-false {
+  display: none;
 }
 
 #prof-pic {
@@ -49,7 +53,7 @@
   border-radius: 3px;
 }
 
-.edit-ppic-overlay {
+.edit-ppic-overlay-true {
   margin-top: 109px;
   background-color: black;
   height: 50px;
@@ -63,11 +67,11 @@
   cursor: pointer;
 }
 
-.edit-ppic-overlay:hover {
+.edit-ppic-overlay-true:hover {
   opacity: .7;
 }
 
-.edit-ppic-overlay p {
+.edit-ppic-overlay-true p {
   font-family: Helvetica, Arial, sans-serif;
   opacity: 1;
 }

@@ -16,13 +16,13 @@ class BioWork extends React.Component {
             Work
           </div>
           <div className="bci-body">
-            <BioFormItemContainer valName="work" valContent={this.props.bios.work} />
+            <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="work" valContent={this.props.bios.work} />
           </div>
         </div>
         <div className="bio-category-item">
           <div className="bci-header"> Education </div>
             <div className="bci-body">
-              <BioFormItemContainer valName="education" valContent={this.props.bios.education} />
+              <BioFormItemContainer canEdit={this.props.bios.id === this.props.session.currentUser.id} valName="education" valContent={this.props.bios.education} />
             </div>
         </div>
       </div>
