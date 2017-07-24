@@ -21,7 +21,19 @@ class ProfilePage extends React.Component {
 
   componentDidMount() {
     this.props.fetchUserBio(this.state.currentProfId)
+
   }
+
+  componentWillReceiveProps(nextProps) {
+    let idReg = /\d+/g;
+    let currentProfId = nextProps.location.pathname.match( idReg )[0];
+    if (this.state.currentProfId !== currentProfId) {
+      this.setState({currentProfId})
+      this.props.fetchUserBio(currentProfId)
+    }
+
+  }
+
 
   render() {
      return(

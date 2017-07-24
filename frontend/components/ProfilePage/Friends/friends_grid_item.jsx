@@ -1,6 +1,10 @@
 import React from 'react'
 
 class FriendsGridItem extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
   render() {
     return (
       <div className="friends-grid-item-container">
@@ -8,7 +12,7 @@ class FriendsGridItem extends React.Component {
           <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
         </div>
         <div className="friends-grid-content">
-          <p> Quokka </p>
+          <p> {this.props.friend.sender_fname} {this.props.friend.sender_lname}</p>
           <div id="friends-grid-btn">
             <i className="fa fa-check"> </i>
             <p> Friends </p>

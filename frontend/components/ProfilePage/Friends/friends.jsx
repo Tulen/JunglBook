@@ -1,5 +1,5 @@
 import React from 'react'
-import FriendsGrid from './friends_grid'
+import FriendsGridContainer from './friends_grid_container'
 
 class Friends extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class Friends extends React.Component {
             <button> Friend Requests </button>
           </div>
         </div>
-        <FriendsGrid />
+        <FriendsGridContainer />
       </div>
 
     )

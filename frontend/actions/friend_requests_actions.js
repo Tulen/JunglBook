@@ -12,6 +12,7 @@ export const fetchUserRequests = id => dispatch => (
   )
 )
 
+
 export const sendUserRequest = req => dispatch => (
   APIUtil.sendUserRequest(req).then(
     req => ( dispatch(receiveUserRequest(req))),

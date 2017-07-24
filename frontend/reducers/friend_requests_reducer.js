@@ -7,7 +7,7 @@ const defaultState = {
 
 const FriendRequestsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  console.log(action);
+
   let newState = merge({}, state)
   switch (action.type) {
     case RECEIVE_USER_REQUESTS:
