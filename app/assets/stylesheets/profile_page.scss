@@ -85,6 +85,16 @@
 #prof-name {
   padding-top: 160px;
   padding-left: 200px;
+  width: 200px;
+  display: inline-block;
+}
+
+#prof-friend-btn {
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+  padding: 8px;
+  border: none;
 }
 
 #prof-headline {

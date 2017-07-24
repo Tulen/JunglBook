@@ -76,6 +76,8 @@ img {
 .img-container-xs {
   min-height: 30px;
   min-width: 30px;
+  max-height: 30px;
+  max-width: 30px;
 }
 
 .filler-text {

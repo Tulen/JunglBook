@@ -17,7 +17,11 @@ class ProfileHeader extends React.Component {
             </div>
             <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
           </div>
-           <h2 id="prof-name"> {this.props.bios.fname} {this.props.bios.lname} </h2>
+          <div>
+            <h2 id="prof-name"> {this.props.bios.fname} {this.props.bios.lname} </h2>
+            <button id="prof-friend-btn"> Add Friend </button>
+          </div>
+
         </div>
         <nav id="prof-headline">
           <ul id="prof-nav-links">
