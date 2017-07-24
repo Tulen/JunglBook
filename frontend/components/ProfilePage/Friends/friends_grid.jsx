@@ -17,7 +17,8 @@ class FriendsGrid extends React.Component {
 
 
   render() {
-    let friendsListArr = values(this.props.friends)
+    let friendsListArr = values(this.props.friendRequests)
+
     let friendsList = friendsListArr.filter((friendReq) => {
       return (
         friendReq["status"] = "accepted"
