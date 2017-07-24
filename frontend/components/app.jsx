@@ -5,11 +5,11 @@ import LoginPage from './LoginPage/login_page'
 import NewsFeed from './NewsFeed/news_feed'
 import ProfilePageContainer from './ProfilePage/profile_page_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
-// AuthRoute and ProtectedRoute causing redirect bugs?
+
 
 const App = () => (
   <Switch>
-    <Route path="/user/:userId" component ={ ProfilePageContainer } />
+    <ProtectedRoute path="/user/:userId" component ={ ProfilePageContainer } />
     <ProtectedRoute path="/feed" component={ NewsFeed } />
     <AuthRoute path="/" component={ LoginPage }/>
   </Switch>

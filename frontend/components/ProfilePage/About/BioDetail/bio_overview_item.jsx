@@ -15,7 +15,7 @@ class BioOverviewItem extends React.Component {
           </div>
         )
       } else {
-        return <p> </p>
+        return <p className="filler-text"> n/a </p>
       }
 
     } else {

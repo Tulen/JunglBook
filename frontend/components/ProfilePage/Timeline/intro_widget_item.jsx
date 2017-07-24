@@ -24,7 +24,7 @@ class IntroWidgetItem extends React.Component {
             return <Link to={`/user/${this.props.session.currentUser.id}/about/`}><p> Add {this.props.valName} </p> </Link>
         }
       } else {
-        return <p> </p>
+        return <p className="filler-text" > n/a </p>
       }
 
     } else {

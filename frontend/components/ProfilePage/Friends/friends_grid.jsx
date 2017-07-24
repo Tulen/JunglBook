@@ -9,28 +9,22 @@ class FriendsGrid extends React.Component {
   }
 
   componentDidMount() {
-    // let idReg = /\d+/g;
-    // let currentProfId = this.props.location.pathname.match( idReg )[0];
-      console.log("FUSDFKLJSDF BIOS", this.props.bios)
-      this.props.fetchUserFriends(this.props.bios.id)
+    let idReg = /\d+/g;
+    let currentProfId = this.props.location.pathname.match( idReg )[0];
+    this.props.fetchUserFriends(currentProfId)
   }
 
 
   render() {
-    let friendsListArr = values(this.props.friendRequests)
-
-    let friendsList = friendsListArr.filter((friendReq) => {
-      return (
-        friendReq["status"] = "accepted"
-      )
-    }).map((friend) => {
+    let friendsListArr = values(this.props.friends)
+    let friendsList = friendsListArr.map((friend) => {
       let pathId
       if (friend.sender_id === this.props.bios.id) {
         pathId = friend.recipient_id
       } else {
         pathId = friend.sender_id
       }
-      return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendsGridItem friend={friend}/> </Link></li>)
+      return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendsGridItem displayId={pathId} friend={friend}/> </Link></li>)
     })
 
     return (

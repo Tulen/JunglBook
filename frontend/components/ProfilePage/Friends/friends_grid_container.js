@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import FriendsGrid from './friends_grid'
 import { fetchUserFriends } from '../../../actions/friends_actions'
+import { fetchUserBio } from '../../../actions/bios_actions'
+import { withRouter } from 'react-router'
 
 
-const mapStateToProps = ( { bios, friendRequests } ) => ({
+const mapStateToProps = ( { bios, friendRequests, friends } ) => ({
   bios,
-  friendRequests
+  friendRequests,
+  friends
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchUserFriends: id => dispatch(fetchUserFriends(id))
+  fetchUserFriends: id => dispatch(fetchUserFriends(id)),
+  fetchUserBio: id => dispatch(fetchUserBio(id))
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps, mapDispatchToProps
-)(FriendsGrid);
+)(FriendsGrid));
