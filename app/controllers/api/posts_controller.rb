@@ -1,6 +1,10 @@
 class Api::PostsController < ApplicationController
   def index
+    puts(params)
+    @user = User.find(params[:id])
+    @posts = @user.posts
 
+    render :index
   end
 
   def show

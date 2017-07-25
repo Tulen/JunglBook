@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   validates :author, :body, presence: true
-  validates :author, uniqueness: true
 
   belongs_to :author,
     primary_key: :id,

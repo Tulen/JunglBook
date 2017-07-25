@@ -9,6 +9,7 @@ import * as POSTAPIUTIL from './util/posts_api_util'
 import * as COMMENTAPIUTIL from './util/comments_api_util'
 import { fetchUserBio, updateUserBio } from './actions/bios_actions'
 import { fetchUserRequests, removeUserRequest, sendUserRequest } from './actions/friend_requests_actions'
+import { createUserPost } from './actions/posts_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.sendUserRequest = sendUserRequest
   window.acceptUserRequest = FRIENDAPIUTIL.acceptUserRequest
   window.removeUserRequest = removeUserRequest
-  window.createUserPost = POSTAPIUTIL.createUserPost
+  window.createUserPost = createUserPost
+  window.fetchUserPosts = POSTAPIUTIL.fetchUserPosts
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);

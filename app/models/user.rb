@@ -43,8 +43,15 @@ class User < ApplicationRecord
     foreign_key: :recipient_id,
     class_name: :FriendRequest
 
-  has_many :posts
-  has_many :comments
+  has_many :posts,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Post
+
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Comment
 
 
   def self.find_by_credentials(email, password)
