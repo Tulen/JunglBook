@@ -13,3 +13,10 @@ export const fetchUserPosts = id => {
     data: {id}
   })
 }
+
+export const deleteUserPost = id => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/posts/${id}`
+  })
+}

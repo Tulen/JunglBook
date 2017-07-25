@@ -21,9 +21,17 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      render :delete
+    else
+      render []
+    end
   end
 
   private

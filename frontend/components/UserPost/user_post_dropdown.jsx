@@ -37,8 +37,7 @@ class UserPostDropdown extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    // this.props.updateUserBio(this.props.bios.id ,{user: {[`${this.props.valName}`]: this.state.inputVal}})
-    console.log("DELETEAJAX")
+    this.props.deleteUserPost(this.props.postId)
   }
 
   update(val) {

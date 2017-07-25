@@ -1,5 +1,5 @@
 import React from 'react'
-import UserPostDropdown from './user_post_dropdown'
+import UserPostDropdownContainer from './user_post_dropdown_container'
 
 class UserPostBody extends React.Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class UserPostBody extends React.Component {
           </div>
           <div className="pbh-icons">
             <i className="fa fa-angle-down" onClick={this.toggleDropdown}></i>
-            <UserPostDropdown dropdownHidden={this.state.dropdownHidden}/>
+            <UserPostDropdownContainer postId={this.props.post.id} dropdownHidden={this.state.dropdownHidden}/>
 
           </div>
         </div>
