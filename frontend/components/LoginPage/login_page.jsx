@@ -8,7 +8,7 @@ class LoginPage extends React.Component {
   render() {
 
     return (
-      <div>  
+      <div>
         <div>
           <header className="login-header">
             <div className="login-logo-container">
@@ -53,14 +53,15 @@ class LoginPage extends React.Component {
           <div>
             <ul>
               <li>
-                English
+                Justin Austria 2017:
               </li>
               <li>
-                Espanol
+                <a target="_blank" href="https://github.com/tulen"> <i className="fa fa-github-square fa-2x"> </i> </a>
               </li>
               <li>
-                Francais
+                <a target="_blank" href="https://www.linkedin.com/in/justin-austria-09984278/"> <i className="fa fa-linkedin-square fa-2x"> </i></a>
               </li>
+
             </ul>
           </div>
           <nav>
