@@ -5,6 +5,8 @@ import configureStore from './store/store';
 import * as APIUTIL from './util/session_api_util'
 import * as BIOAPIUTIL from './util/bios_api_util'
 import * as FRIENDAPIUTIL from './util/friend_requests_api_util'
+import * as POSTAPIUTIL from './util/posts_api_util'
+import * as COMMENTAPIUTIL from './util/comments_api_util'
 import { fetchUserBio, updateUserBio } from './actions/bios_actions'
 import { fetchUserRequests, removeUserRequest, sendUserRequest } from './actions/friend_requests_actions'
 
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.sendUserRequest = sendUserRequest
   window.acceptUserRequest = FRIENDAPIUTIL.acceptUserRequest
   window.removeUserRequest = removeUserRequest
+  window.createUserPost = POSTAPIUTIL.createUserPost
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);
