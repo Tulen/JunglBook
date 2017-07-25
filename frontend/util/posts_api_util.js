@@ -20,3 +20,11 @@ export const deleteUserPost = id => {
     url: `api/posts/${id}`
   })
 }
+
+export const editUserPost = (id, post) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/posts/${id}`,
+    data: { post }
+  })
+}

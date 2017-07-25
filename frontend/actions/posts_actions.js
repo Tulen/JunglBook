@@ -18,6 +18,13 @@ export const deleteUserPost= post => dispatch => (
   )
 )
 
+export const editUserPost= (id, post) => dispatch => (
+  APIUtil.editUserPost(id, post).then(
+      post => ( dispatch(receiveUserPost(post))),
+      error => ( dispatch(receiveErrors(error.responseJSON)))
+  )
+)
+
 export const fetchUserPosts= id => dispatch => (
   APIUtil.fetchUserPosts(id).then(
       posts => ( dispatch(receiveUserPosts(posts))),

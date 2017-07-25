@@ -22,6 +22,7 @@ class UserPostBody extends React.Component {
 
   render() {
     let postNameDisplay
+    let postEdited
 
     if (this.props.profId == this.props.post.author_id) {
       postNameDisplay =
@@ -41,6 +42,12 @@ class UserPostBody extends React.Component {
 
     }
 
+    if (this.props.post.edited) {
+      postEdited = <p> {this.props.post.edit_date} (Edited) </p>
+    } else {
+      postEdited = <p> {this.props.post.post_date} </p>
+    }
+
     return (
       <div className="post-body-container">
         <div className="post-body-heading">
@@ -48,7 +55,7 @@ class UserPostBody extends React.Component {
           <div className="pbh-text">
             { postNameDisplay}
             <div className="pbh-text-date">
-              <p> {this.props.post.post_date} </p>
+              {postEdited}
             </div>
           </div>
           <div className="pbh-icons">

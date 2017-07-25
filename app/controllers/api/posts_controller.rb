@@ -16,13 +16,18 @@ class Api::PostsController < ApplicationController
     if @post.save
       render 'api/posts/create'
     else
-
+      render []
     end
   end
 
   def update
     @post = Post.find(params[:id])
-
+    @post.body = post_params[:body]
+    if @post.save
+      render :update
+    else
+      render []
+    end
   end
 
   def destroy

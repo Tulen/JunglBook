@@ -31,7 +31,6 @@ class UserPostDropdown extends React.Component {
 
   handleEdit(e) {
     e.preventDefault();
-    // this.props.updateUserBio(this.props.bios.id ,{user: {[`${this.props.valName}`]: this.state.inputVal}})
     this.closeModal();
   }
 
