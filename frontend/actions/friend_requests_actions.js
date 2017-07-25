@@ -4,34 +4,30 @@ export const RECEIVE_USER_REQUESTS = "RECEIVE_USER_REQUESTS";
 export const RECEIVE_USER_REQUEST = "RECEIVE_USER_REQUEST";
 export const ACCEPT_USER_REQUEST = "ACCEPT_USER_REQUEST";
 export const DELETE_USER_REQUEST = "DELETE_USER_REQUEST";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+
 
 export const fetchUserRequests = () => dispatch => (
   APIUtil.fetchUserRequests().then(
-      reqs => ( dispatch(receiveUserRequests(reqs))),
-      error => ( dispatch(receiveErrors(error.responseJSON)))
+    reqs => ( dispatch(receiveUserRequests(reqs)))
   )
 )
 
 
 export const sendUserRequest = req => dispatch => (
   APIUtil.sendUserRequest(req).then(
-    req => ( dispatch(receiveUserRequest(req))),
-    error => ( dispatch(receiveErrors(error.responseJSON)))
+    req => ( dispatch(receiveUserRequest(req)))
   )
 )
 
 export const acceptUserRequest = (id, req) => dispatch => (
   APIUtil.acceptUserRequest(id, req).then(
-    req => (dispatch(acceptRequest(req))),
-    error => ( dispatch(receiveErrors(error.responseJSON)))
+    req => (dispatch(acceptRequest(req)))
   )
 )
 
 export const removeUserRequest = (id, req) => dispatch => (
   APIUtil.removeUserRequest(id, req).then(
-    req => (dispatch(deleteRequest(req))),
-    error => ( dispatch(receiveErrors(error.responseJSON)))
+    req => (dispatch(deleteRequest(req)))
   )
 )
 
@@ -53,9 +49,4 @@ export const acceptRequest = req => ({
 export const deleteRequest = req => ({
   type: DELETE_USER_REQUEST,
   req
-})
-
-export const receiveErrors = err  => ({
-  type: RECEIVE_ERRORS,
-  err
 })

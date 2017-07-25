@@ -14,6 +14,7 @@ class FriendRequestDropdown extends React.Component {
 
   render() {
     let requestsArray = values(this.props.friendRequests).filter((request) => {
+      console.log(request.recipient_id, this.props.session.currentUser.id)
       return ((request.status === "pending" || request.status === "PENDING") && request.recipient_id == this.props.session.currentUser.id)
     })
     let requestInfo = requestsArray.map( (request) => (

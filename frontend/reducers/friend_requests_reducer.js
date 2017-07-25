@@ -1,4 +1,4 @@
-import { RECEIVE_USER_REQUESTS, RECEIVE_USER_REQUEST,ACCEPT_USER_REQUEST, DELETE_USER_REQUEST, RECEIVE_ERRORS } from '../actions/friend_requests_actions'
+import { RECEIVE_USER_REQUESTS, RECEIVE_USER_REQUEST,ACCEPT_USER_REQUEST, DELETE_USER_REQUEST } from '../actions/friend_requests_actions'
 import merge from 'lodash/merge'
 
 const defaultState = {
@@ -6,7 +6,7 @@ const defaultState = {
 
 const FriendRequestsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  
+
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_USER_REQUESTS:
@@ -20,8 +20,6 @@ const FriendRequestsReducer = (state = defaultState, action) => {
     case DELETE_USER_REQUEST:
       delete newState[action.req.id]
       return newState
-    case RECEIVE_ERRORS:
-      return defaultState
     default:
       return state
 
