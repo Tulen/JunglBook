@@ -18,7 +18,8 @@ class PostCreateBody extends React.Component {
     e.preventDefault();
     let newPost = {
       body: this.state.body,
-      author_id: this.props.session.currentUser.id
+      author_id: this.props.session.currentUser.id,
+      wall_id: this.props.bios.id
     }
     this.props.createUserPost({post: newPost})
 

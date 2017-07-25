@@ -1,5 +1,6 @@
 import React from 'react'
 import UserPostDropdownContainer from './user_post_dropdown_container'
+import { Link } from 'react-router-dom'
 
 class UserPostBody extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class UserPostBody extends React.Component {
     let postNameDisplay
     let postEdited
 
-    if (this.props.profId == this.props.post.author_id) {
+    if (this.props.post.wall_id == this.props.post.author_id) {
       postNameDisplay =
       <div className="pbh-text-users">
         <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p>
@@ -34,9 +35,9 @@ class UserPostBody extends React.Component {
     } else {
       postNameDisplay =
       <div className="pbh-text-users">
-        <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p>
+        <Link to={`/user/${this.props.post.author_id}`}> <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p> </Link>
           <i className="fa fa-caret-right"> </i>
-        <p> Quokka </p>
+        <p> {this.props.post.wall_fname + ' ' + this.props.post.wall_lname} </p>
       </div>
 
 
@@ -51,11 +52,13 @@ class UserPostBody extends React.Component {
     return (
       <div className="post-body-container">
         <div className="post-body-heading">
-          <img className="post-body-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-          <div className="pbh-text">
-            {postNameDisplay}
-            <div className="pbh-text-date">
-              {postEdited}
+          <div className="pbh-left-group">
+            <img className="post-body-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+            <div className="pbh-text">
+              {postNameDisplay}
+              <div className="pbh-text-date">
+                {postEdited}
+              </div>
             </div>
           </div>
           <div className="pbh-icons">

@@ -3,8 +3,9 @@ import PostCreateBody from './post_create_body';
 import { createUserPost } from '../../actions/posts_actions'
 import {withRouter} from 'react-router'
 
-const mapStateToProps = ( {session} ) => ({
-  session
+const mapStateToProps = ( {session, bios} ) => ({
+  session,
+  bios
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -15,7 +15,12 @@
 
 .post-body-heading {
   display: flex;
+  justify-content: space-between;
   min-height: 46px;
+}
+
+.pbh-left-group {
+  display: flex;
 }
 
 .post-body-pic {
@@ -53,7 +58,6 @@
 }
 
 .pbh-icons {
-  margin-left: 350px;
   position: relative;
 }
 

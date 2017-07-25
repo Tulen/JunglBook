@@ -43,9 +43,14 @@ class User < ApplicationRecord
     foreign_key: :recipient_id,
     class_name: :FriendRequest
 
-  has_many :posts,
+  has_many :authored_posts,
     primary_key: :id,
     foreign_key: :author_id,
+    class_name: :Post
+
+  has_many :received_posts,
+    primary_key: :id,
+    foreign_key: :wall_id,
     class_name: :Post
 
   has_many :comments,

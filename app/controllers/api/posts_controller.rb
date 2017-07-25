@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
   def index
     puts(params)
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.authored_posts + @user.received_posts
 
     render :index
   end
@@ -42,6 +42,6 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :author_id)
+    params.require(:post).permit(:body, :author_id, :wall_id)
   end
 end

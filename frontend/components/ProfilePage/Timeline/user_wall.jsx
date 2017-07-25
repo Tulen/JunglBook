@@ -16,10 +16,13 @@ class UserWall extends React.Component {
     if (this.props.bios.id != nextProps.bios.id) {
       this.props.fetchUserPosts(nextProps.bios.id)
     }
-
   }
   render() {
-    let userPosts = values(this.props.posts).reverse().map(post => {
+    let userPosts = values(this.props.posts).reverse()
+    .filter((post) => {
+      return post.wall_id == this.props.bios.id
+    })
+    .map(post => {
       return <UserPost post={post} profId={this.props.bios.id} />
     })
 
