@@ -75,7 +75,7 @@ class BioFormItem extends React.Component {
            </Modal>
           <div> <i className="fa fa-plus"> </i> </div>
           Add your {this.props.valName}
-          <Modal />
+          
         </div>
       )
     } else {

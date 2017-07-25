@@ -19,7 +19,7 @@ class UserWall extends React.Component {
 
   }
   render() {
-    let userPosts = values(this.props.posts).map(post => {
+    let userPosts = values(this.props.posts).reverse().map(post => {
       return <UserPost post={post} profId={this.props.bios.id} />
     })
 
