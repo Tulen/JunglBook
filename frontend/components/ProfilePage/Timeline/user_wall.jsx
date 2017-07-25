@@ -8,11 +8,19 @@ class UserWall extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserPosts(this.props.profId)
+    this.props.fetchUserPosts(this.props.bios.id )
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("WILLRECEIEVE", this.props, nextProps)
+    if (this.props.bios.id != nextProps.bios.id) {
+      this.props.fetchUserPosts(nextProps.bios.id)
+    }
+
   }
   render() {
     let userPosts = values(this.props.posts).map(post => {
-      return <UserPost post={post} profId={this.props.profId} />
+      return <UserPost post={post} profId={this.props.bios.id} />
     })
 
     return (

@@ -52,6 +52,57 @@
   padding-left: 2px;
 }
 
+.pbh-icons {
+  margin-left: 350px;
+  position: relative;
+}
+
+.pbh-icons i{
+  color: #B5B9BF;
+}
+
+.pbh-icons i:hover {
+  color: black;
+}
+
+.pbh-dropdown {
+  position: absolute;
+  padding: 5px 0;
+  border: 1px solid #CCCCCC;
+  background-color: white;
+  right: -10px;
+  z-index: 1001;
+  box-shadow: 3px 3px 10px #888888;
+}
+
+.pbh-dropdown li {
+  padding: 5px 10px;
+}
+
+.pbh-dropdown p {
+  font-family: Helvetica, Arial, sans-serif;
+  width: 60px;
+  padding-bottom: 15px;
+  color: black;
+}
+
+.pbh-dropdown p:first-of-type {
+  border-bottom: 1px solid #E9EAED;
+
+}
+
+.pbh-dropdown p:hover {
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pbh-dropdown p.pbh-delete {
+  border-bottom: none;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
 .post-body-content {
   min-height: 33px;
   display: flex;

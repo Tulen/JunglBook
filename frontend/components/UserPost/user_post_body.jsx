@@ -1,8 +1,23 @@
 import React from 'react'
+import UserPostDropdown from './user_post_dropdown'
 
 class UserPostBody extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      dropdownHidden: true
+    }
+
+    this.toggleDropdown = this.toggleDropdown.bind(this)
+  }
+
+  toggleDropdown() {
+    if (this.state.dropdownHidden) {
+      this.setState({dropdownHidden: false})
+    } else {
+      this.setState({dropdownHidden: true})
+    }
   }
 
   render() {
@@ -36,13 +51,15 @@ class UserPostBody extends React.Component {
               <p> {this.props.post.post_date} </p>
             </div>
           </div>
+          <div className="pbh-icons">
+            <i className="fa fa-angle-down" onClick={this.toggleDropdown}></i>
+            <UserPostDropdown dropdownHidden={this.state.dropdownHidden}/>
+
+          </div>
         </div>
         <div className="post-body-content">
           <p> {this.props.post.body} </p>
         </div>
-
-
-
       </div>
     )
   }

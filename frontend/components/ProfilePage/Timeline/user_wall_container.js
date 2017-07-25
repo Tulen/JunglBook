@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import UserWall from './user_wall'
 import { fetchUserPosts } from '../../../actions/posts_actions'
 
-const mapStateToProps = ( { session, posts } ) => ({
+const mapStateToProps = ( { session, bios, posts } ) => ({
   session,
+  bios,
   posts
 })
 
