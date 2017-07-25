@@ -6,11 +6,12 @@ class FriendsGridItem extends React.Component {
   }
 
   render() {
+    console.log("THISPROPS", this.props)
     let displayName
     if (this.props.displayId === this.props.friend.sender_id) {
-      displayName = this.props.friend.sender_fname + ' ' + this.props.friend.sender_lname
+      displayName = this.props.friend.fname + ' ' + this.props.friend.lname
     } else {
-        displayName = this.props.friend.recipient_fname + ' ' + this.props.friend.recipient_lname
+        displayName = this.props.friend.fname + ' ' + this.props.friend.lname
     }
     return (
       <div className="friends-grid-item-container">

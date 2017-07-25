@@ -31,7 +31,7 @@ class CreateLogin extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     this.props.login({user: {
-      email: '123@123.com',
+      email: 'leolion@animal.com',
       password: 'password'
     }}).then(() => (
       this.props.history.push('/feed')

@@ -18,12 +18,11 @@ class FriendRequestDropdownItem extends React.Component {
 
   handleDelete(e) {
     // e.preventDefault();
-
     this.props.removeUserRequest(this.props.request.id, this.props.request)
-
   }
 
   render() {
+
     return (
       <div className="fr-dropdown-item">
         <div>

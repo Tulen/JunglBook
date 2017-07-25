@@ -8,6 +8,10 @@ class ProfileHeader extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  componentWillRecieveProps() {
+    console.log("Receieve them props!")
+  }
+
   handleClick() {
     let idArray = values(this.props.friendRequests).map((req) => {
       return [req['sender_id'], req['recipient_id'], req['id']]
@@ -44,6 +48,7 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
+
     let friendIdArray = values(this.props.friends).map((req) => {
       return [req['sender_id'], req['recipient_id'], req['status']]
     })
@@ -52,6 +57,7 @@ class ProfileHeader extends React.Component {
     })
 
     let alreadyFriends = false
+    console.log("Render meh!", alreadyFriends)
     let pendingFriends = false
     let requestStatus
     let requestSenderId
@@ -77,6 +83,7 @@ class ProfileHeader extends React.Component {
 
     if (this.props.bios.id !== this.props.session.currentUser.id) {
       if (alreadyFriends) {
+        console.log("Why delete?")
         profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Delete Friend </button>
       } else if (pendingFriends) {
         if (this.props.session.currentUser.id === requestSenderId) {

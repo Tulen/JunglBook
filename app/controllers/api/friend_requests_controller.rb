@@ -7,6 +7,7 @@ class Api::FriendRequestsController < ApplicationController
   def create
     @request = FriendRequest.new(friend_request_params)
     @request.sender_id = current_user.id
+
     if @request.save
       render "api/friend_requests/create"
     else
@@ -20,6 +21,7 @@ class Api::FriendRequestsController < ApplicationController
   def update
     @request = FriendRequest.find(params[:id])
       @request.status = "accepted"
+    @sender = @request.sender
     if current_user.id == @request.recipient_id && @request.save
       render "api/friend_requests/accept"
     else
