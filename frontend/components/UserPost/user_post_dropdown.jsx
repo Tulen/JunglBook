@@ -31,12 +31,15 @@ class UserPostDropdown extends React.Component {
 
   handleEdit(e) {
     e.preventDefault();
+    let newPost = Object.assign({}, this.props.post)
+    newPost["body"] = this.state.inputVal
+    this.props.editUserPost(this.props.post.id, newPost)
     this.closeModal();
   }
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deleteUserPost(this.props.postId)
+    this.props.deleteUserPost(this.props.post.id)
   }
 
   update(val) {

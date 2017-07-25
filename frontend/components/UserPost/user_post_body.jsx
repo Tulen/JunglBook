@@ -53,14 +53,14 @@ class UserPostBody extends React.Component {
         <div className="post-body-heading">
           <img className="post-body-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
           <div className="pbh-text">
-            { postNameDisplay}
+            {postNameDisplay}
             <div className="pbh-text-date">
               {postEdited}
             </div>
           </div>
           <div className="pbh-icons">
             <i className="fa fa-angle-down" onClick={this.toggleDropdown}></i>
-            <UserPostDropdownContainer postId={this.props.post.id} dropdownHidden={this.state.dropdownHidden}/>
+            <UserPostDropdownContainer post={this.props.post} dropdownHidden={this.state.dropdownHidden}/>
 
           </div>
         </div>
