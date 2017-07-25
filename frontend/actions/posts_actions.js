@@ -22,7 +22,7 @@ export const receiveUserPost = post => ({
   post
 })
 
-export const RECEIVE_USER_POSTS = posts => ({
+export const receiveUserPosts = posts => ({
   type: RECEIVE_USER_POSTS,
   posts
 })
