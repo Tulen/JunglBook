@@ -28,7 +28,7 @@ class BioOverviewItem extends React.Component {
       return (
         <div className="bio-content bc-overview">
           <h4> {this.props.valContent} </h4>
-          <p> { editDisplay }</p>
+          { editDisplay }
         </div>
       )
     }

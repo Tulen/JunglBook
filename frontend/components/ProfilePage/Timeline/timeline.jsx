@@ -2,7 +2,7 @@ import React from 'react'
 import IntroWidget from './intro_widget'
 import PhotoWidget from './photo_widget'
 import FriendWidgetContainer from './friend_widget_container'
-import UserWall from './user_wall'
+import UserWallContainer from './user_wall_container'
 import PostCreate from '../../PostCreate/post_create'
 
 class Timeline extends React.Component {
@@ -25,7 +25,7 @@ class Timeline extends React.Component {
         </div>
         <div id="feed-right">
          <PostCreate />
-         <UserWall profId={this.state.currentProfId} />
+         <UserWallContainer profId={this.state.currentProfId} />
         </div>
       </div>
 

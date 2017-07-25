@@ -42,10 +42,10 @@ class ProfilePage extends React.Component {
          <div id="profile-feed">
            <ProfileHeaderContainer pageId={this.state.currentProfId} />
            <Switch>
-             <Route path="/user/:userId/about" component={About}> </Route>
-             <Route path="/user/:userId/friends" component={Friends}></Route>
-             <Route path="/user/:userId/photos" component={Photos}></Route>
-             <Route path="/user/:userId" component={TimelineContainer}></Route>
+             <Route path="/user/:userId/about" component={About} />
+             <Route path="/user/:userId/friends" component={Friends} />
+             <Route path="/user/:userId/photos" component={Photos} />
+             <Route path="/user/:userId" component={TimelineContainer} />
            </Switch>
 
          </div>

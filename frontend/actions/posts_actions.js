@@ -12,7 +12,7 @@ export const createUserPost= post => dispatch => (
 
 export const fetchUserPosts= id => dispatch => (
   APIUtil.fetchUserPosts(id).then(
-      post => ( dispatch(receiveUserPosts(posts))),
+      posts => ( dispatch(receiveUserPosts(posts))),
       error => ( dispatch(receiveErrors(error.responseJSON)))
   )
 )

@@ -8,10 +8,6 @@ class ProfileHeader extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  componentWillRecieveProps() {
-    console.log("Receieve them props!")
-  }
-
   handleClick() {
     let idArray = values(this.props.friendRequests).map((req) => {
       return [req['sender_id'], req['recipient_id'], req['id']]

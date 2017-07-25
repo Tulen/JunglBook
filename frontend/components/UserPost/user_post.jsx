@@ -6,7 +6,7 @@ class UserPost extends React.Component {
   render() {
     return (
       <div className="user-post">
-        <UserPostBody />
+        <UserPostBody post={this.props.post} profId={this.props.profId} />
         <div className="user-post-actions">
           <span>
             <i className="fa fa-thumbs-up"> </i>
