@@ -83,3 +83,7 @@ img {
 .filler-text {
   color: #e8ebef;
 }
+
+.display-false {
+  display: none;
+}

@@ -61,7 +61,7 @@ class UserPostBody extends React.Component {
               </div>
             </div>
           </div>
-          <div className="pbh-icons">
+          <div className={`pbh-icons display-${this.props.post.author_id === this.props.session.currentUser.id}`}>
             <i className="fa fa-angle-down" onClick={this.toggleDropdown}></i>
             <UserPostDropdownContainer post={this.props.post} dropdownHidden={this.state.dropdownHidden}/>
 

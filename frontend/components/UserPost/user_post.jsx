@@ -1,12 +1,12 @@
 import React from 'react'
-import UserPostBody from './user_post_body'
+import UserPostBodyContainer from './user_post_body_container'
 import CommentList from './UserComments/comment_list'
 
 class UserPost extends React.Component {
   render() {
     return (
       <div className="user-post">
-        <UserPostBody post={this.props.post} profId={this.props.profId} />
+        <UserPostBodyContainer post={this.props.post} profId={this.props.profId} />
         <div className="user-post-actions">
           <span>
             <i className="fa fa-thumbs-up"> </i>
