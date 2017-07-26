@@ -6,7 +6,8 @@ class CommentListItem extends React.Component {
     super(props)
 
     this.state = {
-      dropdownHidden: true
+      dropdownHidden: true,
+      replyHidden: true
     }
 
     this.toggleDropdown = this.toggleDropdown.bind(this)
@@ -17,6 +18,14 @@ class CommentListItem extends React.Component {
       this.setState({dropdownHidden: false})
     } else {
       this.setState({dropdownHidden: true})
+    }
+  }
+
+  toggleReplay() {
+    if (this.state.replyHidden) {
+      this.setState({replyHidden: false})
+    } else {
+      this.setState({replyHidden: true})
     }
   }
 
@@ -68,7 +77,7 @@ class CommentListItem extends React.Component {
               </div>
               <div className="comment-actions">
                 <p> Like </p>
-                <p> Reply </p>
+                <p onClick={this.toggleReply}> Reply </p>
                 {commentEdited}
               </div>
             </div>

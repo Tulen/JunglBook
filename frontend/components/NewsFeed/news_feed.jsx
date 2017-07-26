@@ -4,6 +4,7 @@ import PostCreate from '../PostCreate/post_create'
 import NewsFeedListContainer from './news_feed_list_container'
 
 class NewsFeed extends React.Component {
+
   render() {
      return(
        <div>

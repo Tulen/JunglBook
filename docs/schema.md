@@ -50,3 +50,4 @@ column name | data type | details
 id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users), indexed
 img_url     | text      | not null
+is_profile  | boolean   | not null

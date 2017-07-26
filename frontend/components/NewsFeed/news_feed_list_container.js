@@ -9,6 +9,7 @@ const mapStateToProps = ( { session, bios, posts } ) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  fetchUserBio: (id) => dispatch(fetchUserBio(id)),
   fetchUserPosts: (id) => dispatch(fetchUserPosts(id))
 })
 

@@ -5,6 +5,7 @@ import values from 'lodash/values'
 class NewsFeedList extends React.Component {
 
   componentDidMount() {
+    this.props.fetchUserBio(this.props.session.currentUser.id)
     this.props.fetchUserPosts(this.props.session.currentUser.id )
   }
 

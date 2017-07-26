@@ -16,7 +16,6 @@ class CommentForm extends React.Component {
 
   handleKeyPress(e) {
     if (e.key == 'Enter') {
-      console.log('a')
       let newComment = {
         body: this.state.body,
         author_id: this.props.session.currentUser.id,
@@ -30,7 +29,7 @@ class CommentForm extends React.Component {
     return (
       <div className="comment-form">
         <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
-        <input value={this.state.body} onKeyPress={this.handleKeyPress} onChange={this.update('body')}  type="text" placeholder="Write a comment..."/>
+        <input ref={this.props.inputRef} value={this.state.body} onKeyPress={this.handleKeyPress} onChange={this.update('body')}  type="text" placeholder="Write a comment..."/>
       </div>
     )
   }

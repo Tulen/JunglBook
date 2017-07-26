@@ -17,7 +17,7 @@ class CommentList extends React.Component {
     return (
       <div className="comment-list-container">
         { postComments }
-        <CommentFormContainer postId={this.props.postId} />
+        <CommentFormContainer inputRef={this.props.inputRef} postId={this.props.postId} />
       </div>
     )
   }

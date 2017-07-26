@@ -58,6 +58,10 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Comment
 
+  has_many :photos,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: :Photo
 
 
   def self.find_by_credentials(email, password)
