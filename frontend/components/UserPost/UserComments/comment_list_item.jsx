@@ -9,6 +9,7 @@ class CommentListItem extends React.Component {
     function timeSince(date) {
       let seconds = Math.floor((new Date() - date) / 1000);
       let interval = Math.floor(seconds / 31536000);
+
       if (interval > 1) {
         return interval + " years";
       }
@@ -32,6 +33,7 @@ class CommentListItem extends React.Component {
     }
 
     if (this.props.comment.post_id === this.props.postId) {
+      console.log(new Date(this.props.comment.created_at));
       return (
         <div className="comment-list-item">
           <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg"/>
@@ -42,7 +44,7 @@ class CommentListItem extends React.Component {
             <div className="comment-actions">
               <p> Like </p>
               <p> Reply </p>
-              <p> -  {timeSince(new Date(this.props.comment.post_date))} </p>
+              <p> -  {timeSince(new Date(this.props.comment.created_at))} </p>
             </div>
           </div>
         </div>

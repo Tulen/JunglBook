@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentForm from './comment_form'
+import CommentFormContainer from './comment_form_container'
 import CommentListItem from './comment_list_item'
 import values from 'lodash/values'
 
@@ -17,7 +17,7 @@ class CommentList extends React.Component {
     return (
       <div className="comment-list-container">
         { postComments }
-        <CommentForm />
+        <CommentFormContainer postId={this.props.postId} />
       </div>
     )
   }
