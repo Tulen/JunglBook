@@ -1,6 +1,7 @@
 import React from 'react'
 import PhotoWidgetItem from './photo_widget_item'
 import { Link } from 'react-router-dom'
+import values from 'lodash/values'
 
 class PhotoWidget extends React.Component {
   constructor(props) {
@@ -8,6 +9,12 @@ class PhotoWidget extends React.Component {
   }
 
   render() {
+    let photosListArr = values(this.props.photos)
+
+    let photosList = photosListArr.map((photo) => {
+      return( <li key={photo.id}>  <PhotoWidgetItem photoImg={photo.img_url} /></li>)
+    })
+  
     return (
       <div className="prof-subcomponent"  id="photo-widget">
         <div className="prof-subcomponent-header">
@@ -18,10 +25,7 @@ class PhotoWidget extends React.Component {
         </div>
         <div className="widget-grid">
           <ul>
-            <li> <PhotoWidgetItem /> </li>
-            <li> <PhotoWidgetItem /> </li>
-            <li> <PhotoWidgetItem /> </li>
-
+            { photosList }
           </ul>
 
         </div>

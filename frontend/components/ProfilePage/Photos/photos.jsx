@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotosGrid from './photos_grid'
+import PhotosGridContainer from './photos_grid_container'
 
 class Photos extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Photos extends React.Component {
             <h4> Photos </h4>
           </div>
         </div>
-        <PhotosGrid />
+        <PhotosGridContainer />
       </div>
 
     )

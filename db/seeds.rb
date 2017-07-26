@@ -27,3 +27,9 @@
 # r2 = Response.create!(
 #   respondent_id: u2.id, answer_choice_id: ac4.id
 #   )
+
+
+# LION PHOTOS
+# https://s-media-cache-ak0.pinimg.com/736x/4a/d5/91/4ad591f799ebffc4b410579f1f1acb44--beautiful-creatures-big-cats.jpg
+# https://images-na.ssl-images-amazon.com/images/I/51h1N%2BEw%2BoL._SL500_AC_SS350_.jpg
+# http://www.awf.org/sites/default/files/media/gallery/wildlife/Lion/lion_Theodore_mattis.jpg?itok=lAT56K6j

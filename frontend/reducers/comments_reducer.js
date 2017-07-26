@@ -8,7 +8,6 @@ const defaultState = {
 const CommentsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state)
-  console.log("ACTION", action)
   switch (action.type) {
     case RECEIVE_COMMENT:
       newState[`${action.comment.id}`] = action.comment

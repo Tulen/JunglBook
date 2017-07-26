@@ -13,7 +13,6 @@
 #photos-grid ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-content: space-around;
   margin: 0 3px;
 }
@@ -22,7 +21,7 @@
   border: 1px solid #D3D6DB;
   width: 206px;
   height: 206px;
-  margin-bottom: 3px;
+  margin: 5px;
 }
 
 .photos-grid-item-container img {
