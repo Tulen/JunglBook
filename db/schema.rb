@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726205051) do
+ActiveRecord::Schema.define(version: 20170726224846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20170726205051) do
     t.boolean "is_profile", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_cover", default: false, null: false
+    t.index ["owner_id"], name: "index_photos_on_owner_id"
   end
 
   create_table "posts", force: :cascade do |t|

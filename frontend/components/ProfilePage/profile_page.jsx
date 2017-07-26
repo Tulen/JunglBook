@@ -20,7 +20,8 @@ class ProfilePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserBio(this.state.currentProfId)
+    this.props.fetchUserBio(this.state.currentProfId),
+    this.props.fetchUserPhotos(this.state.currentProfId)
 
   }
 

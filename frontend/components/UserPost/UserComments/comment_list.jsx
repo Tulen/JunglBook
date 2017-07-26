@@ -9,7 +9,7 @@ class CommentList extends React.Component {
   }
 
   render() {
-    let postComments = values(this.props.comments).reverse()
+    let postComments = values(this.props.comments)
     .map(comment => {
       return <CommentListItem userId={this.props.session.currentUser.id} comment={comment} postId={this.props.postId} />
     })
