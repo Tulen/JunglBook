@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar_container'
 import PostCreate from '../PostCreate/post_create'
-import NewsFeedList from './news_feed_list'
+import NewsFeedListContainer from './news_feed_list_container'
 
 class NewsFeed extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class NewsFeed extends React.Component {
          <NavBarContainer />
            <div id="news-feed">
             <PostCreate />
-            <NewsFeedList />
+            <NewsFeedListContainer />
            </div>
        </div>
 
