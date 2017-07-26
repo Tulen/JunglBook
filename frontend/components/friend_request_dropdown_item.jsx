@@ -1,5 +1,6 @@
 import React from 'react'
 import merge from 'lodash/merge'
+import { Link } from 'react-router-dom'
 
 class FriendRequestDropdownItem extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class FriendRequestDropdownItem extends React.Component {
           <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
         </div>
         <div>
-          <p> {this.props.senderFirst} {this.props.senderLast} </p>
+          <Link to={`/user/${this.props.request.sender_id}`}> <p> {this.props.senderFirst} {this.props.senderLast} </p> </Link>
         </div>
         <div>
           <button onClick={this.handleConfirm}> Confirm </button>

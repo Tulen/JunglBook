@@ -41,7 +41,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
 post_id     | integer   | not null, foreign key (references users), indexed
-parent_id   | integer   | not null, foreign key (references users), indexed
+parent_id   | integer   | foreign key (references users), indexed
 body        | text      | not null
 
 ## Photos

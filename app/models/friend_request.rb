@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: friend_requests
+#
+#  id           :integer          not null, primary key
+#  sender_id    :integer          not null
+#  recipient_id :integer          not null
+#  status       :string           default("PENDING"), not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class FriendRequest < ApplicationRecord
   validates :sender, :recipient, null: false
 
