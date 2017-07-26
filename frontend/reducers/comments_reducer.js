@@ -8,12 +8,13 @@ const defaultState = {
 const CommentsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state)
+  console.log("ACTION", action)
   switch (action.type) {
     case RECEIVE_COMMENT:
       newState[`${action.comment.id}`] = action.comment
       return newState
     case RECEIVE_POST_COMMENTS:
-      return action.comments
+      return merge(newState, action.comments)
     case RECEIVE_COMMENT_ID:
       delete newState[`${action.id.id}`]
       return newState

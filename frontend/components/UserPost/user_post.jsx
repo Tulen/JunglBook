@@ -1,6 +1,6 @@
 import React from 'react'
 import UserPostBodyContainer from './user_post_body_container'
-import CommentList from './UserComments/comment_list'
+import CommentListContainer from './UserComments/comment_list_container'
 
 class UserPost extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class UserPost extends React.Component {
             <p> Share </p>
           </span>
         </div>
-        <CommentList />
+        <CommentListContainer postId={this.props.post.id}/>
       </div>
     )
   }
