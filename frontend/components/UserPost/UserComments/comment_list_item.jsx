@@ -49,8 +49,15 @@ class CommentListItem extends React.Component {
       return Math.floor(seconds) + " seconds";
     }
 
+    let commentEdited
+
+    if (this.props.comment.edited) {
+      commentEdited = <p> - {timeSince(new Date(this.props.comment.updated_at))} (Edited) </p>
+    } else {
+      commentEdited = <p> - {timeSince(new Date(this.props.comment.created_at))} </p>
+    }
+
     if (this.props.comment.post_id === this.props.postId) {
-      console.log(new Date(this.props.comment.created_at));
       return (
         <div className="comment-list-item">
           <div className="pbh-left-group">
@@ -62,7 +69,7 @@ class CommentListItem extends React.Component {
               <div className="comment-actions">
                 <p> Like </p>
                 <p> Reply </p>
-                <p> -  {timeSince(new Date(this.props.comment.created_at))} </p>
+                {commentEdited}
               </div>
             </div>
           </div>
