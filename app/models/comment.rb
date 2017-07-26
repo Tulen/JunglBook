@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  validates :author, :parent, :post, :body, presence: true
+  validates :author, :post, :body, presence: true
 
   belongs_to :author,
     primary_key: :id,

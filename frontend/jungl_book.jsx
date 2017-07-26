@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserPosts = fetchUserPosts
   window.deleteUserPost = deleteUserPost
   window.editUserPost = editUserPost
+  window.createComment = COMMENTAPIUTIL.createComment
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);
