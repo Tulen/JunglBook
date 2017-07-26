@@ -1,7 +1,24 @@
 import React from 'react'
+import CommentListDropdownContainer from './comment_list_dropdown_container'
 
 class CommentListItem extends React.Component {
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      dropdownHidden: true
+    }
+
+    this.toggleDropdown = this.toggleDropdown.bind(this)
+  }
+
+  toggleDropdown() {
+    if (this.state.dropdownHidden) {
+      this.setState({dropdownHidden: false})
+    } else {
+      this.setState({dropdownHidden: true})
+    }
+  }
 
   render() {
 
@@ -36,16 +53,23 @@ class CommentListItem extends React.Component {
       console.log(new Date(this.props.comment.created_at));
       return (
         <div className="comment-list-item">
-          <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg"/>
-          <div className="comment-body-container">
-            <div className="comment-body">
-              <span className="comment-username"> {this.props.comment.author_fname + " " + this.props.comment.author_lname} </span> {this.props.comment.body}
+          <div className="pbh-left-group">
+            <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg"/>
+            <div className="comment-body-container">
+              <div className="comment-body">
+                <span className="comment-username"> {this.props.comment.author_fname + " " + this.props.comment.author_lname} </span> {this.props.comment.body}
+              </div>
+              <div className="comment-actions">
+                <p> Like </p>
+                <p> Reply </p>
+                <p> -  {timeSince(new Date(this.props.comment.created_at))} </p>
+              </div>
             </div>
-            <div className="comment-actions">
-              <p> Like </p>
-              <p> Reply </p>
-              <p> -  {timeSince(new Date(this.props.comment.created_at))} </p>
-            </div>
+          </div>
+
+          <div className="pbh-icons comment-body-icon">
+            <i className="fa fa-ellipsis-h" onClick={this.toggleDropdown}> </i>
+            <CommentListDropdownContainer comment={this.props.comment} dropdownHidden={this.state.dropdownHidden}/>
           </div>
         </div>
         )
