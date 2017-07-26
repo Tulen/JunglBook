@@ -74,7 +74,7 @@ class CommentListItem extends React.Component {
             </div>
           </div>
 
-          <div className="pbh-icons comment-body-icon">
+          <div className={`pbh-icons comment-body-icon display-${this.props.comment.author_id === this.props.userId}`}>
             <i className="fa fa-ellipsis-h" onClick={this.toggleDropdown}> </i>
             <CommentListDropdownContainer comment={this.props.comment} dropdownHidden={this.state.dropdownHidden}/>
           </div>
