@@ -12,7 +12,6 @@ class UserWall extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("WILLRECEIEVE", this.props, nextProps)
     if (this.props.bios.id != nextProps.bios.id) {
       this.props.fetchUserPosts(nextProps.bios.id)
     }

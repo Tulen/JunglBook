@@ -7,7 +7,6 @@ const defaultState = {
 
 const PostsReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  console.log("POSTREDUCER", action)
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_USER_POST:

@@ -87,3 +87,7 @@ img {
 .display-false {
   display: none;
 }
+
+.filler-div {
+  height: 15px;
+}

@@ -3,7 +3,7 @@ import IntroWidget from './intro_widget'
 import PhotoWidget from './photo_widget'
 import FriendWidgetContainer from './friend_widget_container'
 import UserWallContainer from './user_wall_container'
-import PostCreate from '../../PostCreate/post_create'
+import PostCreateContainer from '../../PostCreate/post_create_container'
 
 class Timeline extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Timeline extends React.Component {
          <FriendWidgetContainer profId={this.state.currentProfId} />
         </div>
         <div id="feed-right">
-         <PostCreate />
+         <PostCreateContainer />
          <UserWallContainer profId={this.state.currentProfId} />
         </div>
       </div>

@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import PostCreate from './post_create';
 
-const mapStateToProps = ( { session, bios } ) => ({
+const mapStateToProps = ( { session, bios, friends } ) => ({
   session,
-  bios
+  bios,
+  friends
 })
 
 export default connect(

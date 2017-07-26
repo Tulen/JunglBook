@@ -3,7 +3,6 @@ import { ACCEPT_USER_REQUEST, DELETE_USER_REQUEST } from '../actions/friend_requ
 import merge from 'lodash/merge'
 
 const defaultState = {
-  friends: {}
 }
 
 const FriendsReducer = (state = defaultState, action) => {

@@ -26,7 +26,6 @@ class PostCreateBody extends React.Component {
   }
 
   render() {
-    console.log(this.state.body)
     return (
       <div>
         <div className="new-post-form">
