@@ -9,7 +9,7 @@ class NewsFeed extends React.Component {
        <div>
          <NavBarContainer />
            <div id="news-feed">
-            <PostCreate />
+            <PostCreate display="true"/>
             <NewsFeedListContainer />
            </div>
        </div>

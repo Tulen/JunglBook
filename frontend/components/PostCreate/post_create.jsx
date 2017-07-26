@@ -5,10 +5,6 @@ import values from 'lodash/values'
 
 class PostCreate extends React.Component {
 
-  componentWillReceiveProps() {
-
-  }
-
   render() {
 
     let displayPostCreate = false
@@ -18,9 +14,7 @@ class PostCreate extends React.Component {
       return friend["sender_id"] === this.props.bios.id || friend["recipient_id"] === this.props.bios.id
     })
 
-    console.log("FRIEND ARRAY", friendArr)
-
-    if (friendArr.length < 1) {
+    if (friendArr.length < 1 && this.props.display !== "true") {
       return <div className="filler-div"> </div>
     } else {
       return (
