@@ -10,6 +10,7 @@ import * as COMMENTAPIUTIL from './util/comments_api_util'
 import { fetchUserBio, updateUserBio } from './actions/bios_actions'
 import { fetchUserRequests, removeUserRequest, sendUserRequest } from './actions/friend_requests_actions'
 import { createUserPost, fetchUserPosts, deleteUserPost, editUserPost } from './actions/posts_actions'
+import { createComment, fetchPostComments, editComment, deleteComment } from './actions/comments_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -40,7 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserPosts = fetchUserPosts
   window.deleteUserPost = deleteUserPost
   window.editUserPost = editUserPost
-  window.createComment = COMMENTAPIUTIL.createComment
+  window.createComment = createComment
+  window.fetchPostComments = fetchPostComments
+  window.editComment = editComment
+  window.deleteComment = deleteComment
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);

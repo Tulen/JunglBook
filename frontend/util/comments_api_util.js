@@ -13,3 +13,18 @@ export const fetchPostComments = id => {
     data: {id}
   })
 }
+
+export const deleteComment = id => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/comments/${id}`
+  })
+}
+
+export const editComment = (id, comment) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/comments/${id}`,
+    data: { comment }
+  })
+}
