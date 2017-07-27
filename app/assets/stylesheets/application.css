@@ -91,3 +91,7 @@ img {
 .filler-div {
   height: 15px;
 }
+
+input, button {
+  outline-style: none;
+}
