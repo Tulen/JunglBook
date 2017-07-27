@@ -14,7 +14,7 @@ class PostCreate extends React.Component {
       return friend["sender_id"] === this.props.session.currentUser.id || friend["recipient_id"] === this.props.session.currentUser.id
     })
 
-    if (this.props.display ==="true" || this.props.bios.id == this.props.session.currentUser.id ) {
+    if (this.props.display === "true" || this.props.bios.id == this.props.session.currentUser.id ) {
 
       return (
         <div className={`prof-subcomponent post-create`}>

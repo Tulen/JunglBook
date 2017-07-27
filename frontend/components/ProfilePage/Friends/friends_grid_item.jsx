@@ -6,7 +6,13 @@ class FriendsGridItem extends React.Component {
   }
 
   render() {
-    console.log("THISPROPS", this.props)
+    let profilePhoto
+    if (this.props.friendProfile !== null){
+      profilePhoto = `${this.props.friendProfile}`
+    } else {
+      profilePhoto = 'https://s-media-cache-ak0.pinimg.com/736x/b1/df/a5/b1dfa5e1f8fc944f9d5f0ff8d715533c--silhouette-studio-silhouette-portrait.jpg'
+    }
+
     let displayName
     if (this.props.displayId === this.props.friend.sender_id) {
       displayName = this.props.friend.sender_fname + ' ' + this.props.friend.sender_lname
@@ -16,7 +22,7 @@ class FriendsGridItem extends React.Component {
     return (
       <div className="friends-grid-item-container">
         <div className="friends-grid-photo-container">
-          <img src={`${this.props.friendProfile}`} />
+          <img src={profilePhoto} />
         </div>
         <div className="friends-grid-content">
           <p> {displayName} </p>
