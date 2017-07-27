@@ -30,7 +30,7 @@ class PhotosShow extends React.Component {
           <div className="photos-show-left">
             <img className="photos-show-img" src={`${this.props.showImg}`} />
           </div>
-          <div className="photos-show-right">
+          <div className={`photos-show-right display-${this.props.session.currentUser.id == this.props.bios.id}`}>
             <div onClick={this.handleProfile}>
               <h3>
                 Set as profile picture
