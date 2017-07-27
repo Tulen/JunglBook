@@ -38,10 +38,29 @@
 
 .photos-show-left {
   flex: 3;
-  background-color: black;
 }
 
 .photos-show-right {
   flex: 1;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.photos-show-right div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.photos-show-right div:hover {
+  background-color: #D7E3C9;
+  font-weight: bold;
+}
+
+.photos-show-img {
+  height: 100%;
+  width: 100%;
 }

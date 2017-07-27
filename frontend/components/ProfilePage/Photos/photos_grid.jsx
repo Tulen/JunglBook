@@ -2,23 +2,29 @@ import React from 'react'
 import PhotosGridItem from './photos_grid_item'
 import values from 'lodash/values'
 import Modal from 'react-modal'
-import PhotosShow from './photos_show'
+import PhotosShowContainer from './photos_show_container'
 
 class PhotosGrid extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      modalImg: ''
     }
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
+  }
+
+  handleModal(modalImg) {
+    this.setState({modalImg});
+    this.openModal();
   }
 
   afterOpenModal() {
@@ -32,15 +38,11 @@ class PhotosGrid extends React.Component {
     this.props.fetchUserPhotos(this.props.bios.id)
   }
 
-  handleClick() {
-    console.log(show)
-  }
-
   render() {
     let photosListArr = values(this.props.photos)
 
     let photosList = photosListArr.map((photo) => {
-      return( <li key={photo.id} onClick={this.openModal}>  <PhotosGridItem photoImg={photo.img_url} /></li>)
+      return(<PhotosGridItem key={photo.id} handleModal={e => this.handleModal(e)} photoImg={photo.img_url} />)
     })
 
     return (
@@ -61,7 +63,7 @@ class PhotosGrid extends React.Component {
            onRequestClose={this.closeModal}
            contentLabel="Bio Form Modal"
          >
-          <PhotosShow closeModal={this.closeModal}/>
+          <PhotosShowContainer showImg={this.state.modalImg} closeModal={this.closeModal}/>
 
          </Modal>
         <ul>

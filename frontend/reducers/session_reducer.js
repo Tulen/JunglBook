@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/session_actions'
+import { RECEIVE_USER_BIO } from '../actions/bios_actions'
 import merge from 'lodash/merge'
 
 const defaultState = {
@@ -8,7 +9,16 @@ const defaultState = {
 
 const SessionReducer = (state = defaultState, action) => {
   Object.freeze(state);
+  console.log("BIBOIBOBIOBIBOI", action)
   switch (action.type) {
+    case RECEIVE_USER_BIO:
+      if (action.bio.profile_url) {
+        return merge({}, state, {currentUser: {profile_url: action.bio.profile_url}});
+      } else if (action.bio.cover_url) {
+        return merge({}, state, {currentUser: {cover_url: action.bio.cover_url}});
+      } else {
+        return state
+      }
     case RECEIVE_CURRENT_USER:
       return merge({}, state, {currentUser: action.currentUser})
     case RECEIVE_ERRORS:

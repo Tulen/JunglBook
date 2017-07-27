@@ -13,7 +13,9 @@ let defaultState = {
   hometown: '',
   relationship: '',
   nickname: '',
-  favorite_quote: ''
+  favorite_quote: '',
+  profile_url: '',
+  cover_url: ''
 }
 
 const BiosReducer = (state = defaultState, action) => {

@@ -24,6 +24,6 @@ class Api::BiosController < ApplicationController
   private
 
   def bios_params
-    params.require(:user).permit(:work, :education, :current_city, :hometown, :relationship, :nickname, :favorite_quote)
+    params.require(:user).permit(:work, :education, :current_city, :hometown, :relationship, :nickname, :favorite_quote, :profile_url, :cover_url)
   end
 end
