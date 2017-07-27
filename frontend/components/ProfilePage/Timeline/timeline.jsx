@@ -15,6 +15,7 @@ class Timeline extends React.Component {
     };
   }
 
+
   render() {
     return (
       <div id="feed-body">

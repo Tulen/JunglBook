@@ -6,6 +6,27 @@ import values from 'lodash/values'
 class PhotoWidget extends React.Component {
   constructor(props) {
     super(props)
+    let idReg = /\d+/g;
+    let currentProfId = this.props.location.pathname.match( idReg )[0];
+    this.state = {
+      currentProfId: currentProfId
+    }
+  }
+
+  componentDidMount() {
+    let idReg = /\d+/g;
+    let currentProfId = this.props.location.pathname.match( idReg )[0];
+    this.props.fetchUserPhotos(currentProfId)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    let idReg = /\d+/g;
+    let currentProfId = nextProps.location.pathname.match( idReg )[0];
+    // console.log("ID COMPARE", this.state.currentProfId, currentProfId)
+    if (this.state.currentProfId !== currentProfId) {
+      this.setState({currentProfId})
+      this.props.fetchUserPhotos(currentProfId)
+    }
   }
 
   render() {
@@ -14,7 +35,7 @@ class PhotoWidget extends React.Component {
     let photosList = photosListArr.map((photo) => {
       return( <li key={photo.id}>  <PhotoWidgetItem photoImg={photo.img_url} /></li>)
     })
-  
+
     return (
       <div className="prof-subcomponent"  id="photo-widget">
         <div className="prof-subcomponent-header">

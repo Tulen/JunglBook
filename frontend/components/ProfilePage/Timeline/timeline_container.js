@@ -6,6 +6,10 @@ const mapStateToProps = ( {bios, session} ) => ({
   session
 })
 
+const mapDispatchToProps = dispatch => ({
+  fetchUserPhotos: id => dispatch(fetchUserPhotos(id))
+})
+
 export default connect(
-  mapStateToProps
+  mapStateToProps, mapDispatchToProps
 )(Timeline);

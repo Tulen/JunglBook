@@ -7,6 +7,10 @@ class PhotosGrid extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchUserPhotos(this.props.bios.id)
+  }
+
   render() {
     let photosListArr = values(this.props.photos)
 
