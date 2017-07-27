@@ -66,11 +66,18 @@ class CommentListItem extends React.Component {
       commentEdited = <p> - {timeSince(new Date(this.props.comment.created_at))} </p>
     }
 
+    let profilePhoto
+    if (this.props.comment.author_profile){
+      profilePhoto = `${this.props.comment.author_profile}`
+    } else {
+      profilePhoto = 'https://s-media-cache-ak0.pinimg.com/736x/b1/df/a5/b1dfa5e1f8fc944f9d5f0ff8d715533c--silhouette-studio-silhouette-portrait.jpg'
+    }
+
     if (this.props.comment.post_id === this.props.postId) {
       return (
         <div className="comment-list-item">
           <div className="pbh-left-group">
-            <img className="comment-pic" src={`${this.props.comment.author_profile}`}/>
+            <img className="comment-pic" src={profilePhoto}/>
             <div className="comment-body-container">
               <div className="comment-body">
                 <span className="comment-username"> {this.props.comment.author_fname + " " + this.props.comment.author_lname} </span> {this.props.comment.body}

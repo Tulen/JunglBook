@@ -49,11 +49,18 @@ class UserPostBody extends React.Component {
       postEdited = <p> {this.props.post.post_date} </p>
     }
 
+    let profilePhoto
+    if (this.props.post.author_profile){
+      profilePhoto = `${this.props.post.author_profile}`
+    } else {
+      profilePhoto = 'https://s-media-cache-ak0.pinimg.com/736x/b1/df/a5/b1dfa5e1f8fc944f9d5f0ff8d715533c--silhouette-studio-silhouette-portrait.jpg'
+    }
+
     return (
       <div className="post-body-container">
         <div className="post-body-heading">
           <div className="pbh-left-group">
-            <img className="post-body-pic" src={`${this.props.post.author_profile}`}/>
+            <img className="post-body-pic" src={profilePhoto}/>
             <div className="pbh-text">
               {postNameDisplay}
               <div className="pbh-text-date">

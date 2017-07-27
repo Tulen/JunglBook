@@ -26,10 +26,17 @@ class PostCreateBody extends React.Component {
   }
 
   render() {
+    let profilePhoto
+    if (this.props.session.currentUser.profile_url){
+      profilePhoto = `${this.props.session.currentUser.profile_url}`
+    } else {
+      profilePhoto = 'https://s-media-cache-ak0.pinimg.com/736x/b1/df/a5/b1dfa5e1f8fc944f9d5f0ff8d715533c--silhouette-studio-silhouette-portrait.jpg'
+    }
+
     return (
       <div>
         <div className="new-post-form">
-          <img className="post-create-photo" src={`${this.props.session.currentUser.profile_url}`}/>
+          <img className="post-create-photo" src={profilePhoto}/>
           <input value={this.state.body} onChange={this.update('body')} type="text" placeholder="What's On Your Mind?"/>
         </div>
         <div className="new-post-footer">

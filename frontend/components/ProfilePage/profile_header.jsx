@@ -99,6 +99,14 @@ class ProfileHeader extends React.Component {
       coverPhoto = 'black'
     }
 
+    let profilePhoto
+    if (this.props.bios.profile_url){
+      profilePhoto = `${this.props.bios.profile_url}`
+    } else {
+      profilePhoto = 'https://s-media-cache-ak0.pinimg.com/736x/b1/df/a5/b1dfa5e1f8fc944f9d5f0ff8d715533c--silhouette-studio-silhouette-portrait.jpg'
+    }
+
+
     console.log("COVERPHOTO", coverPhoto)
 
     return (
@@ -113,7 +121,7 @@ class ProfileHeader extends React.Component {
               <i className="fa fa-camera"> </i>
               <Link to={`/user/${this.props.pageId}/photos`}> <p> Update Profile Picture </p> </Link>
             </div>
-            <img src={`${this.props.bios.profile_url}`} />
+            <img src={profilePhoto} />
           </div>
           <div>
             <h2 id="prof-name"> {this.props.bios.fname} {this.props.bios.lname} </h2>
