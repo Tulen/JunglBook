@@ -28,3 +28,20 @@
   height: 100%;
   width: 100%;
 }
+
+.photos-show {
+  width: 100%;
+  min-height: 495px;
+  max-height: 801px;
+  display: flex;
+}
+
+.photos-show-left {
+  flex: 3;
+  background-color: black;
+}
+
+.photos-show-right {
+  flex: 1;
+  background-color: red;
+}
