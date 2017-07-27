@@ -11,8 +11,18 @@ class PostCreate extends React.Component {
     let friendArr = values(this.props.friends)
 
     friendArr = friendArr.filter((friend) => {
-      return friend["sender_id"] === this.props.bios.id || friend["recipient_id"] === this.props.bios.id
+      return friend["sender_id"] === this.props.session.currentUser.id || friend["recipient_id"] === this.props.session.currentUser.id
     })
+
+    if (this.props.display ==="true" || this.props.bios.id == this.props.session.currentUser.id ) {
+
+      return (
+        <div className={`prof-subcomponent post-create`}>
+          <PostCreateNav />
+          <PostCreateBodyContainer />
+        </div>
+      )
+    }
 
     if (friendArr.length < 1 && this.props.display !== "true") {
       return <div className="filler-div"> </div>
