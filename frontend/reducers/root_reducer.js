@@ -6,6 +6,7 @@ import FriendsReducer from './friends_reducer';
 import PostsReducer from './posts_reducer';
 import CommentsReducer from './comments_reducer';
 import PhotosReducer from './photos_reducer';
+import ProfilePhotosReducer from './profile_photos_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ const RootReducer = combineReducers({
   friends: FriendsReducer,
   posts: PostsReducer,
   comments: CommentsReducer,
-  photos: PhotosReducer
+  photos: PhotosReducer,
+  profilePhotos: ProfilePhotosReducer
 })
 
 export default RootReducer

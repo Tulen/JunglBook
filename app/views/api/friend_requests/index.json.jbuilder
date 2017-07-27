@@ -6,6 +6,7 @@
     json.status request.status
     json.sender_fname request.sender.fname
     json.sender_lname request.sender.lname
+    json.sender_profile request.sender.profile_url
   end
 
 end

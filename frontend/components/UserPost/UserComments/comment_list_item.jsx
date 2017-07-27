@@ -70,7 +70,7 @@ class CommentListItem extends React.Component {
       return (
         <div className="comment-list-item">
           <div className="pbh-left-group">
-            <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg"/>
+            <img className="comment-pic" src={`${this.props.comment.author_profile}`}/>
             <div className="comment-body-container">
               <div className="comment-body">
                 <span className="comment-username"> {this.props.comment.author_fname + " " + this.props.comment.author_lname} </span> {this.props.comment.body}

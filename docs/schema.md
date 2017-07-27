@@ -18,6 +18,8 @@ hometown        | string    |
 relationship    | string    |
 nickname        | string    |
 favorite_quote  | string    |
+profile_url     | text      |
+cover_url       | text      |
 
 
 ## FriendRequests

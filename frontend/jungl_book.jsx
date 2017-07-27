@@ -8,11 +8,13 @@ import * as FRIENDAPIUTIL from './util/friend_requests_api_util'
 import * as POSTAPIUTIL from './util/posts_api_util'
 import * as COMMENTAPIUTIL from './util/comments_api_util'
 import * as PHOTOAPIUTIL from './util/photos_api_util'
+import * as PROFILEPHOTOAPIUTIL from './util/profile_photos_api_util'
 import { fetchUserBio, updateUserBio } from './actions/bios_actions'
 import { fetchUserRequests, removeUserRequest, sendUserRequest } from './actions/friend_requests_actions'
 import { createUserPost, fetchUserPosts, deleteUserPost, editUserPost } from './actions/posts_actions'
 import { createComment, fetchPostComments, editComment, deleteComment } from './actions/comments_actions'
 import { uploadPhoto, fetchUserPhotos, changeProfilePic, deletePhoto } from './actions/photos_actions'
+import { fetchProfilePic } from './actions/profile_photos_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.editComment = editComment
   window.deleteComment = deleteComment
   window.fetchUserPhotos = fetchUserPhotos
+  window.fetchProfilePic = fetchProfilePic
   // TESTING END
 
   ReactDOM.render(<Root store={store} />, root);

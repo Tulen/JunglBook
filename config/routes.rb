@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/api/profile_photos/profile', to: 'api/profile_photos#profile', defaults: {format: :json}
   get '/api/profile_photos/cover', to: 'api/profile_photos#cover', defaults: {format: :json}
+  get '/api/profile_photos/profile/update', to: 'api/profile_photos#profile_update', defaults: {format: :json}
+  get '/api/profile_photos/cover/update', to: 'api/profile_photos#cover_update', defaults: {format: :json}
 
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :destroy]

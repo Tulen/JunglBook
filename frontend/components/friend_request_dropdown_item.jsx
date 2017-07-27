@@ -27,7 +27,7 @@ class FriendRequestDropdownItem extends React.Component {
     return (
       <div className="fr-dropdown-item">
         <div>
-          <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+          <img src={`${this.props.request.sender_profile}`} />
         </div>
         <div>
           <Link to={`/user/${this.props.request.sender_id}`}> <p> {this.props.senderFirst} {this.props.senderLast} </p> </Link>

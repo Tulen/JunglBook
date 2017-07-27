@@ -27,15 +27,18 @@ class FriendWidget extends React.Component {
 
     let friendsList = friendsListArr.map((friend) => {
       let pathId
+      let friendProfile
       if (friend.sender_id === this.props.bios.id) {
         pathId = friend.recipient_id
+        friendProfile = friend.recipient_profile
       } else {
         pathId = friend.sender_id
+        friendProfile = friend.sender_profile
       }
       if (pathId === undefined) {
         return <h4> </h4>
       }
-      return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendWidgetItem friend={friend}/> </Link></li>)
+      return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendWidgetItem friendProfile={friendProfile}/> </Link></li>)
     })
 
     return (

@@ -52,7 +52,7 @@ class NavBar extends React.Component {
               <Link to={`/user/${linkTo}`}>
                 <div>
                   <div className="img-container img-container-xs">
-                    <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+                    <img src={`${this.props.session.currentUser.profile_url}`} />
                   </div>
 
                   <p> {this.props.session.currentUser.fname} </p>

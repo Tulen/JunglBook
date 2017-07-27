@@ -20,11 +20,3 @@ export const deletePhoto = id => {
     url: `api/photos/${id}`
   })
 }
-
-export const changeProfilePic = (id, photo) => {
-  return $.ajax({
-    method: "PATCH",
-    url: `api/photos/${id}`,
-    data: { photo }
-  })
-}

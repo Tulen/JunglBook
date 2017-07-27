@@ -29,7 +29,7 @@ class PostCreateBody extends React.Component {
     return (
       <div>
         <div className="new-post-form">
-          <img className="post-create-photo" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg"/>
+          <img className="post-create-photo" src={`${this.props.session.currentUser.profile_url}`}/>
           <input value={this.state.body} onChange={this.update('body')} type="text" placeholder="What's On Your Mind?"/>
         </div>
         <div className="new-post-footer">

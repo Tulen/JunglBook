@@ -53,7 +53,7 @@ class UserPostBody extends React.Component {
       <div className="post-body-container">
         <div className="post-body-heading">
           <div className="pbh-left-group">
-            <img className="post-body-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+            <img className="post-body-pic" src={`${this.props.post.author_profile}`}/>
             <div className="pbh-text">
               {postNameDisplay}
               <div className="pbh-text-date">

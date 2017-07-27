@@ -28,7 +28,7 @@ class CommentForm extends React.Component {
   render() {
     return (
       <div className="comment-form">
-        <img className="comment-pic" src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+        <img className="comment-pic" src={`${this.props.session.currentUser.profile_url}`} />
         <input ref={this.props.inputRef} value={this.state.body} onKeyPress={this.handleKeyPress} onChange={this.update('body')}  type="text" placeholder="Write a comment..."/>
       </div>
     )

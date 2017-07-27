@@ -16,7 +16,7 @@ class FriendsGridItem extends React.Component {
     return (
       <div className="friends-grid-item-container">
         <div className="friends-grid-photo-container">
-          <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+          <img src={`${this.props.friendProfile}`} />
         </div>
         <div className="friends-grid-content">
           <p> {displayName} </p>

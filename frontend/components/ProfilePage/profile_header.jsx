@@ -103,7 +103,7 @@ class ProfileHeader extends React.Component {
               <i className="fa fa-camera"> </i>
               <p> Update Profile Picture </p>
             </div>
-            <img src="https://pbs.twimg.com/media/DBF7FLLVYAAaJDX.jpg" />
+            <img src={`${this.props.bios.profile_url}`} />
           </div>
           <div>
             <h2 id="prof-name"> {this.props.bios.fname} {this.props.bios.lname} </h2>

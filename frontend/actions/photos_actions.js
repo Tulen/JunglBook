@@ -18,13 +18,6 @@ export const deletePhoto = photo => dispatch => (
   )
 )
 
-export const changeProfilePic = (id, photo) => dispatch => (
-  APIUtil.changeProfilePic(id, photo).then(
-      photo => ( dispatch(receiveUserPost(photo))),
-      error => ( dispatch(receiveErrors(error.responseJSON)))
-  )
-)
-
 export const fetchUserPhotos = id => dispatch => (
   APIUtil.fetchUserPhotos(id).then(
       photos => ( dispatch(receiveUserPhotos(photos))),
