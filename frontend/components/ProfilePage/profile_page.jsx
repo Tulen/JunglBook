@@ -4,7 +4,7 @@ import ProfileHeaderContainer from './profile_header_container'
 import TimelineContainer from './Timeline/timeline_container'
 import About from './About/about'
 import Friends from './Friends/friends'
-import Photos from './Photos/photos'
+import PhotosContainer from './Photos/photos_container'
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -45,7 +45,7 @@ class ProfilePage extends React.Component {
            <Switch>
              <Route path="/user/:userId/about" component={About} />
              <Route path="/user/:userId/friends" component={Friends} />
-             <Route path="/user/:userId/photos" component={Photos} />
+             <Route path="/user/:userId/photos" component={PhotosContainer} />
              <Route path="/user/:userId" component={TimelineContainer} />
            </Switch>
 
