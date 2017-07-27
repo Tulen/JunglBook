@@ -9,7 +9,6 @@ const defaultState = {
 
 const SessionReducer = (state = defaultState, action) => {
   Object.freeze(state);
-  console.log("BIBOIBOBIOBIBOI", action)
   switch (action.type) {
     case RECEIVE_USER_PROF_PHOTO:
       if (action.bio.profile_url) {

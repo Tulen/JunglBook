@@ -92,16 +92,26 @@ class ProfileHeader extends React.Component {
       profileButton = <Link to={`/user/${this.props.session.currentUser.id}/about`}><button id="prof-friend-btn"> <i className="fa fa-pencil"></i> Edit Profile </button></Link>
     }
 
+    let coverPhoto
+    if (this.props.bios.cover_url) {
+      coverPhoto = `url(${this.props.bios.cover_url})`
+    } else {
+      coverPhoto = 'black'
+    }
+
+    console.log("COVERPHOTO", coverPhoto)
 
     return (
 
       <div id="prof-header-container">
-        <div id="prof-cvr-photo">
-          <button id={`edit-cvr-photo-${this.props.bios.id === this.props.session.currentUser.id}`}> <i className="fa fa-camera"> </i> Add/Edit Cover Photo</button>
+        <div id="prof-cvr-photo" style={{background: `${coverPhoto}`}}>
+          <button id={`edit-cvr-photo-${this.props.bios.id === this.props.session.currentUser.id}`}> <Link to={`/user/${this.props.pageId}/photos`}>
+            <i className="fa fa-camera"> </i> Add/Edit Cover Photo </Link>
+          </button>
           <div id="prof-pic">
             <div className={`edit-ppic-overlay-${this.props.bios.id === this.props.session.currentUser.id}`}>
               <i className="fa fa-camera"> </i>
-              <p> Update Profile Picture </p>
+              <Link to={`/user/${this.props.pageId}/photos`}> <p> Update Profile Picture </p> </Link>
             </div>
             <img src={`${this.props.bios.profile_url}`} />
           </div>
