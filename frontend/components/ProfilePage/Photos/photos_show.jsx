@@ -13,7 +13,7 @@ class PhotosShow extends React.Component {
     let newProfile = {
       profile_url: this.props.showImg
     }
-    this.props.updateUserBio(this.props.session.currentUser.id, {user: newProfile})
+    this.props.updateUserPhoto(this.props.session.currentUser.id, {user: newProfile})
   }
 
   handleCover(e) {
@@ -21,7 +21,7 @@ class PhotosShow extends React.Component {
     let newCover = {
       cover_url: this.props.showImg
     }
-    this.props.updateUserBio(this.props.session.currentUser.id, {user: newCover})
+    this.props.updateUserPhoto(this.props.session.currentUser.id, {user: newCover})
   }
 
   render() {

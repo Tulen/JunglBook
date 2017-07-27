@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PhotosShow from './photos_show';
-import { updateUserBio } from '../../../actions/bios_actions'
+import { updateUserPhoto } from '../../../actions/bios_actions'
 import {withRouter} from 'react-router'
 
 const mapStateToProps = ( {bios, session, photos} ) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = ( {bios, session, photos} ) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  updateUserBio: (id, bios) => dispatch(updateUserBio(id, bios))
+  updateUserPhoto: (id, bios) => dispatch(updateUserPhoto(id, bios))
 })
 
 export default withRouter(connect(

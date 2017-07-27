@@ -1,4 +1,4 @@
-import { RECEIVE_USER_BIO } from '../actions/bios_actions'
+import { RECEIVE_USER_BIO, RECEIVE_USER_PROF_PHOTO } from '../actions/bios_actions'
 import merge from 'lodash/merge';
 
 let defaultState = {
@@ -22,6 +22,8 @@ const BiosReducer = (state = defaultState, action) => {
   Object.freeze(state)
 
   switch (action.type) {
+    case RECEIVE_USER_PROF_PHOTO:
+      return merge({}, state, {profile_url: action.bio.profile_url})
     case RECEIVE_USER_BIO:
       return Object.assign({}, state, action.bio);
 
