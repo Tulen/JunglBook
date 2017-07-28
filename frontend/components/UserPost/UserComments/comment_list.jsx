@@ -20,7 +20,7 @@ class CommentList extends React.Component {
 
     })
     .map(comment => {
-      return <CommentListItem nested={this.props.nested} userId={this.props.session.currentUser.id} comment={comment} postId={this.props.postId} />
+      return <CommentListItem key={comment.id} nested={this.props.nested} userId={this.props.session.currentUser.id} comment={comment} postId={this.props.postId} />
     })
     if (this.props.nested && this.props.hidden) {
       return <div> </div>

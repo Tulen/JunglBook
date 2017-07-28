@@ -22,7 +22,7 @@ class UserWall extends React.Component {
       return post.wall_id == this.props.bios.id
     })
     .map(post => {
-      return <UserPost post={post} profId={this.props.bios.id} />
+      return <UserPost key={post.id} post={post} profId={this.props.bios.id} />
     })
 
     return (

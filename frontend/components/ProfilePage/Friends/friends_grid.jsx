@@ -30,7 +30,7 @@ class FriendsGrid extends React.Component {
       if (pathId === undefined) {
         return <h2> </h2>
       }
-      return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendsGridItem displayId={pathId} friend={friend} friendProfile={friendProfile}/> </Link></li>)
+      return( <li key={`${(Date.now() * friend.sender_id + Date.now() * friend.recipient_id)}`}> <Link to={`/user/${pathId}`}><FriendsGridItem displayId={pathId} friend={friend} friendProfile={friendProfile}/> </Link></li>)
     })
 
     return (

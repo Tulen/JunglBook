@@ -12,7 +12,7 @@ class NewsFeedList extends React.Component {
   render() {
     let userPosts = values(this.props.posts).reverse()
     .map(post => {
-      return <UserPost post={post} profId={this.props.session.currentUser.id} />
+      return <UserPost key={post.id} post={post} profId={this.props.session.currentUser.id} />
     })
 
     return (

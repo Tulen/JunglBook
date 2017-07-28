@@ -38,7 +38,7 @@ class FriendWidget extends React.Component {
       if (pathId === undefined) {
         return <h4> </h4>
       }
-      return( <li key={friend.id}> <Link to={`/user/${pathId}`}><FriendWidgetItem friendProfile={friendProfile}/> </Link></li>)
+      return( <li key={`${(Date.now() * friend.sender_id + Date.now() * friend.recipient_id)}`}> <Link to={`/user/${pathId}`}><FriendWidgetItem friendProfile={friendProfile}/> </Link></li>)
     })
 
     return (
