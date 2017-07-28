@@ -35,7 +35,7 @@ class UserPostBody extends React.Component {
     if (this.props.post.wall_id == this.props.post.author_id) {
       postNameDisplay =
       <div className="pbh-text-users">
-        <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p>
+        <Link to={`/user/${this.props.post.author_id}`}> <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p> </Link>
       </div>
 
 
@@ -44,7 +44,7 @@ class UserPostBody extends React.Component {
       <div className="pbh-text-users">
         <Link to={`/user/${this.props.post.author_id}`}> <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p> </Link>
           <i className="fa fa-caret-right" > </i>
-        <p> {this.props.post.wall_fname + ' ' + this.props.post.wall_lname} </p>
+        <Link to={`/user/${this.props.post.wall_id}`}> <p> {this.props.post.wall_fname + ' ' + this.props.post.wall_lname} </p> </Link>
       </div>
 
 
@@ -67,7 +67,7 @@ class UserPostBody extends React.Component {
       <div className="post-body-container">
         <div className="post-body-heading">
           <div className="pbh-left-group">
-            <img className="post-body-pic" src={profilePhoto}/>
+            <Link to={`/user/${this.props.post.author_id}`}> <img className="post-body-pic" src={profilePhoto}/> </Link>
             <div className="pbh-text">
               {postNameDisplay}
               <div className="pbh-text-date">

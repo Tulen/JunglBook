@@ -1,5 +1,6 @@
 import React from 'react'
 import CommentListDropdownContainer from './comment_list_dropdown_container'
+import { Link } from 'react-router-dom'
 
 class CommentListItem extends React.Component {
   constructor(props) {
@@ -84,10 +85,10 @@ class CommentListItem extends React.Component {
       return (
         <div className="comment-list-item">
           <div className="pbh-left-group">
-            <img className="comment-pic" src={profilePhoto}/>
+            <Link to={`/user/${this.props.comment.author_id}`}> <img className="comment-pic" src={profilePhoto}/> </ Link>
             <div className="comment-body-container">
               <div className="comment-body">
-                <span className="comment-username"> {this.props.comment.author_fname + " " + this.props.comment.author_lname} </span> {this.props.comment.body}
+                  <span className="comment-username"> <Link to={`/user/${this.props.comment.author_id}`}>  {this.props.comment.author_fname + " " + this.props.comment.author_lname} </Link> </span> {this.props.comment.body}
               </div>
               <div className="comment-actions">
                 <p> Like </p>
