@@ -23,6 +23,7 @@ class UserPostBody extends React.Component {
   }
 
   handleClose() {
+    
     setTimeout(() => {
       this.toggleDropdown()
     }, 300)
@@ -76,7 +77,7 @@ class UserPostBody extends React.Component {
             </div>
           </div>
           <div className={`pbh-icons display-${this.props.post.author_id === this.props.session.currentUser.id}`}>
-            <button className="fa fa-angle-down" onClick={this.toggleDropdown} ></button>
+            <button className="fa fa-angle-down" onClick={this.toggleDropdown}></button>
             <UserPostDropdownContainer post={this.props.post} toggleDropdown={this.toggleDropdown} dropdownHidden={this.state.dropdownHidden}/>
 
           </div>

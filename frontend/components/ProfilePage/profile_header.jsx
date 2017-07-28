@@ -78,7 +78,7 @@ class ProfileHeader extends React.Component {
 
     if (this.props.bios.id !== this.props.session.currentUser.id) {
       if (alreadyFriends) {
-        profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Delete Friend </button>
+        profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Unfriend </button>
       } else if (pendingFriends) {
         if (this.props.session.currentUser.id === requestSenderId) {
           profileButton = <button id="prof-friend-btn" onClick={this.handleClick}> <i className="fa fa-user"></i> Cancel Request </button>
@@ -105,9 +105,6 @@ class ProfileHeader extends React.Component {
     } else {
       profilePhoto = 'https://s-media-cache-ak0.pinimg.com/736x/b1/df/a5/b1dfa5e1f8fc944f9d5f0ff8d715533c--silhouette-studio-silhouette-portrait.jpg'
     }
-
-
-    console.log("COVERPHOTO", coverPhoto)
 
     return (
 

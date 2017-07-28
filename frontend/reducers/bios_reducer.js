@@ -20,11 +20,10 @@ let defaultState = {
 
 const BiosReducer = (state = defaultState, action) => {
   Object.freeze(state)
-  console.log(action);
   switch (action.type) {
     case RECEIVE_USER_PROF_PHOTO:
       return merge({}, state, {profile_url: action.bio.profile_url, cover_url: action.bio.cover_url});
-    
+
     case RECEIVE_USER_BIO:
       return Object.assign({}, state, action.bio);
 

@@ -22,7 +22,6 @@ class PhotoWidget extends React.Component {
   componentWillReceiveProps(nextProps) {
     let idReg = /\d+/g;
     let currentProfId = nextProps.location.pathname.match( idReg )[0];
-    // console.log("ID COMPARE", this.state.currentProfId, currentProfId)
     if (this.state.currentProfId !== currentProfId) {
       this.setState({currentProfId})
       this.props.fetchUserPhotos(currentProfId)

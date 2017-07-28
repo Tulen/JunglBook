@@ -4,10 +4,17 @@ class CommentForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      body: ''
+      body: '',
+      focused: this.props.focused
     }
 
     this.handleKeyPress = this.handleKeyPress.bind(this)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.focused) {
+      this.input.focus();
+    }
   }
 
   update(val) {
@@ -38,7 +45,7 @@ class CommentForm extends React.Component {
     return (
       <div className={`comment-form nested-${this.props.nested}`}>
         <img className="comment-pic" src={profilePhoto} />
-        <input ref={this.props.inputRef} value={this.state.body} onKeyPress={this.handleKeyPress} onChange={this.update('body')}  type="text" placeholder="Write a comment..."/>
+        <input ref={(el) => {this.input = el;}} value={this.state.body} onKeyPress={this.handleKeyPress} onChange={this.update('body')}  type="text" placeholder="Write a comment..."/>
       </div>
     )
   }

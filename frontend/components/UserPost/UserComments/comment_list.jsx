@@ -28,7 +28,7 @@ class CommentList extends React.Component {
       return (
         <div className={`comment-list-container nested-${this.props.nested}`}>
           { postComments }
-          <CommentFormContainer parentCommentId={this.props.parentCommentId} nested={this.props.nested} inputRef={this.props.inputRef} postId={this.props.postId} />
+          <CommentFormContainer focused={this.props.focused}  parentCommentId={this.props.parentCommentId} nested={this.props.nested} inputRef={this.props.inputRef} postId={this.props.postId} />
         </div>
       )
     }

@@ -53,10 +53,53 @@ class CreateUser extends React.Component {
   }
 
   checkValidity(val) {
-    function validateEmail(email) {
-      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
+    function validateNamePresence(name) {
+      return name.length > 0
     }
+
+    function validateEmail(email) {
+      let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(email);
+    }
+
+    function validatePasswordLength(password) {
+      return password.length >= 8
+    }
+
+    function validateAge(birthday) {
+      let currentDate = new Date();
+      let currentYear = 1900 + currentDate.getYear();
+      let currentMonth = 1 + currentDate.getMonth();
+      let currentDay = currentDate.getDate();
+      let inputDate = birthday.split('-');
+      let inputYear = parseInt(inputDate[0]);
+      let inputMonth = parseInt(inputDate[1]);
+      let inputDay = parseInt(inputDate[2]);
+      let oldEnough = false
+
+      if ((currentYear - inputYear) < 13) {
+        if (currentYear - inputYear === 12) {
+          if (currentMonth > inputMonth) {
+            oldEnough = true
+          } else if (currentMonth === inputMonth) {
+            if ( currentDay >= inputDay ) {
+              oldEnough = true
+            } else {
+              oldEnough = false
+            }
+          } else {
+            oldEnough = false
+          }
+        } else {
+          oldEnough = false
+        }
+      } else {
+          oldEnough = true
+      }
+
+      return oldEnough
+    }
+
     let newInputState = merge({}, this.state.inputState);
     return (e) => {
 
@@ -69,6 +112,22 @@ class CreateUser extends React.Component {
         checkValue = e.target.value
       }
 
+      function setErrorClass(bool, val) {
+        if (bool) {
+          newInputState[val].valid = true;
+          newInputState[val].className = "input-noerror";
+          if (e.target === undefined) {
+            this.validationSwitch.push(true);
+          }
+        } else {
+          newInputState[val].valid = false;
+          newInputState[val].className = "input-error";
+          if (e.target === undefined) {
+              this.validationSwitch.push(false);
+          }
+        }
+      }
+
       if (e === '') {
         newInputState[val].valid = false;
         newInputState[val].className = 'input-error';
@@ -78,102 +137,22 @@ class CreateUser extends React.Component {
         switch (val) {
           case 'fname':
           case 'lname':
-            if (checkValue.length > 0 ) {
-              newInputState[val].valid = true;
-              newInputState[val].className = 'input-noerror';
-              if (e.target === undefined) {
-                this.validationSwitch.push(true);
-              }
-
-            } else {
-              newInputState[val].valid = false;
-              newInputState[val].className = 'input-error';
-              if (e.target === undefined) {
-                  this.validationSwitch.push(false);
-              }
-            }
+            setErrorClass(validateNamePresence(checkValue), val);
             break;
           case 'email':
-            if (validateEmail(checkValue)) {
-              newInputState[val].valid = true;
-              newInputState[val].className = 'input-noerror';
-              if (e.target === undefined) {
-                this.validationSwitch.push(true);
-              }
-            } else {
-              newInputState[val].valid = false;
-              newInputState[val].className = 'input-error';
-              if (e.target === undefined) {
-                this.validationSwitch.push(false);
-              }
-            }
+            setErrorClass(validateEmail(checkValue), val);
             break;
           case 'password':
-            if (checkValue.length > 7 ) {
-              newInputState[val].valid = true;
-              newInputState[val].className = 'input-noerror';
-              if (e.target === undefined) {
-                this.validationSwitch.push(true);
-              }
-            } else {
-              newInputState[val].valid = false;
-              newInputState[val].className = 'input-error';
-              if (e.target === undefined) {
-                this.validationSwitch.push(false);
-              }
-            }
+            setErrorClass(validatePasswordLength(checkValue), val);
             break;
           case 'birthday':
-            let currentDate = new Date();
-            let currentYear = 1900 + currentDate.getYear();
-            let currentMonth = 1 + currentDate.getMonth();
-            let currentDay = currentDate.getDate();
-            let inputDate = checkValue.split('-');
-            let inputYear = parseInt(inputDate[0]);
-            let inputMonth = parseInt(inputDate[1]);
-            let inputDay = parseInt(inputDate[2]);
-            let oldEnough = false
-
-            if ((currentYear - inputYear) < 13) {
-              if (currentYear - inputYear === 12) {
-                if (currentMonth > inputMonth) {
-                  oldEnough = true
-                } else if (currentMonth === inputMonth) {
-                  if ( currentDay >= inputDay ) {
-                    oldEnough = true
-                  } else {
-                    oldEnough = false
-                  }
-                } else {
-                  oldEnough = false
-                }
-              } else {
-                oldEnough = false
-              }
-            } else {
-                oldEnough = true
-            }
-            if (oldEnough) {
-              newInputState[val].valid = true;
-              newInputState[val].className = 'input-noerror';
-              if (e.target === undefined) {
-                this.validationSwitch.push(true);
-              }
-            } else {
-              newInputState[val].valid = false;
-                newInputState[val].className = 'input-error';
-                if (e.target === undefined) {
-                  this.validationSwitch.push(false);
-                }
-            }
+            setErrorClass(validateAge(checkValue), val);
             break;
           default:
+            break;
         }
       }
-
       this.setState({ ['inputState']: newInputState });
-
-
     };
   }
 
@@ -190,50 +169,19 @@ class CreateUser extends React.Component {
 
     })
     let newSubmitInputState = merge({}, this.state.inputState)
+    const inputFields = ["fname", "lname", "email", "password", "birthday"]
 
-    let indexCounter = 0;
-    this.validationSwitch.forEach((bool) => {
-      if (bool){
-        switch (indexCounter) {
-          case 0:
-            newSubmitInputState.fname.className = "input-noerror";
-            break;
-          case 1:
-            newSubmitInputState.lname.className = "input-noerror";
-            break;
-          case 2:
-            newSubmitInputState.email.className = "input-noerror";
-            break;
-          case 3:
-            newSubmitInputState.password.className = "input-noerror";
-            break;
-          case 4:
-            newSubmitInputState.birthday.className = "input-noerror";
-            break;
-          default:
 
-          }
-        } else {
-            switch (indexCounter) {
-              case 0:
-                newSubmitInputState.fname.className = "input-error";
-                break;
-              case 1:
-                newSubmitInputState.lname.className = "input-error";
-                break;
-              case 2:
-                newSubmitInputState.email.className = "input-error";
-                break;
-              case 3:
-                newSubmitInputState.password.className = "input-error";
-                break;
-              case 4:
-                newSubmitInputState.birthday.className = "input-error";
-                break;
-              default:
-              }
-            }
-        indexCounter++;
+    function setSubmitErrorClass(bool, string) {
+      if (bool) {
+        newSubmitInputState[string].className = "input-noerror";
+      } else {
+        newSubmitInputState[string].className = "input-error";
+      }
+    }
+
+    this.validationSwitch.forEach((bool, idx) => {
+      setSubmitErrorClass(bool, inputFields[idx]);
       }
     );
     this.setState({ ['inputState']: newSubmitInputState });

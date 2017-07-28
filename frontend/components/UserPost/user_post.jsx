@@ -7,12 +7,15 @@ import CommentFormContainer from './UserComments/comment_form_container'
 class UserPost extends React.Component {
   constructor(props) {
     super(props)
-    // this.handleClick = this.handleClick.bind(this)
+
+    this.state = {
+      focused: false
+    }
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(e) {
-    // let commentEnter = this.refs.commentEnter
-    // commentEnter.handleKeyPress(e)
+    this.setState({focused: true})
   }
 
   render() {
@@ -33,7 +36,7 @@ class UserPost extends React.Component {
             <p> Share </p>
           </span>
         </div>
-        <CommentListContainer inputRef={() => (this.handleKeyPress)} postId={this.props.post.id}/>
+        <CommentListContainer focused={this.state.focused} inputRef={() => (this.handleKeyPress)} postId={this.props.post.id}/>
       </div>
     )
   }
