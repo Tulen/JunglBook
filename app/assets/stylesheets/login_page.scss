@@ -231,7 +231,7 @@ input[type="date"] {
 
 .login-footer {
   background-color: white;
-  height: 154px;
+  min-height: 29vh;
   color: #044A25;
   min-width: 1000px;
 }
@@ -239,6 +239,7 @@ input[type="date"] {
 .login-footer > * {
   padding-top: 20px;
   margin-left: 20px;
+  text-align: center;
 }
 
 .login-footer li {
