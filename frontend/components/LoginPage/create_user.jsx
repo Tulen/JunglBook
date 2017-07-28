@@ -112,18 +112,18 @@ class CreateUser extends React.Component {
         checkValue = e.target.value
       }
 
-      function setErrorClass(bool, val) {
+      function setErrorClass(bool, val, that) {
         if (bool) {
           newInputState[val].valid = true;
           newInputState[val].className = "input-noerror";
           if (e.target === undefined) {
-            this.validationSwitch.push(true);
+            that.validationSwitch.push(true);
           }
         } else {
           newInputState[val].valid = false;
           newInputState[val].className = "input-error";
           if (e.target === undefined) {
-              this.validationSwitch.push(false);
+            that.validationSwitch.push(false);
           }
         }
       }
@@ -137,16 +137,16 @@ class CreateUser extends React.Component {
         switch (val) {
           case 'fname':
           case 'lname':
-            setErrorClass(validateNamePresence(checkValue), val);
+            setErrorClass(validateNamePresence(checkValue), val, this);
             break;
           case 'email':
-            setErrorClass(validateEmail(checkValue), val);
+            setErrorClass(validateEmail(checkValue), val, this);
             break;
           case 'password':
-            setErrorClass(validatePasswordLength(checkValue), val);
+            setErrorClass(validatePasswordLength(checkValue), val, this);
             break;
           case 'birthday':
-            setErrorClass(validateAge(checkValue), val);
+            setErrorClass(validateAge(checkValue), val, this);
             break;
           default:
             break;
@@ -186,6 +186,7 @@ class CreateUser extends React.Component {
     );
     this.setState({ ['inputState']: newSubmitInputState });
     this.validationSwitch = [];
+    console.log(this.state.user)
     newUser['user'] = this.state.user;
     this.props.signup(newUser).then(() => (
       this.props.history.push('/feed')
