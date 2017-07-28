@@ -22,6 +22,7 @@ class CommentForm extends React.Component {
         post_id: this.props.postId
       }
       this.props.createComment({comment: newComment})
+      this.setState({body: ''})
     }
   }
 

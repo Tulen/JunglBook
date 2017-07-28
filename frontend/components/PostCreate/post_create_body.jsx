@@ -22,7 +22,7 @@ class PostCreateBody extends React.Component {
       wall_id: this.props.bios.id
     }
     this.props.createUserPost({post: newPost})
-
+    this.setState({body: ''})
   }
 
   render() {
