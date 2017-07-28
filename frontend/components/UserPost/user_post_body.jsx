@@ -10,7 +10,8 @@ class UserPostBody extends React.Component {
       dropdownHidden: true
     }
 
-    this.toggleDropdown = this.toggleDropdown.bind(this)
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   toggleDropdown() {
@@ -19,6 +20,12 @@ class UserPostBody extends React.Component {
     } else {
       this.setState({dropdownHidden: true})
     }
+  }
+
+  handleClose() {
+    setTimeout(() => {
+      this.toggleDropdown()
+    }, 150)
   }
 
   render() {
@@ -36,7 +43,7 @@ class UserPostBody extends React.Component {
       postNameDisplay =
       <div className="pbh-text-users">
         <Link to={`/user/${this.props.post.author_id}`}> <p> {this.props.post.author_fname + ' ' + this.props.post.author_lname}  </p> </Link>
-          <i className="fa fa-caret-right"> </i>
+          <i className="fa fa-caret-right" > </i>
         <p> {this.props.post.wall_fname + ' ' + this.props.post.wall_lname} </p>
       </div>
 
@@ -69,7 +76,7 @@ class UserPostBody extends React.Component {
             </div>
           </div>
           <div className={`pbh-icons display-${this.props.post.author_id === this.props.session.currentUser.id}`}>
-            <i className="fa fa-angle-down" onClick={this.toggleDropdown}></i>
+            <button className="fa fa-angle-down" onClick={this.toggleDropdown} onBlur={this.handleClose}></button>
             <UserPostDropdownContainer post={this.props.post} dropdownHidden={this.state.dropdownHidden}/>
 
           </div>

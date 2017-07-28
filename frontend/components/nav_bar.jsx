@@ -10,6 +10,7 @@ class NavBar extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   handleSubmit(e) {
@@ -25,6 +26,12 @@ class NavBar extends React.Component {
     } else {
       this.setState({dropdownHidden: true})
     }
+  }
+
+  handleClose() {
+    setTimeout(() => {
+      this.toggleDropdown()
+    }, 150)
   }
 
   render() {
@@ -71,9 +78,7 @@ class NavBar extends React.Component {
               <div className="nav-dropdowns-container">
                   <FriendRequestDropdownContainer dropdownHidden={this.state.dropdownHidden} />
               </div>
-              <i className='fa fa-group' onClick={this.toggleDropdown}>
-
-              </i>
+              <button className='fa fa-group' onClick={this.toggleDropdown} onBlur={this.handleClose}></button>
               <i className='fa fa-comments' ></i>
               <i className='fa fa-globe'></i>
             </div>

@@ -95,3 +95,8 @@ img {
 input, button {
   outline-style: none;
 }
+
+button.fa {
+  background-color: inherit;
+  border: none;
+}
