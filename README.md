@@ -4,11 +4,8 @@
 
 [heroku]:https://junglbook.herokuapp.com
 
-JunglBook is a Facebook-inspired social networking application for animals.
+JunglBook is a Facebook-inspired social networking application for animals. This application is built upon a Ruby on Rails backend, a PostgreSQL database, a React.js front end as well as Redux for state management. Data requests are made through AJAX requests with JSON responses being built through JBuilder.
 
-## Technologies
-
- Tech description here: Redux, react, Ruby on Rails, PostgreSQL.
 
 ## Features
 
@@ -85,16 +82,33 @@ this.validationSwitch.forEach((bool, idx) => {
 
 ```
 
-### User Profiles
+### User Profiles & Bios
+
+In creating an account, users are given a profile page that - among other things-  houses all "bio" information about that user. Users are able to add and edit their "bio" information which includes fields such as work, education and current city. This information is displayed both in a component that lives on that users timeline as well as a separate about component that lives on another page.
+
+![User About Page](/app/assets/images/profile-about.png)
 
 ### Friending
+
+Users are able to send friend requests to other users, which can then be either accepted or denied by the receiving user. This is handled through the use of a friend request join table that facilitates a many-to-many relationship between users. This table has a status column that represents requests that are either pending or accepted, with accepted rows representing valid friendship relationships between users.
+
+### Profile and Cover Pictures / Photo Upload
+
+Users are given a default profile picture upon account, but are able to upload photos to their profile, from which they are able to select their own custom profile picture and/or cover photo.
+
 
 ### Posts and Comments
 
 ![Post Comment Demo](/app/assets/gifs/post-comments.gif)
 
 JunglBook allows users to post on their profile pages and the profile pages of their friends. Users are also able to comment on these posts and reply to these comments as well. Both comments and posts are editable and deletable by their authors.
-### Profile Pictures, Cover Photos, Photo Upload
+
+
+### NewsFeed
+
+In addition to having a personal profile page, users also have access to a separate NewsFeed page that displays all posts and comments relevant to that user in a single location.
+
+![News Feed](/app/assets/images/news-feed.png)
 
 ### Moving Forward
 
