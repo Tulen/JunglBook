@@ -168,6 +168,12 @@
   border-top: none;
   width: 95%;
 }
+
+.comment-list-item.nested-true {
+  border-left: 2px solid #E9EAED;
+
+}
+
 .comment-form {
   min-height: 34px;
   padding: 2px 0 8px 0;
