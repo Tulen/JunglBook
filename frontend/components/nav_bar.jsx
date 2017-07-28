@@ -70,7 +70,7 @@ class NavBar extends React.Component {
               </Link>
 
 
-              <p> <Link to="/feed">Home</Link>  </p>
+              <Link to="/feed"><p> Home </p></Link>
             </div>
 
 

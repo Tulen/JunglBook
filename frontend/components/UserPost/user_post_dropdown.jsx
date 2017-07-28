@@ -27,6 +27,7 @@ class UserPostDropdown extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
+    this.props.toggleDropdown();
   }
 
   handleEdit(e) {
