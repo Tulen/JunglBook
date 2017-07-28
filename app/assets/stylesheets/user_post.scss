@@ -154,12 +154,20 @@
 .comment-list-item {
   min-height: 34px;
   padding: 8px 12px 4px 12px;
-  display: flex;
-  justify-content: space-between;
+
   font-size: 12px;
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.comment-list-item > div:first-of-type{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nested-true {
+  border-top: none;
+  width: 95%;
+}
 .comment-form {
   min-height: 34px;
   padding: 2px 0 8px 0;
@@ -201,4 +209,14 @@
   padding: 5px 0 9px 5px;
   width: 446px;
   margin-left: 10px;
+}
+
+.comment-actions p:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.comment-actions p:last-of-type {
+  font-weight: normal;
+  cursor: text;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import CommentListDropdownContainer from './comment_list_dropdown_container'
 import { Link } from 'react-router-dom'
+import CommentListContainer from './comment_list_container'
 
 class CommentListItem extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class CommentListItem extends React.Component {
     }
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.toggleReply = this.toggleReply.bind(this)
     this.handleClose = this.handleClose.bind(this);
   }
 
@@ -83,24 +85,28 @@ class CommentListItem extends React.Component {
 
     if (this.props.comment.post_id === this.props.postId) {
       return (
-        <div className="comment-list-item">
-          <div className="pbh-left-group">
-            <Link to={`/user/${this.props.comment.author_id}`}> <img className="comment-pic" src={profilePhoto}/> </ Link>
-            <div className="comment-body-container">
-              <div className="comment-body">
-                  <span className="comment-username"> <Link to={`/user/${this.props.comment.author_id}`}>  {this.props.comment.author_fname + " " + this.props.comment.author_lname} </Link> </span> {this.props.comment.body}
-              </div>
-              <div className="comment-actions">
-                <p> Like </p>
-                <p onClick={this.toggleReply}> Reply </p>
-                {commentEdited}
+        <div className={`comment-list-item nested-${this.props.nested}`}>
+          <div>
+            <div className="pbh-left-group">
+              <Link to={`/user/${this.props.comment.author_id}`}> <img className="comment-pic" src={profilePhoto}/> </ Link>
+              <div className="comment-body-container">
+                <div className="comment-body">
+                    <span className="comment-username"> <Link to={`/user/${this.props.comment.author_id}`}>  {this.props.comment.author_fname + " " + this.props.comment.author_lname} </Link> </span> {this.props.comment.body}
+                </div>
+                <div className="comment-actions">
+                  <p> Like </p>
+                  <p className="comment-reply" onClick={this.toggleReply}> Reply </p>
+                  {commentEdited}
+                </div>
               </div>
             </div>
+            <div className={`pbh-icons comment-body-icon display-${this.props.comment.author_id === this.props.userId}`}>
+              <button className="fa fa-ellipsis-h" onClick={this.toggleDropdown}> </button>
+              <CommentListDropdownContainer comment={this.props.comment} toggleDropdown={this.toggleDropdown} dropdownHidden={this.state.dropdownHidden}/>
+            </div>
           </div>
-
-          <div className={`pbh-icons comment-body-icon display-${this.props.comment.author_id === this.props.userId}`}>
-            <button className="fa fa-ellipsis-h" onClick={this.toggleDropdown}> </button>
-            <CommentListDropdownContainer comment={this.props.comment} toggleDropdown={this.toggleDropdown} dropdownHidden={this.state.dropdownHidden}/>
+          <div>
+            <CommentListContainer postId={this.props.comment.post_id} parentCommentId={this.props.comment.id} hidden={this.state.replyHidden} nested={true} />
           </div>
         </div>
         )

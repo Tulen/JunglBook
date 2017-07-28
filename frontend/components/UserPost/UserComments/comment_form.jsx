@@ -19,7 +19,8 @@ class CommentForm extends React.Component {
       let newComment = {
         body: this.state.body,
         author_id: this.props.session.currentUser.id,
-        post_id: this.props.postId
+        post_id: this.props.postId,
+        parent_id: this.props.parentCommentId
       }
       this.props.createComment({comment: newComment})
       this.setState({body: ''})
@@ -35,7 +36,7 @@ class CommentForm extends React.Component {
     }
 
     return (
-      <div className="comment-form">
+      <div className={`comment-form nested-${this.props.nested}`}>
         <img className="comment-pic" src={profilePhoto} />
         <input ref={this.props.inputRef} value={this.state.body} onKeyPress={this.handleKeyPress} onChange={this.update('body')}  type="text" placeholder="Write a comment..."/>
       </div>

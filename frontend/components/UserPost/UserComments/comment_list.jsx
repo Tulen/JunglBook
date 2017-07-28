@@ -5,21 +5,35 @@ import values from 'lodash/values'
 
 class CommentList extends React.Component {
   componentDidMount() {
-    this.props.fetchPostComments(this.props.postId )
+    if (this.props.nested != true) {
+      this.props.fetchPostComments(this.props.postId )
+    }
   }
 
   render() {
-    let postComments = values(this.props.comments)
-    .map(comment => {
-      return <CommentListItem userId={this.props.session.currentUser.id} comment={comment} postId={this.props.postId} />
-    })
+    let postComments = values(this.props.comments).filter((comment) => {
+      if (this.props.nested) {
+        return comment.parent_id === this.props.parentCommentId
+      } else {
+        return comment.parent_id == null
+      }
 
-    return (
-      <div className="comment-list-container">
-        { postComments }
-        <CommentFormContainer inputRef={this.props.inputRef} postId={this.props.postId} />
-      </div>
-    )
+    })
+    .map(comment => {
+      return <CommentListItem nested={this.props.nested} userId={this.props.session.currentUser.id} comment={comment} postId={this.props.postId} />
+    })
+    if (this.props.nested && this.props.hidden) {
+      return <div> </div>
+    } else {
+      return (
+        <div className={`comment-list-container nested-${this.props.nested}`}>
+          { postComments }
+          <CommentFormContainer parentCommentId={this.props.parentCommentId} nested={this.props.nested} inputRef={this.props.inputRef} postId={this.props.postId} />
+        </div>
+      )
+    }
+
+
   }
 }
 
