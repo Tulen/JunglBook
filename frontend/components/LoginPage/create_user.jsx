@@ -186,7 +186,6 @@ class CreateUser extends React.Component {
     );
     this.setState({ ['inputState']: newSubmitInputState });
     this.validationSwitch = [];
-    console.log(this.state.user)
     newUser['user'] = this.state.user;
     this.props.signup(newUser).then(() => (
       this.props.history.push('/feed')
